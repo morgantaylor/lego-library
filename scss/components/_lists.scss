@@ -1,0 +1,47 @@
+// ==================
+// List Styles 
+// ==================
+
+/* we don't reset lists, instead we have classes 
+that will remove styles or apply styles */
+
+.list--styled {
+  margin: 0 0 0 40px;
+}
+
+.list--unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list--inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+
+  & > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  }
+}
+
+.list__item {
+  @include transition(all, .2s, ease);
+  padding: 5px 5px 5px 10px;
+  color: $lego-gray-5;
+  display: block;
+  width: auto;
+  border-left: 2px solid transparent;
+}
+
+.list__title {
+  @include text($weight: 600, $color: $black);
+  margin: 30px 0 5px 0;
+  display: block;
+
+  &:nth-of-type(1) {
+    margin-top: 0;
+  }
+}

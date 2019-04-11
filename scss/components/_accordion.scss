@@ -1,0 +1,130 @@
+// ==================
+// Accordion 
+// ==================
+
+.accordion__wrapper {
+  @extend %flex--column;
+  max-width: 650px;
+  margin: 0;
+}
+
+// Accordion Base Styles //
+
+.accordion {
+  @include relative();
+  color: $lego-gray-5;
+  background-color: $white;
+
+  &--paneled {
+    @include box-shadow(0, 1px, 1px, rgba(0,0,0,.05));
+    @include relative();
+    color: $lego-gray-5;
+    margin: 5px 0 0 0;
+    background-color: $white;
+    border: 1px solid transparent;
+    border-color: $lego-gray-2;
+    border-radius: 4px;
+
+    @extend %accordion__i--base;
+
+    /* If you want accordion open by defaul comment just switch
+       between %accordion--closed being commented out and %accordion--open
+       being active. */
+
+    // @extend %accordion--open;
+
+    @extend %accordion--closed;
+  }
+
+  @extend %accordion__i--base;
+
+  /* If you want accordion open by defaul comment just switch
+     between %accordion--closed being commented out and %accordion--open
+     being active. */
+
+  // @extend %accordion--open;
+
+  @extend %accordion--closed;
+
+}
+
+.accordion__title {
+  @extend %flex;
+  @include text($font-sm, $weight: bold);
+  @include relative();
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  color: $lego-gray-5;
+  
+
+  &--paneled {
+    @extend .accordion__title;
+    background-color: $lego-gray-1;
+    border-color: $lego-gray-2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 0;
+  }
+}
+
+
+// this is a modification to the .accordion__title
+.accordion__title--secondary {
+  font-weight: normal;
+  padding: 0px 5px;
+}
+
+.accordion__container {
+  @extend %flex--column;
+  @include text($font-sm, $weight: 100, $color: $lego-gray-5);
+  @include transition(all, 1s, ease);
+  @include relative();
+  overflow: hidden;
+  z-index: 2;
+  background-color: $white;
+
+  &--paneled {
+    @extend .accordion__container;
+
+    /* If you want accordion open by defaul comment just switch
+       between %accordion--closed being commented out and %accordion--open
+       being active. */
+
+    // @extend %accordion__container--open;
+
+    @extend %accordion__container--closed;
+
+    padding: 10px;
+
+  }
+
+  /* If you want accordion open by defaul comment just switch
+     between %accordion--closed being commented out and %accordion--open
+     being active. */
+
+  // @extend %accordion__container--open;
+
+  @extend %accordion__container--closed;
+
+  .list__item {
+
+    &:hover {
+      background-color: $lego-primary;
+      color: $white;
+    }
+
+    &:active {
+      border-left: 2px solid $lego-primary;
+    }
+  }
+
+  .disclaimer {
+    @include text(10px, $color: $lego-gray-5);
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+

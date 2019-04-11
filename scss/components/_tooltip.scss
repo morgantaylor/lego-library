@@ -1,0 +1,117 @@
+// ==================
+// Tooltip 
+// ==================
+
+.tooltip__wrapper {
+  -webkit-transform: translateZ(0); /* webkit flicker fix */
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.tooltip {
+  @include absolute(left -10px);
+  @include transition(all, .25s, ease-out);
+  @include box-shadow(2px, 2px, 6px, rgba(0, 0, 0, 0.28));
+
+  background: rgba(0,0,0,0.8);
+  color: $white;
+  display: block;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 10px;
+  border-radius: 4px;
+  pointer-events: none;
+  text-transform: none;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  white-space: normal;
+}
+
+.tooltip--top {
+  @include transform(translateY(10px));
+
+  bottom: 100%;
+}
+
+.tooltip--bottom {
+  @include transform(translateY(-10px));
+
+  top: 100%;
+  margin-top: 15px;
+}
+
+.tooltip--left {
+  @include transform(translateX(15px));
+
+  top: -25%;
+  left: -100%;
+  margin-left: -37px;
+}
+
+.tooltip--right {
+  @include transform(translateX(-15px));
+
+  top: -25%;
+  left: 100%;
+  margin-left: 16px;
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.tooltip:before {
+  @include absolute(bottom -20px left 0);
+  content: " ";
+  display: block;
+  height: 20px;
+  position: absolute;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.tooltip:after {
+  @include absolute();
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid rgba(0,0,0,0.8) 10px;
+  content: " ";
+  height: 0;
+  width: 0;
+  left: 50%;
+}
+
+.tooltip--bottom:after {
+  @include transform(rotate(-180deg));
+
+  top: -10px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.tooltip--top:after {
+  bottom: -10px;
+  left: 50%;
+  margin-left: -13px;
+  margin-top: 15px;
+}
+
+.tooltip--left:after {
+  @include transform(rotate(-90deg));
+
+  left: 100%;
+  top: 44%;
+  margin-left: -5px;
+}
+
+.tooltip--right:after {
+  @include transform(rotate(90deg));
+
+  left: 0%;
+  top: 44%;
+  margin-left: -15px;
+}
+  
+.tooltip__wrapper:hover .tooltip {
+  @include transform(translateY(0px));
+
+  opacity: 1;
+  pointer-events: auto;
+}

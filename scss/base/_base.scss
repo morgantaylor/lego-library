@@ -1,0 +1,399 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+      url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+      url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), 
+      url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), 
+      url('https://cf.xad.com/content/shared/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body  {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+body {
+  @extend %arial-text;
+  @include text(14px, 1.5, $color: $lego-gray-6);
+  margin: 0;
+  height: auto;
+  background-color: $white;
+}
+
+///// Elements //////
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+label,
+divider,
+sidebar,
+blockquote footer {
+  display: block;
+}
+
+
+//// Typography /////
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %arial-bold-text;
+}
+
+h1,
+h2,
+h3 {
+  margin: 20px 0 10px 0;
+}
+
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 44px;
+}
+h2 {
+  font-size: 38px;
+}
+h3 {
+  font-size: 32px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
+
+p,
+.paragraph {
+  @extend %arial-text;
+  @include text($font-sm, 1.7);
+} 
+
+p {
+  margin: 15px 0;
+}
+
+blockquote {
+  @extend %arial-bold-text;
+  font-size: 17.5px;
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid $lego-gray-1;
+}
+
+blockquote footer {
+  @include text(80%, 1.4, $color: $lego-gray-5);
+}
+
+blockquote footer:before {
+  content: '\2014 \00A0';
+}
+
+mark {
+  background-color: #ff0; // yellow
+  color: $black;
+}
+
+small {
+  font-size: 80%
+}
+
+sub,
+sup {
+  @include text(75%, 0);
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -.25em
+}
+
+sup {
+  top: -.5em
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+em {
+  font-style: italic;
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+
+////////// IMG SVG //////
+
+img {
+  border-style: none
+}
+
+svg:not(:root) {
+  overflow: hidden
+}
+
+
+//////// A Tag /////////
+
+a {
+  background-color: transparent;
+}
+
+a,
+button {
+  @extend %focus-none;
+  @extend %arial-text;
+  text-decoration: none;
+  display: inline-block;
+  color: $lego-primary;
+}
+
+a:focus, 
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+[type="button"],
+[type="reset"], 
+[type="submit"] {
+  -webkit-appearance: button;
+  overflow: visible;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+////////// Inputs ////////
+
+input[type="text"],
+input[type="color"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="time"],
+input[type="range"],
+input,
+select,
+textarea {
+  @extend %focus-none;
+  @include text($font-sm, 1.4, $color: $lego-gray-5);
+  @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
+  @include transition((border-color, box-shadow), .15s, ease-in-out);
+  padding: 10px 12px;
+  display: inline-block;
+  border: 1px solid $lego-gray-3;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $lego-gray-5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $lego-gray-5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $lego-gray-5;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $lego-gray-5;
+}
+
+select {
+  @extend %flex;
+  // min-width: 180px;
+
+  option {
+    @extend %flex;
+    @include box-sizing(content-box);
+    padding: 2px 2px 1px;
+    min-width: 64px;
+    min-height: 26px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+fieldset {
+  padding: 10px 20px 20px;
+  border-radius: 4px;
+  border: 2px solid $lego-gray-3;
+}
+
+legend {
+  @include box-sizing(border-box);
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+  padding: 0 5px;
+}
+
+button, 
+input, 
+select, 
+textarea {
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  margin: 0 5px;
+}
+
+//////// Code ///////////
+code,kbd,samp,pre {
+  font-family: monospace,monospace;
+
+}
+
+code,
+pre {
+  @include text($font-sm, 17px, $color: $black);
+  text-size-adjust: 100%;
+  border-radius: 4px;
+  background-color: $lego-gray-1;
+}
+
+code {
+  display: inline;
+  font-weight: normal;
+  width: auto;
+  height: auto;
+  white-space: pre;
+  padding: 2px 16px;
+}
+
+pre {
+  display: inline-block;
+  overflow: auto;
+  padding: 16px;
+  margin: 0;
+  max-width: 950px;
+  width: auto;
+  border: 0;
+}
+
+
+/////// Tables /////////
+
+
+table,
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+ table caption,
+.table caption {
+  @include text($font-sm, $color: $lego-gray-5);
+  caption-side: bottom;
+}
+
+ table thead,
+.table thead {
+  @include text($weight: bold);
+  text-transform: capitalize;
+}
+
+ table tbody,
+.table tbody {
+  color: $lego-gray-5;
+}
+
+.table > tbody > tr > td,
+ table > tbody > tr > td,
+.table > tbody > tr > th, 
+ table > tbody > tr > th, 
+.table > tfoot > tr > td, 
+ table > tfoot > tr > td, 
+.table > tfoot > tr > th, 
+ table > tfoot > tr > th, 
+.table > thead > tr > td, 
+ table > thead > tr > td, 
+.table > thead > tr > th,
+ table > thead > tr > th {
+  padding: 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid $lego-gray-2;
+}
+
+ table tbody tr,
+.table tbody tr {
+  height: 55px;
+}
+
+table.table-striped tbody tr:nth-child(odd) td {
+  background-color: $lego-gray-1;
+}
+
+table.table-bordered,
+table.table-bordered td {
+  border: 1px solid $lego-gray-1;
+}
+
+//////// Dividers ///////
+
+hr {
+  @include box-sizing(content-box);
+  margin: 20px 0;
+  border-top: 1px solid $lego-gray-2;
+}
+
+
+
+
+

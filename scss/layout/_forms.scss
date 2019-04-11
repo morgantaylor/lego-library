@@ -1,0 +1,165 @@
+// ======================
+// Form, Form Items and Classes
+// ======================
+
+.searchbar {
+  input[type="search"] {
+    height: 42px;
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+input[disabled] {
+  cursor: not-allowed;
+  color: $lego-gray-2;
+}
+
+fieldset button {
+  margin: 0;
+}
+
+// Form Groupings & Spacing
+
+.lego-form {
+  input[type=password], 
+  input[type=email], 
+  input[type=url], 
+  input[type=date], 
+  input[type=month], 
+  input[type=time], 
+  input[type=datetime], 
+  input[type=datetime-local], 
+  input[type=week], 
+  input[type=tel], 
+  input[type=color], 
+  input[type=number], 
+  input[type=search], 
+  input[type=text], 
+  select, 
+  textarea {
+    padding: 10px 12px;
+    display: inline-block;
+    border: 1px solid $lego-gray-3;
+    box-shadow: inset 0 1px 3px $lego-gray-2;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin: 5px 5px 5px 0;
+  }
+  label {
+    display: inline-block;
+    margin: 8px 10px 3px 0;
+  }
+}
+
+.lego-form.lego-form--stacked {
+  @extend .lego-form;
+
+  input[type=password], 
+  input[type=email], 
+  input[type=url], 
+  input[type=date], 
+  input[type=month], 
+  input[type=time], 
+  input[type=datetime], 
+  input[type=datetime-local], 
+  input[type=week], 
+  input[type=tel], 
+  input[type=color], 
+  input[type=number], 
+  input[type=search], 
+  input[type=text], 
+  select, 
+  textarea,
+  label {
+    display: block;
+    margin: 5px 0;
+    width: 300px;
+  }
+  .form__controls {
+    margin: 15px 0 0 0;
+  }
+  .btn {
+    margin: 0;
+  }
+}
+
+.lego-form.lego-form--aligned {
+  @extend .lego-form;
+
+  .form__group {
+    margin-bottom: 15px;
+
+    label {
+      margin-bottom: 5px;
+      text-align: left;
+      display: block;
+      width: 100%;
+
+       @include for-size(tablet-portrait-up) {
+        width: 13em;
+        margin: 0 15px 0 0;
+        text-align: right;
+        display: inline-block;
+       }
+    }
+    input,
+    select,
+    textarea {
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+
+      @include for-size(phone) {
+        margin-bottom: .3em;
+        display: block;
+      }
+    }
+  }
+  .form__controls {
+    margin: 1.5em 0 0 11em;
+
+    @include for-size(phone) {
+      margin: 1.5em 0 0 0;
+    }
+  }
+}
+
+// Form Styles
+
+.form__heading,
+.form__label {
+  @extend %flex;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+}
+
+.form__heading {
+  @extend %capitalize;
+  justify-content: space-between;
+  font-size: $font-lg;
+  color: $black;
+  font-weight: bold;
+  margin: 24px 20px 8px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.form__label {
+  margin: 0 0 5px 0;
+  font-weight: normal;
+  color: $lego-gray-5;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+
+
+
+
+
+
+

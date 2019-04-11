@@ -1,0 +1,61 @@
+// ==================
+// Alerts 
+// ==================
+
+.alert {
+  @extend %flex;
+  padding: 15px;
+  border: 1px solid transparent;
+
+  .alert-close {
+    opacity: .6;
+    color: inherit;
+    margin-left: auto;
+    background-color: inherit;
+    padding: 0;
+  }
+}
+
+.alert-- {
+  opacity: 1;
+
+  &global {
+    @extend .alert--;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    color: $lego-gray-5;
+    background-color: $lego-gray-1;
+    border-color: $lego-gray-5;
+  }
+
+  &error {
+    @extend .alert--;
+    color: darken($lego-danger, 10%);
+    background-color: lighten($lego-danger, 30%);
+    border-color: darken($lego-danger, 10%);
+  }
+
+  &warning {
+    @extend .alert--;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }
+
+  &success {
+    @extend .alert--;
+    color: darken($lego-success, 10%);
+    background-color: lighten($lego-success, 30%);
+    border-color: darken($lego-success, 10%);
+  }
+
+  &info {
+    @extend .alert--;
+    color: darken($lego-primary, 10%);
+    background-color: lighten($lego-primary, 30%);
+    border-color: darken($lego-primary, 10%);
+  }
+}

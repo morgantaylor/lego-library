@@ -1,0 +1,233 @@
+// Button Mixin //
+
+@mixin skin($prefix, $main-color) {
+  @if $prefix == 'skin-' {
+    background-color: $main-color;
+    color: $white;
+    border: 1px solid $main-color;
+
+    &:not([disabled]):hover,
+    &:hover:not(.disabled) {
+      color: $white;
+      background-color: darken($main-color, 10%);
+      border-color: darken($main-color, 12%);
+    }
+
+    &:not([disabled]).active,
+    &:not(.disabled).active {
+      color: $white;
+      background-color: darken($main-color, 20%);
+      border-color: darken($main-color, 22%);
+    }
+    
+    &.active {
+      color: darken($main-color, 15%);
+    }
+
+    &.selected {
+      color: $white;
+      border-color: darken($main-color, 15%);
+      background-color: darken($main-color, 15%);
+    }
+  }
+  @else if $prefix == 'skin-reverse-' {
+    color: $main-color;
+    background-color: $white;
+    border: 1px solid $main-color;
+
+    &:not([disabled]):hover,
+    &:not(.disabled):hover {
+      color: $white;
+      background-color: $main-color;
+      border-color: darken($main-color, 12%);
+    }
+
+    &:not([disabled]).active,
+    &:not(.disabled).active {
+      color: $white;
+      background-color: darken($main-color, 20%);
+      border-color: darken($main-color, 22%);
+    }
+    
+    &.active {
+      color: darken($main-color, 15%);
+    }
+
+    &.selected {
+      border-color: darken($main-color, 15%);
+      color: $white;
+      background-color: darken($main-color, 15%);
+    }
+  }
+  @else if $prefix == 'link-' {
+    color: $main-color;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &:not([disabled]):hover,
+    &:not(.disabled):hover {
+      color: darken($main-color, 12%);
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &.active {
+      color: darken($main-color, 15%);
+    }
+  }
+  
+  &.disabled,
+  &[disabled] {
+    @extend %input--disabled;
+    cursor: not-allowed !important;
+  }
+}
+
+
+// Text Mixin //
+
+@mixin text($size: null, $height: null, $weight: null, $color: null) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Position Mixins //
+// position mixin: http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
+
+@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+  
+  @each $offset in $offsets {
+    $index: index($args, $offset);
+    
+    @if $index {
+      @if $index == length($args) {
+        #{$offset}: 0;
+      }
+      @else {
+        $next: nth($args, $index + 1);
+        @if is-valid-length($next) {
+          #{$offset}: $next;
+        }
+        @else if index($offsets, $next) {
+          #{$offset}: 0;
+        }
+        @else {
+          @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+        }
+      }
+    }
+  }
+}
+
+@function is-valid-length($value) {
+  @return (type-of($value) == "number" and not unitless($value)) 
+  or (index(auto initial inherit 0, $value) != null);
+}
+
+@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}
+
+
+// === Autoprefixer === //
+// ==================== //
+
+// Transform 
+// Ex: @include transform(translateY, 10px);
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+     -moz-transform: $transforms;
+      -ms-transform: $transforms;
+       -o-transform: $transforms;
+          transform: $transforms;
+}
+
+// Box Shadow 
+// Ex: box-shadow(2px, 2px, 6px, rgba(0, 0, 0, 0.28));
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+       -moz-box-shadow: inset $top $left $blur $color;
+        -ms-box-shadow: inset $top $left $blur $color;
+         -o-box-shadow: inset $top $left $blur $color;
+            box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+       -moz-box-shadow: $top $left $blur $color;
+        -ms-box-shadow: $top $left $blur $color;
+         -o-box-shadow: $top $left $blur $color;
+            box-shadow: $top $left $blur $color;
+  }
+}
+
+// Box-sizing
+// Ex: @include box-sizing(border-box);
+@mixin box-sizing($arg) {
+  -webkit-box-sizing: $arg;
+     -moz-box-sizing: $arg;
+          box-sizing: $arg;
+}
+
+// Transition 
+// Ex: transition(all, .25s, ease-out);
+// $transition-property = the property you want to transition
+// $transition-time = seconds you want the transition to last
+// $method = how you want it to transition - e.g. ease-in-out
+// @mixin transition($transition-property, $transition-time, $method) {
+//   -webkit-transition: $transition-property $transition-time $method;
+//      -moz-transition: $transition-property $transition-time $method;
+//       -ms-transition: $transition-property $transition-time $method;
+//        -o-transition: $transition-property $transition-time $method;
+//           transition: $transition-property $transition-time $method;
+// }
+
+// This is the old mixin for transitions,
+// going to need to trasition theses
+@mixin transition($var...) {
+    -webkit-transition: $var;
+    -moz-transition: $var;
+    -ms-transition: $var;
+    -o-transition: $var;
+    transition: $var;
+}
+
+// Border-radius //
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.74mngvb8z
+// to use: @include for-size(desktop-up)
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
+
+  @if $range == phone-only {
+    @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+  } @else if $range == desktop-up {
+    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $desktop-upper-boundary) { @content; }
+  }
+}

@@ -1,0 +1,807 @@
+// ==================
+// Inputs 
+// ==================
+
+.input--btn {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.input--btn>.button, 
+.input--btn>button, 
+.input--btn>input {
+  border-radius: 0;
+}
+
+.input--btn>.button:first-child, 
+.input--btn>button:first-child, 
+.input--btn>input:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.input--btn>input:first-child {
+  border-right: 0;
+}
+
+.input--btn>.button:last-child, 
+.input--btn>button:last-child, 
+.input--btn>input:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.input--btn>input:last-child {
+  border-left: 0;
+}
+
+.input--btn>.button,
+.input--btn>button {
+  height: 44px;
+  padding: 6px 18px;
+  margin: 0;
+}
+
+.input--btn>input+input {
+  border-left-width: 0;
+}
+
+.input--btn>button.btn-reverse-input[disabled],
+.input--btn>button.btn-reverse-input.disabled,
+.input--btn>button.btn-input[disabled],
+.input--btn>button.btn-input.disabled,
+.input--btn>input[disabled],
+.input--btn>input.disabled,
+.input--btn>input[readonly],
+.input--btn>button.btn-reverse-input[readonly]
+.input--btn>button.btn-input[readonly] {
+  @extend %input--disabled;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+// Inline input and label group //
+
+.input--inline {
+  display: inline-block;
+  width: auto;
+  min-width: 300px;
+  vertical-align: middle;
+}
+
+.label--inline {
+  display: inline-block;
+}
+
+// Single Input Groups with labels //
+
+.input__group {
+  @extend %flex--column;
+  width: 100%;
+  margin: 0 28px 20px 0;
+  // put in min-width for default
+
+  @include for-size(tablet-landscape-up) {
+    width: auto;
+  }
+
+  &:last-of-type {
+
+    @include for-size(tablet-landscape-up) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .md-label {
+    display: block;
+    margin-right: 10px;
+  }
+
+  input {
+    display: block;
+    margin: 0;
+    width: 100%;
+
+    @include for-size(tablet-landscape-up) {
+      width: 250px;
+    }
+  }
+
+  &--inline {
+    @extend .input__group;
+    flex-direction: row;
+  }
+
+  &--height {
+
+    &-sm {
+      min-height: 50px;
+    }
+
+    &-md {
+      min-height: 90px;
+    }
+  }
+
+  &--width-lg {
+    width: 350px;
+
+    input {
+      width: auto;
+    }
+  }
+}
+
+// ===== Text Input fields that look like Angular Material ==== //
+
+.field {
+  --uiFieldPaddingTop: var(--fieldPaddingTop, 0px);
+  --uiFieldPaddingRight: var(--fieldPaddingRight, 0px);
+  --uiFieldPaddingBottom: var(--fieldPaddingBottom, 0px);
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 0px);
+
+  --uiFieldBorderColor: var(--fieldBorderColor, transpatent);
+  --uiFieldBorderTop: var(--fieldBorderTop, 0px);
+  --uiFieldBorderRight: var(--fieldBorderRight, 0px);
+  --uiFieldBorderBottom: var(--fieldBorderBottom, 0px);
+  --uiFieldBorderLeft: var(--fieldBorderLeft, 0px);
+
+  --uiFieldBgColor: var(--fieldBgColor, transpatent);
+  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+  --uiFieldAnimationDuration: var(--fieldAnimationDuration, .3s);
+  --uiFieldFonstSize: var(--fieldFontSize, 16px);
+
+  position: relative;  
+}
+
+input.field__input,
+textarea.field__input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--uiFieldBgColor);
+
+  /* for iOS */
+  appearance: none;
+  border-radius: 0;
+
+  border-style: solid;
+  border-color: var(--uiFieldBorderColor);
+
+  border-top-width: var(--uiFieldBorderTop);
+  border-right-width: var(--uiFieldBorderRight);
+  border-bottom-width: var(--uiFieldBorderBottom);
+  border-left-width: var(--uiFieldBorderLeft);
+
+  padding-top: var(--uiFieldPaddingTop);
+  padding-right: var(--uiFieldPaddingRight);
+  padding-bottom: var(--uiFieldPaddingBottom);
+  padding-left: var(--uiFieldPaddingLeft);
+
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  box-shadow: none;
+
+  &::-webkit-input-placeholder{ 
+    color: var(--uiFieldPlaceholderColor);
+    opacity: 0;
+  }
+
+  &::-moz-placeholder { 
+    color: var(--uiFieldPlaceholderColor);
+    opacity: 0;
+  }
+
+  &:focus{
+    outline: none;  
+  }
+
+  &:focus::-webkit-input-placeholder{ 
+    transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
+    opacity: 1;
+  }
+
+  &:focus::-moz-placeholder{ 
+    transition: opacity var(--uiFieldAnimationDuration) ease-out var(--uiFieldAnimationDuration);
+    opacity: 1;
+  }
+
+}
+
+.field__label-wrap {
+  height: 100%;
+  display: block;
+}
+
+.field__label {
+  position: absolute;
+  top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
+  left: calc(0px + var(--uiFieldPaddingLeft) + var(--uiFieldBorderLeft));
+
+  pointer-events: none;
+  font-size: .9em;
+
+  transition: top var(--uiFieldAnimationDuration) cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity var(--uiFieldAnimationDuration) ease-out;
+  will-change: top, opacity;
+}
+
+.field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label {
+  opacity: 0;
+  top: calc(0px + var(--uiFieldPaddingTop) + var(--uiFieldBorderTop));
+}
+
+.field__input:focus ~ .field__label-wrap .field__label {
+  opacity: 1;
+  top: calc(-1 * calc(var(--uiFieldPaddingTop) + var(--uiFieldBorderTop) + 15px));
+}
+
+.field-am {
+  --uiFieldBorderBottom: var(--fieldBorderBottom, 2px);
+  --uiFieldPaddingTop: var(--fieldPaddingTop, 5px);
+  --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+  --uiFieldPaddingBottom: var(--fieldPaddingBottom, 9px);
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 0);  
+
+  .field__label-wrap:after {
+    content: "";
+    width: 0;
+    height: var(--uiFieldBorderBottom);
+    background-color: var(--fieldBorderColorActive);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    will-change: width;
+    transition: width var(--uiFieldAnimationDuration) ease-out;
+  }
+
+  .field__input:focus ~ .field__label-wrap:after{
+    width: 100%;
+  }
+}
+
+.field {
+  --fieldBorderColor: $lego-gray-6;
+  --fieldBorderColorActive: $lego-success;
+  --fieldPlaceholderColor: $lego-gray-5;
+  display: block;
+  color: $lego-gray-6;
+}
+
+
+// Looks like Material Design but with no transition on the label 
+
+.md-group {
+  @include relative();
+
+  .md-label {
+    margin: 0;
+  }
+
+  .md-input {
+    @include border-radius(0);
+    margin-bottom: 10px;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 1px solid #333;
+    padding: 0 10px 0 0;
+    height: 27px;
+    background-color: transparent;
+
+    &:focus {
+      color: $lego-success;
+      border-bottom: 1px solid $lego-success;
+    }
+
+    &[readonly],
+    &[readonly]:focus {
+      @extend %input--disabled;
+    }
+  }
+}
+
+// ===== Textarea that looks like Angular Material ==== //
+
+textarea.am-textarea {
+  @extend %focus-none;
+  @include text($font-sm, 1.4, $color: $lego-gray-5);
+  overflow: auto;
+  display: block;
+  margin-top: 0;
+  padding: 2px 2px 1px;
+  border-width: 0;
+  border-radius: 0;
+  border-bottom: 1px;
+  border-style: solid;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+  border-color: $lego-gray-6;
+
+  &:focus {
+    color: $lego-success;
+    border-bottom: 1px solid $lego-success;
+  }
+
+  &[disabled] {
+    @extend %input--disabled;
+  }
+}
+
+// ===== Similarieties btw Ui-select and Autocomplete ==== //
+
+.ui-select-container .ui-select-match .ui-select-toggle {
+  @extend %flex--align--center;
+  @extend %focus-none;
+  @include text($color: $lego-gray-5);
+  @include border-radius(0);
+  border: 0;
+  border-bottom: 1px solid $lego-gray-6;
+  margin: 0;
+  padding: 3px 0 0 4px;
+  width: 100%;
+  height: 27px;
+  text-transform: none;
+  background-color: transparent;
+  box-shadow: none;
+
+  @include for-size(tablet-landscape-up) {
+    width: 250px;
+  }
+}
+
+
+// ===== Custom Angular Bootstrap UI Select ==== //
+
+.ui-select-container {
+  width: 100%;
+  margin-bottom: 10px;
+
+  @include for-size(tablet-landscape-up) {
+    max-width: 250px;
+  }
+
+  .ui-select-match {
+    @extend %focus-none;
+
+    .ui-select-toggle {
+
+      &[disabled] {
+        @extend %input--disabled;
+      }
+
+      .ui-select-match-text {
+        width: auto;
+        padding: 0;
+
+        span {
+          margin-bottom: -6px;
+        }
+      }
+
+      a.btn {
+        @include relative(right 0);
+        height: auto;
+        padding: 0;
+        margin: -2px 0 0 10px;
+        color: $lego-danger;
+      }
+    }
+
+    &.btn-default-focus {
+      outline: none;
+      background-color: transparent;
+      border-bottom: inherit;
+      box-shadow: none;
+      outline-offset: 0;
+    }
+
+    .ui-select-search-hidden {
+      display: none;
+    }
+  }
+
+  &.open {
+    .ui-select-toggle {
+      @include transition(all 1s ease);
+      @include text($color: $lego-success);
+      border-color: $lego-success;
+
+      .caret {
+        color: $lego-success;
+      }
+    }
+  }
+
+  .ui-select-choices {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    left: 0;
+    max-width: 100%;
+    margin-top: 2px;
+
+    .ui-select-choices-row-inner {
+      @extend %ellipses;
+      width: 100%;
+      padding: 8px 20px;
+
+      @include for-size(tablet-landscape-up) {
+        max-width: 248px;
+      }
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+// ===== Dropdown that look like Angular Material Select ==== //
+
+// Default Checkboxes and Radio Inputs
+
+.checkbox, 
+.radio {
+  @include relative();
+  display: block;
+
+  label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.checkbox, 
+.radio {
+  input[type=checkbox],
+  input[type=radio] {
+    @include absolute();
+    margin-top: 5px;
+    margin-left: -20px;
+  }
+}  
+
+
+
+// ===== Custom Checkbox and Radio Inputs ==== //
+
+.custom-radio {
+  margin: 5px 0;
+
+  &__label {
+    @extend %flex;
+
+    b {margin-right: 5px;}
+
+    b + span {margin-left: 0;}
+
+    span {margin-left: 5px;}
+  }
+}
+
+.custom-checkbox,
+.custom-radio {
+
+  input[type='checkbox'],
+  input[type='radio'] { 
+    display:none;
+    height: 0; 
+    width: 0; 
+
+    & + label {
+      @extend %capitalize;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      font-weight: normal;
+
+      & > span:first-of-type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 13px;
+        height: 13px;
+        margin-right: 10px;
+        background: transparent;
+        border: 2px solid $lego-gray-5;
+        border-radius: 2px;
+        cursor: pointer; 
+      }
+    }
+  }
+
+  input[type='checkbox'] {
+
+    & + label > span:first-of-type {
+      transition: all 250ms cubic-bezier(.4,.0,.23,1);
+
+      @include for-size(tablet-portrait-up) {
+        width: 15px;
+        height: 15px;
+      }
+
+      @include for-size(desktop-up) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  input[type='radio'] { 
+
+    & + label > span:first-of-type {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: 50%;
+    }
+
+    &[disabled] {
+
+      & + label,
+      & + label > span:first-of-type,
+      &:checked + label > span:first-of-type {
+        @extend %input--disabled;
+      }
+    }
+  }
+ 
+  input[type='checkbox']:focus + label,
+  input[type='radio']:focus + label {
+    color: $custom-checkbox-label-color;
+  }
+
+  input[type='checkbox']:focus + label > span:first-of-type,
+  input[type='radio']:focus + label > span:first-of-type {
+    background: rgba(255,255,255,.1);
+  }
+
+  input[type='checkbox']:checked + label > span:first-of-type {
+    border-color: $custom-checkbox-border-color;
+    background-color: $custom-checkbox-bg-color;
+    animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 1px;
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      transform: rotate(45deg);
+      transform-origin: 0% 100%;
+      animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+
+      @include for-size(tablet-portrait-up) {
+        top: 6px;
+        left: 2px;
+      }
+
+      @include for-size(desktop-up) {
+        top: 3px;
+        left: 3px;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        animation: large-checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+      }
+    }
+  }
+
+  input[type='radio']:checked + label > span:first-of-type {
+    border-color: $custom-checkbox-border-color;
+    background-color: $white;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -33px;
+      left: 4px;
+      border-radius: 50%;
+      border-right: 46px solid transparent;
+      border-bottom: 43px solid transparent;
+      transform: scale(0.3);
+      transform-origin: 0% 100%;
+      animation: radio-check forwards;
+    }
+  }
+}
+
+@keyframes shrink-bounce {
+  0%{
+    transform: scale(1);
+  }
+  33%{    
+    transform: scale(.85);
+  }
+  100%{
+    transform: scale(1);    
+  }
+}
+
+@keyframes radio-check {
+  0%{
+    width: 0;
+    height: 0;
+  }
+  100%{    
+    width: .4em;
+    height: .7em;    
+    border-color: $custom-checkbox-border-color;
+  }
+}
+
+@keyframes checkbox-check {
+  0%{
+    width: 0;
+    height: 0;
+    border-color: $white;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  33%{
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  100%{    
+    width: .4em;
+    height: .7em;    
+    border-color: $white;
+    transform: translate3d(0,-.5em,0) rotate(45deg);
+  }
+}
+
+@keyframes large-checkbox-check {
+  0%{
+    width: 0;
+    height: 0;
+    border-color: $white;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  33%{
+    width: .2em;
+    height: .4em;
+    transform: translate3d(0,0,0) rotate(45deg);
+  }
+  100%{    
+    width: .5em;
+    height: .9em;    
+    border-color: $white;
+    transform: translate3d(0,-.5em,0) rotate(45deg);
+  }
+}
+
+.checkbox--inline, 
+.radio--inline {
+  @include relative();
+  display: inline-block;
+  margin: 5px 15px 0 0;
+  font-weight: 400;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+// ======= Custom Select Menu =======//
+
+.select {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: $white;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0 5px;
+  color: $lego-gray-6;
+  border: 1px solid $lego-gray-5;
+  cursor: pointer;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: transparent;
+    background-image: none;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    cursor: pointer;
+
+    @extend %size-styles;
+
+    &.skin-lg {
+      padding-right: 40px !important;
+    }
+
+    &.skin-md {
+      padding-right: 40px !important;
+    }
+
+    &.skin-sm {
+      padding-right: 40px !important;
+    }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* Arrow */
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    padding: 0 1em;
+    right: 0;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  &::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+}
+
+.select-inline {
+  @extend .select;
+  display: inline-flex !important;
+}
+
+
+// ======= Autocomplete ======= //
+
+.lego-chips-autocomplete {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .autocomplete-wrapper {
+    position: relative;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .autocomplete-suggestions {
+    display: none;
+    z-index: 1000;
+    margin: 0 5px;
+    padding: 0;
+    max-height: 350px;
+    overflow-y: scroll;
+    border: 1px solid #b8babb;
+
+    .autocomplete-item {
+      width: 100%;
+      background-color: $white;
+      padding: 8px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lego-gray-3;
+        color: $white;
+      }
+    }
+  }
+
+  input:focus + .autocomplete-suggestions {
+    display: block;
+    position: absolute;
+    width: calc(100% - 12px);
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  }
+}

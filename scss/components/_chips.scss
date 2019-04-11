@@ -1,0 +1,43 @@
+.chips {
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    margin: 8px 5px;
+    box-sizing: border-box;
+
+  .chip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.5);
+    padding: 7px 12px;
+    margin: 0 2px 5px 0;
+    border-radius: 24px;
+    align-items: center;
+    cursor: pointer;
+
+    &.chip-default {
+      background-color: #e0e0e0;
+      color: $black;
+    }
+
+    &.skin-green {box-shadow: 0 2px rgba(131,188,32,.5);}
+    &.skin-gray {box-shadow: 0 2px rgba(99,102,106,.5);}
+    &.skin-red {box-shadow: 0 2px rgb(213, 62, 79.5);}
+    &.skin-blue {box-shadow: 0 2px rgba(51,122,183,.5);}
+    &.skin-input {box-shadow: 0 2px rgba(184,186,187,.5);}
+
+    &.skin-reverse-green {box-shadow: 0 2px rgba(131,188,32,.5);}
+    &.skin-reverse-gray {box-shadow: 0 2px rgba(99,102,106,.5);}
+    &.skin-reverse-red {box-shadow: 0 2px rgb(213, 62, 79.5);}
+    &.skin-reverse-blue {box-shadow: 0 2px rgba(51,122,183,.5);}
+    &.skin-reverse-input {box-shadow: 0 2px rgba(184,186,187,.5);}
+
+    &.removable {
+
+      .close-chip {
+        padding-left: 10px;
+      }
+    }
+  }
+}

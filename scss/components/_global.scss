@@ -1,0 +1,42 @@
+////////// Skin Colors //////////
+
+.skin-green {@include skin('skin-', $lego-success);}
+.skin-gray {@include skin('skin-', $lego-gray-5);}
+.skin-red {@include skin('skin-', $lego-danger);}
+.skin-blue {@include skin('skin-', $lego-primary);}
+.skin-input {@include skin('skin-', $input-default);}
+
+.skin-reverse-green {@include skin('skin-reverse-', $lego-success);}
+.skin-reverse-gray {@include skin('skin-reverse-', $lego-gray-5);}
+.skin-reverse-red {@include skin('skin-reverse-', $lego-danger);}
+.skin-reverse-blue {@include skin('skin-reverse-', $lego-primary);}
+.skin-reverse-input {@include skin('skin-reverse-', $input-default);}
+
+.link-green {@include skin('link-', $lego-success);}
+.link-gray {@include skin('link-', $lego-gray-5);}
+.link-red {@include skin('link-', $lego-danger);}
+.link-blue {@include skin('link-', $lego-primary);}
+.link-white {@include skin('link-', $white);}
+
+
+//////// Sizes //////////
+
+.skin-lg {
+  padding: 16px 30px !important;
+  font-size: 18px !important;
+  border-radius: 9px !important;
+}
+
+.skin-md {
+  padding: 12px 24px !important;
+  font-size: 14px !important;
+  border-radius: 6px !important;
+}
+
+.skin-sm {
+  padding: 9px 12px !important;
+  font-size: 12px !important;
+  border-radius: 3px !important;
+}
+
+

@@ -1,0 +1,209 @@
+// ==================
+// Buttons 
+// ==================
+
+button {
+  @include text($font-sm, 1.4, 400);
+  @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+  white-space: nowrap;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.btn {
+  @extend button;
+}
+
+
+/////// Buton Display /////////
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin: 0;
+
+  ~ .btn-block {
+    margin: 5px 0;
+  }
+}
+
+
+/////// Button Grous ///////
+
+.btn--group {
+  @include relative();
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 0;
+}
+
+.btn--group > button,
+.btn--group > .btn {
+  @include relative();
+  float: left;
+  margin: 0;
+}
+
+.btn--group > button:first-child,
+.btn--group > .btn:first-child {
+  margin-left: 0;
+}
+
+.btn--group > button:first-child:not(:last-child):not(.dropdown__toggle),
+.btn--group > .btn:first-child:not(:last-child):not(.dropdown__toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn--group button + button, 
+.btn--group .btn + .btn, 
+.btn--group button + btn--group,
+.btn--group .btn + btn--group,  
+.btn--group .btn--group + button,
+.btn--group .btn--group + .btn, 
+.btn--group .btn--group + btn--group {
+  margin-left: -1px;
+}
+
+.btn--group > button:not(:first-child):not(:last-child):not(.dropdown__toggle),
+.btn--group > .btn:not(:first-child):not(:last-child):not(.dropdown__toggle) {
+  border-radius: 0;
+}
+
+.btn--group > button:last-child:not(:first-child),
+.btn--group > .btn:last-child:not(:first-child), 
+.btn--group > .dropdown__toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+//////////// Custom Upload File Button /////////////
+
+.btn-upload-container {
+
+  .inputfile {
+    @include absolute();
+    opacity: 0;
+    z-index: -1;
+    width: auto;
+
+    &+.btn--upload {
+      @include text($font-sm, 1.4);
+      display: inline-block;
+      border-radius: 4px;
+      margin: 0 5px;
+      padding: 10px 18px;
+      text-transform: capitalize;
+
+      @extend %size-styles;
+    }
+  }
+}
+
+//// Pure CSS Dropdown ////
+
+.lego-dropdown {
+  @include relative();
+  display: inline-block;
+  z-index: 1000;
+
+  /**
+  Hide the checkbox itself. Checking and unchecking 
+  it we will be done via the label element.
+  */
+
+  label {
+    input[type=checkbox]{
+      @include absolute();
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      cursor: pointer;
+
+      &:checked[disabled] ~ ul,
+      &:checked.disabled ~ ul {
+        display: none;
+      }
+
+      &[disabled] ~ button,
+      &.disabled ~ button {
+        @extend %input--disabled;
+      }
+    }
+  }
+
+  & > input[type='checkbox'] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  /*  The ul will have display:none by default */
+
+  ul {
+    @include box-shadow(0, 6px, 12px, rgba(0,0,0,0.175));
+    @include absolute();
+    list-style: none;
+    text-align: left;
+    float: left;
+    width: 100%;
+    z-index: 1000;
+    margin:0;
+    padding:0;
+    min-width: 153px;
+    background-color: $white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 4px;
+    display: none;
+    max-height: 350px;
+    overflow-y: scroll;
+  }
+
+  ul li {
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+
+  ul li:hover {
+    background-color: $lego-gray-3;
+    color: $white;
+  }
+
+  ul li a {
+    color: inherit;
+  }
+
+  input[type=checkbox]:checked ~ ul {
+    display: block;
+  }
+
+  &.lego-dropdown--show {
+    ul {
+      display: block;
+    }
+  }
+}

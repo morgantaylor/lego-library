@@ -1,0 +1,156 @@
+//// CSS Select ////
+
+.lego-select {
+  display: inline-block;
+
+  // only for using straight css for dropdown not js click
+  & > input[type='checkbox'] {
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  button {
+    margin: 0 5px;
+
+    &.lego-selected-value {
+      @extend %ellipses;
+      max-width: 250px;
+    }
+
+    &.disabled,
+    &[disabled] {
+      color: $lego-gray-3;
+      cursor: not-allowed;
+    }
+  }
+
+  input[type=checkbox]:checked ~ .lego-select-overlay  {
+    display: inherit;
+  }
+
+  .lego-select-overlay {
+    @include box-shadow(0, 6px, 12px, rgba(0, 0, 0, 0.175));
+    @include absolute();
+    width: auto;
+    z-index: 1000;
+    margin: 0 0 0 5px;
+    padding: 0;
+    background-color: $white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 4px;
+    display: none;
+    max-height: 215px;
+    overflow-y: scroll;
+
+    &.lego-select-overlay--show {
+      display: block;
+    }
+  }
+
+  .lego-option {
+    display: block;
+    padding: 8px 20px;
+    color: $lego-gray-6;
+
+    &.option-selected {
+      color: $lego-primary;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: $lego-gray-3;
+      color: $white;
+    }
+
+    &.disabled,
+    &[disabled] {
+      color: $lego-gray-3;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .lego-option-group {
+
+    .lego-option-title {
+      font-weight: bold;
+      color: $lego-gray-4;
+      font-size: 12px;
+      cursor: auto;
+      margin: 0;
+      padding: 8px 20px;
+
+      &:hover {
+        background-color: $white;
+        color: $lego-gray-4;
+      }
+    }
+
+    .lego-option {
+      padding-left: 30px;
+      color: $lego-gray-5;
+
+      &:hover {
+        background-color: $lego-gray-2;
+        color: $white;
+      }
+    }
+  }
+
+  // checkboxes inside lego-option
+  .select-checkbox {
+
+    .checkbox {
+
+      label {
+        padding-left: 30px;
+
+        input[type="checkbox"] {
+          position: absolute;
+          opacity: 1;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          cursor: pointer;
+          margin: -1px 5px 0 -30px;
+          box-shadow: none;
+        }
+      }
+    }
+
+    input[type='checkbox'] {
+      font-size: 18px;
+      margin: 0 2px;
+      cursor: pointer;
+
+      & + label {
+        display: inline-block;
+        padding-left: 12px;
+        cursor: pointer;
+      }
+    }
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+
+      input[type="checkbox"] {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &.drop-up {
+
+    .lego-select-overlay {
+      bottom: 47px;
+    }
+  }
+}

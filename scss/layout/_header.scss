@@ -1,0 +1,45 @@
+// ==================
+// Headers 
+// ==================
+
+header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  background-color: #4f4f4f;
+  padding: 0;
+
+  .logo {
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 0;
+    margin: 0 auto 0 20px;
+  }
+
+  .navigation {
+    display: flex;
+    position:relative;
+    width: auto;
+    height: 100%;
+    background-color: white;
+  }
+
+  .profile {
+    margin-left: 20px;
+    font-size: 16px;
+    display: flex;
+    background-color: transparent;
+    color: #fff;
+
+    span {
+      word-wrap: break-word;
+    }
+  }
+}
+
+

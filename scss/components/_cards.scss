@@ -1,0 +1,109 @@
+// ==================
+// Cards 
+// ==================
+.card,
+.card__display,
+.card__title,
+.card__name {
+  display: block;
+}
+
+.card {
+  @include box-shadow(1px, 2px, 3px, rgba(0, 0, 0, 0.2));
+  @include relative();
+  width: 185px;
+  border: 1px solid $lego-gray-1;
+  border-radius: 4px;
+  margin: 0 20px 20px 0;
+  padding: 115px 15px 15px;
+}
+
+.card__title {
+  @include text($font-sm, $color: $lego-gray-5);
+  text-transform: uppercase;
+}
+
+.card__name {
+  @include text($font-xs, $color: $lego-gray-3);
+  margin-bottom: 15px;
+}
+
+.card__display {
+  @include absolute();
+  width: -webkit-calc(100% + 3px);
+  width: calc(100% + 3px);
+  height: 100px;
+  left: -1px;
+  top: -1px;
+  border-radius: 3px 3px 0 0;
+}
+
+///// Dashboard Cards
+
+.dashboard-cards {
+  display: flex;
+
+  .dashboard-card {
+    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.28));
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 15px;
+
+    .dashboard-stats {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .dashboard-box {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 0;
+
+      &:first-of-type,
+      &:last-of-type {
+        width: 100%;
+      }
+
+      &:first-of-type {
+        background-color: #5bc0de;
+        border-top-left-radius: 5px;
+      }
+      &:last-of-type {
+        background-color: #eea236;
+        border-top-right-radius: 5px;
+      }
+
+      .number {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .label {
+        font-size: 12px;
+      }
+    }
+
+    .dashboard-title {
+      color: $black;
+      background-color: $white;
+      font-size: 20px;
+      padding: 5px 0;
+      width: 100%;
+      text-align: center;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}

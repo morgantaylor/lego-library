@@ -1,0 +1,183 @@
+// ==================
+// Sidebar 
+// ==================
+
+sidebar {
+  @include transform(translateZ(0));
+  padding-top: 60px;
+  max-width: 230px;
+  width: 100%;
+  padding: 60px 30px 10px 20px;
+  overflow-y: scroll;
+  overflow: hidden;
+
+  .menu__title {
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid $lego-gray-2;
+    cursor: pointer;
+    text-transform: none;
+    color: rgba(0,0,0,.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .list__title {
+    color: $lego-gray-6;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 100;
+    font-family: $montserrat;
+  }
+
+  .list {
+    list-style-type: none;
+    margin-left: 0;
+
+    .list__item {
+  
+      &:hover {
+        background-color: $lego-primary;
+        color: $white;
+      }
+
+      &:active {
+        border-left: 2px solid $lego-primary;
+      }
+    }
+  }
+}
+
+sidebar.sidebar--fixed {
+  @include absolute();
+  left: -281px;
+  top: 35px;
+  padding-top: 20px;
+  background-color: $white;
+  color: $lego-gray-6;
+  border-right: 1px solid #4f4f4f;
+  border-bottom: 1px solid #4f4f4f;
+  z-index: 1;
+
+  @include for-size(tablet-landscape-up) {
+    @include fixed();
+    left: 0;
+    border: 0;
+    padding-top: 60px;
+    top: 0;
+    max-width: 230px;
+  }
+}
+
+.sidebar--fixed + .content {
+  margin-left: 20px;
+  padding-left: 45px;
+
+  @include for-size(tablet-landscape-up) {
+    padding-top: 55px;
+    margin-left: 300px;
+  }
+}
+
+.menu__mobile-icon {
+  @include absolute();
+  color: $lego-gray-6;
+
+  @include for-size(tablet-landscape-up) {
+    display: none;
+  }
+
+  .fa {
+    padding: 10px;
+  }
+
+  #close-menu {
+    display: none;
+  }
+}
+
+// ==================
+// Sidebar From angular
+// ==================
+
+// sidebar,
+// .sidebar {
+//   @include transform(translateZ(0px));
+//   padding-top: 60px;
+//   max-width: 230px;
+//   width: 100%;
+//   padding: 60px 30px 10px 20px;
+//   overflow-y: scroll;
+//   overflow: hidden;
+
+//   .menu__title {
+//     padding-bottom: 6px;
+//     margin-bottom: 6px;
+//     border-bottom: 1px solid $lego-gray-2;
+//     cursor: pointer;
+//     text-transform: none;
+//     color: rgba(0,0,0,.3);
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+
+//   .list__title {
+//     color: $dark-gray;
+//     margin-bottom: 5px;
+//     display: block;
+//     font-weight: 100;
+//     font-family: $montserrat;
+//   }
+
+//   .list {
+//     list-style-type: none;
+//     margin-left: 0;
+
+//     .list__item {
+  
+//       &:hover {
+//         background-color: $true-blue;
+//         color: $white;
+//       }
+
+//       &:active {
+//         border-left: 2px solid $true-blue;
+//       }
+//     }
+//   }
+
+//   &.sidebar--fixed {
+//     @include absolute();
+//     left: -281px;
+//     top: 35px;
+//     padding-top: 20px;
+//     background-color: $white;
+//     color: $dark-gray;
+//     border-right: 1px solid #4f4f4f;
+//     border-bottom: 1px solid #4f4f4f;
+//     z-index: 1;
+
+//     @include for-size(tablet-landscape-up) {
+//       @include fixed();
+//       left: 0;
+//       border: 0;
+//       padding-top: 60px;
+//       top: 0;
+//       max-width: 230px;
+//     }
+
+//     & + .content {
+//       margin-left: 20px;
+//       padding-left: 45px;
+
+//       @include for-size(tablet-landscape-up) {
+//           padding-top: 55px;
+//           margin-left: 300px;
+//       }
+//     }
+//   }
+// }
+
+
+
+
