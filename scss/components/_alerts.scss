@@ -4,58 +4,82 @@
 
 .alert {
   @extend %flex;
+  z-index: 2;
   padding: 15px;
-  border: 1px solid transparent;
 
-  .alert-close {
+  &__close {
     opacity: .6;
     color: inherit;
     margin-left: auto;
     background-color: inherit;
-    padding: 0;
+    margin-right: 15px;
+    padding-right: 0;
   }
-}
 
-.alert-- {
-  opacity: 1;
-
-  &global {
-    @extend .alert--;
+  &--notification {
+    @extend .alert;
+    opacity: .8;
     position: absolute;
-    left: 0;
-    right: 0;
+    border-radius: 6px;
+    max-width: 250px;
+    border: 1px solid transparent;
+  }
+
+  &--global {
+    @extend .alert;
+    opacity: 1;
+    position: fixed;
     top: 0;
-    border-radius: 0;
+    right: 0;
+    left: 0;
+    padding: 15px 0 15px 15px;
     color: $lego-gray-5;
     background-color: $lego-gray-1;
-    border-color: $lego-gray-5;
   }
 
-  &error {
-    @extend .alert--;
-    color: darken($lego-danger, 10%);
+  &--danger {
+    @extend .alert;
+    color: darken($lego-danger, 20%);
     background-color: lighten($lego-danger, 30%);
-    border-color: darken($lego-danger, 10%);
+
+    &-border {
+      @extend .alert--danger;
+      border-color: darken($lego-danger, 10%);
+    }
   }
 
-  &warning {
-    @extend .alert--;
-    color: #8a6d3b;
+  &--warning {
+    @extend .alert;
+    color: darken(#8a6d3b, 20%);
     background-color: #fcf8e3;
-    border-color: #faebcc;
+
+    &-border {
+      @extend .alert--warning;
+      border-color: #faebcc;
+    }
   }
 
-  &success {
-    @extend .alert--;
-    color: darken($lego-success, 10%);
+  &--success {
+    @extend .alert;
+    color: darken($lego-success, 20%);
     background-color: lighten($lego-success, 30%);
-    border-color: darken($lego-success, 10%);
+
+    &-border {
+      @extend .alert--success;
+      border-color: darken($lego-success, 10%);
+    }
   }
 
-  &info {
-    @extend .alert--;
-    color: darken($lego-primary, 10%);
-    background-color: lighten($lego-primary, 30%);
-    border-color: darken($lego-primary, 10%);
+  &--info {
+    @extend .alert;
+    color: darken($lego-info, 20%);
+    background-color: lighten($lego-info, 25%);
+
+    &-border {
+      @extend .alert--info;
+      border-color: darken($lego-info, 10%);      
+    }
   }
 }
+
+
