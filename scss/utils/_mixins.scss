@@ -30,7 +30,7 @@
       background-color: darken($main-color, 15%);
     }
   }
-  @else if $prefix == 'skin-reverse-' {
+  @else if $prefix == 'skin-outline-' {
     color: $main-color;
     background-color: $white;
     border: 1px solid $main-color;

@@ -1,16 +1,14 @@
 ////////// Skin Colors //////////
 
 .skin-green {@include skin('skin-', $lego-success);}
-.skin-gray {@include skin('skin-', $lego-gray-5);}
+.skin-gray {@include skin('skin-', $lego-gray-3);}
 .skin-red {@include skin('skin-', $lego-danger);}
 .skin-blue {@include skin('skin-', $lego-primary);}
-.skin-input {@include skin('skin-', $input-default);}
 
-.skin-reverse-green {@include skin('skin-reverse-', $lego-success);}
-.skin-reverse-gray {@include skin('skin-reverse-', $lego-gray-5);}
-.skin-reverse-red {@include skin('skin-reverse-', $lego-danger);}
-.skin-reverse-blue {@include skin('skin-reverse-', $lego-primary);}
-.skin-reverse-input {@include skin('skin-reverse-', $input-default);}
+.skin-reverse-green {@include skin('skin-outline-', $lego-success);}
+.skin-reverse-gray {@include skin('skin-outline-', $lego-gray-3);}
+.skin-reverse-red {@include skin('skin-outline-', $lego-danger);}
+.skin-reverse-blue {@include skin('skin-outline-', $lego-primary);}
 
 .link-green {@include skin('link-', $lego-success);}
 .link-gray {@include skin('link-', $lego-gray-5);}

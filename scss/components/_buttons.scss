@@ -12,7 +12,10 @@ button {
   text-transform: capitalize;
   text-align: center;
   white-space: nowrap;
+  min-height: 41px;
   padding: 10px 18px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
   border: 1px solid transparent;
   border-radius: 4px;
   vertical-align: middle;
@@ -31,17 +34,47 @@ button {
 
 .btn {
   @extend button;
+
+  &--primary { @include skin('skin-', $lego-primary); }
+
+  &--success { @include skin('skin-', $lego-success); }
+
+  &--danger { @include skin('skin-', $lego-danger); }
+
+  &--default { @include skin('skin-', $lego-gray-3); }
+
+  &--outline-primary { @include skin('skin-outline-', $lego-primary); }
+
+  &--outline-success { @include skin('skin-outline-', $lego-success); }
+
+  &--outline-danger { @include skin('skin-outline-', $lego-danger); }
+
+  &--outline-default { @include skin('skin-outline-', $lego-gray-3); }
+}
+
+.link {
+  @extend button;
+
+  &--success {@include skin('link-', $lego-success);}
+
+  &--default {@include skin('link-', $lego-gray-5);}
+    
+  &--danger {@include skin('link-', $lego-danger);}
+    
+  &--primary {@include skin('link-', $lego-primary);}
+    
+  &--white {@include skin('link-', $white);}
 }
 
 
 /////// Buton Display /////////
 
-.btn-block {
+.btn--block {
   display: block;
   width: 100%;
   margin: 0;
 
-  ~ .btn-block {
+  ~ .btn--block {
     margin: 5px 0;
   }
 }
@@ -125,6 +158,15 @@ button {
   @include relative();
   display: inline-block;
   z-index: 1000;
+
+  + .lego-dropdown {
+    margin-left: 5px;
+  }
+
+  button {
+    margin-right: 0;
+    margin-left: 0;
+  }
 
   /**
   Hide the checkbox itself. Checking and unchecking 
