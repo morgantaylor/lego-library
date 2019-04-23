@@ -4,10 +4,9 @@
 
 sidebar {
   @include transform(translateZ(0));
-  padding-top: 60px;
   max-width: 230px;
   width: 100%;
-  padding: 60px 30px 10px 20px;
+  padding: 10px 30px 10px 20px;
   overflow-y: scroll;
   overflow: hidden;
 
@@ -17,7 +16,6 @@ sidebar {
     border-bottom: 1px solid $lego-gray-2;
     cursor: pointer;
     text-transform: none;
-    color: rgba(0,0,0,.3);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -62,9 +60,8 @@ sidebar.sidebar--fixed {
   @include for-size(tablet-landscape-up) {
     @include fixed();
     left: 0;
-    border: 0;
-    padding-top: 60px;
     top: 0;
+    border: 0;
     max-width: 230px;
   }
 }
@@ -74,7 +71,6 @@ sidebar.sidebar--fixed {
   padding-left: 45px;
 
   @include for-size(tablet-landscape-up) {
-    padding-top: 55px;
     margin-left: 300px;
   }
 }
@@ -82,6 +78,7 @@ sidebar.sidebar--fixed {
 .menu__mobile-icon {
   @include absolute();
   color: $lego-gray-6;
+  padding: 20px;
 
   @include for-size(tablet-landscape-up) {
     display: none;
