@@ -195,14 +195,14 @@ input[type="search"],
 input[type="time"],
 input[type="range"],
 input,
-select,
 textarea {
   @extend %focus-none;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
   @include transition((border-color, box-shadow), .15s, ease-in-out);
   padding: 5px;
-  height: 36px;
+  height: 38px;
+  min-width: 250px;
   display: inline-block;
   border: 1px solid $lego-gray-3;
   border-radius: 4px;
@@ -222,10 +222,28 @@ textarea {
   color: $lego-gray-5;
 }
 
-select {
-  @extend %flex;
+button, 
+input, 
+select,
+textarea {
   font-weight: 100;
   letter-spacing: 0.01em;
+
+  ~ * {
+    margin-left: 5px;
+  }
+}
+
+select {
+  @extend %focus-none;
+  @extend %flex;
+  @include text($font-sm, 1.4, $color: $lego-gray-5);
+  height: 36px;
+  padding: 5px;
+  min-width: 250px;
+  border: 1px solid $lego-gray-3;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 form {
@@ -248,13 +266,6 @@ legend {
   padding: 0 5px;
 }
 
-button, 
-input, 
-textarea {
-  font-weight: 100;
-  letter-spacing: 0.01em;
-  margin: 0 5px;
-}
 
 //////// Code ///////////
 code,kbd,samp,pre {

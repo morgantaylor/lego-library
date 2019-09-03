@@ -2,67 +2,6 @@
 // Inputs 
 // ==================
 
-.input--btn {
-  width: 100%;
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.input--btn>.button, 
-.input--btn>button, 
-.input--btn>input {
-  border-radius: 0;
-}
-
-.input--btn>.button:first-child, 
-.input--btn>button:first-child, 
-.input--btn>input:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.input--btn>input:first-child {
-  border-right: 0;
-}
-
-.input--btn>.button:last-child, 
-.input--btn>button:last-child, 
-.input--btn>input:last-child {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.input--btn>input:last-child {
-  border-left: 0;
-}
-
-.input--btn>.button,
-.input--btn>button {
-  height: 44px;
-  padding: 6px 18px;
-  margin: 0;
-}
-
-.input--btn>input+input {
-  border-left-width: 0;
-}
-
-.input--btn>button.btn-reverse-input[disabled],
-.input--btn>button.btn-reverse-input.disabled,
-.input--btn>button.btn-input[disabled],
-.input--btn>button.btn-input.disabled,
-.input--btn>input[disabled],
-.input--btn>input.disabled,
-.input--btn>input[readonly],
-.input--btn>button.btn-reverse-input[readonly]
-.input--btn>button.btn-input[readonly] {
-  @extend %input--disabled;
-}
-
-textarea.form-control {
-  height: auto;
-}
-
 // Inline input and label group //
 
 .input--inline {
@@ -76,31 +15,50 @@ textarea.form-control {
   display: inline-block;
 }
 
-// Single Input Groups with labels //
+// Input Groups //
 
-.input__group {
-  @extend %flex--column;
+.input-group {
+  display: flex;
+  align-items: center;
   width: 100%;
   margin: 0 28px 20px 0;
-  // put in min-width for default
+  border-radius: 4px;
 
   @include for-size(tablet-landscape-up) {
     width: auto;
   }
 
-  &:last-of-type {
 
-    @include for-size(tablet-landscape-up) {
-      margin: 0 0 20px 0;
+  .input-group__btn,
+  .input-group__input {
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-left: 0;
     }
   }
 
-  .md-label {
-    display: block;
-    margin-right: 10px;
+  label {
+    margin-right: 8px;
+
+    & + .input-group__input {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-left: 1px;
+    }
   }
 
-  input {
+  .input-group__input {
     display: block;
     margin: 0;
     width: 100%;
@@ -108,30 +66,19 @@ textarea.form-control {
     @include for-size(tablet-landscape-up) {
       width: 250px;
     }
-  }
 
-  &--inline {
-    @extend .input__group;
-    flex-direction: row;
-  }
-
-  &--height {
-
-    &-sm {
-      min-height: 50px;
-    }
-
-    &-md {
-      min-height: 90px;
+    .input-group__input + .input-group__input {
+      border-left-width: 0;
     }
   }
 
-  &--width-lg {
-    width: 350px;
+  &--stacked {
+    @extend %flex--column;
+  }
 
-    input {
-      width: auto;
-    }
+  &__btn {
+    margin: 0;
+    position: relative;
   }
 }
 
@@ -694,7 +641,6 @@ textarea.am-textarea {
   cursor: pointer;
   height: 36px;
   padding-right: 5px;
-  margin: 5px 0;
   border-radius: 4px;
   border: 1px solid $lego-gray-3;
 
