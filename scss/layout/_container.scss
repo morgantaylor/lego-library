@@ -4,31 +4,22 @@
 
 .container {
   @extend %container--default;
+
+  & .container {
+    padding-left: 25px;
+  }
 }
 
-.container .container {
-  padding-left: 25px;
-}
-
-.container__row {
-  @extend %container--default;
+.flex-container {
   @extend %flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .column {
   flex-basis: 500px;
 }
 
-.container__column {
-  @extend %container--default;
+.flex-column {
   @extend %flex--column;
-}
-
-.flex {
-  @extend %flex;
-}
-
-.flex--align--center {
-  @extend %flex;
-  @extend %flex--align--center;
 }

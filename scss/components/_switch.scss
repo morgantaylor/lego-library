@@ -17,6 +17,8 @@
 .switch {
   @extend %flex; 
   @include relative();
+  flex-wrap: wrap;
+  justify-content: flex-start;
   width: 150px;
 
   &-inline {
@@ -140,7 +142,8 @@
 ////////// Switch Toggle ////////////
 
 .switch-toggle__wrapper {
-  @extend %flex--align--center;
+  display: flex;
+  align-items: center;
   border: 0;
   padding: 0;
   margin: 0;
@@ -154,8 +157,9 @@
 }
 
 .switch-toggle {
-  @extend %flex--align--center;
   @include relative();
+  display: flex;
+  align-items: center;
   height: 30px;
   width: auto;
   padding: 0 !important;
@@ -186,8 +190,9 @@
   }
 
   input + label {
-    @extend %flex--align--center;
     @include relative();
+    display: flex;
+    align-items: center;
     z-index: 2;
     padding: 3px 20px;
     margin: 0;
