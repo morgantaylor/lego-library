@@ -413,7 +413,7 @@ textarea.am-textarea {
 
   input[type="checkbox"],
   input[type="radio"] {
-    @include relative(top -1px);
+    @include relative(top -2px);
     margin-right: 8px;
     margin-left: 3px
   }
