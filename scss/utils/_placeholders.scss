@@ -17,10 +17,15 @@
 
 // Containers //
 
+%container--default {
+  @include relative();
+  margin: 0 auto 20px auto;
+  padding: 0;
+  width: 100%;
+}
+
 %flex {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: center;
 }
 
@@ -29,24 +34,12 @@
   flex-direction: column;
 }
 
-%flex--align--center {
-  display: flex;
-  align-items: center;
-}
-
 %capitalize {
   text-transform: capitalize;
 }
 
 %uppercase {
   text-transform: uppercase;
-}
-
-%container--default {
-  @include relative();
-  margin: 0 auto 20px auto;
-  padding: 0;
-  width: 100%;
 }
 
 %ellipses {

@@ -235,7 +235,6 @@ textarea {
 
 select {
   @extend %focus-none;
-  @extend %flex;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   height: 36px;
   padding: 5px;

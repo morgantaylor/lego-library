@@ -131,6 +131,8 @@ fieldset button {
 .form__heading,
 .form__label {
   @extend %flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   -webkit-box-align: baseline;
   align-items: baseline;
 }

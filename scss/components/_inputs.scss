@@ -293,10 +293,11 @@ textarea.am-textarea {
 // ===== Similarieties btw Ui-select and Autocomplete ==== //
 
 .ui-select-container .ui-select-match .ui-select-toggle {
-  @extend %flex--align--center;
   @extend %focus-none;
   @include text($color: $lego-gray-5);
   @include border-radius(0);
+  display: flex;
+  align-items: center;
   border: 0;
   border-bottom: 1px solid $lego-gray-6;
   margin: 0;
@@ -448,6 +449,9 @@ textarea.am-textarea {
   }
 
   select {
+    @extend %flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     outline: 0;
     box-shadow: none;
     border: 0 !important;
