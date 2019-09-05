@@ -17,6 +17,16 @@
 
 // Input Groups //
 
+// Need to address two ways of looking at input groups
+// 1. can be used for forms with labels next to inputs
+// 2. can be used for forms with labels above inputs
+// 3. can be used to group inputs and buttons in the same container
+
+// Needs:
+// [add] default horizontal
+// [add] input-group--stacked
+// [to do] section for those that look like material design
+
 .input-group {
   display: flex;
   align-items: center;
@@ -28,6 +38,7 @@
     width: auto;
   }
 
+  // border radius corners depending on who comes first
 
   .input-group__btn,
   .input-group__input {
