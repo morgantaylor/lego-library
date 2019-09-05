@@ -393,31 +393,23 @@ textarea.am-textarea {
 // Default Checkboxes and Radio Inputs
 
 .checkbox, 
-.radio {
+.radio,
+.checkbox--inline, 
+.radio--inline {
   @include relative();
-  display: block;
+  font-weight: 400;
+  cursor: pointer;
 
-  label {
-    min-height: 20px;
-    padding-left: 20px;
-    margin-bottom: 0;
-    font-weight: 400;
-    cursor: pointer;
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include relative(top -1px);
+    margin-right: 8px;
+    margin-left: 3px
   }
 }
 
 .checkbox, 
 .radio {
-  input[type=checkbox],
-  input[type=radio] {
-    @include absolute();
-    margin-top: 5px;
-    margin-left: -20px;
-  }
-}  
-
-
-
 // ===== Custom Checkbox and Radio Inputs ==== //
 
 .custom-radio {
@@ -623,16 +615,13 @@ textarea.am-textarea {
     border-color: $white;
     transform: translate3d(0,-.5em,0) rotate(45deg);
   }
+  display: block;
 }
 
 .checkbox--inline, 
 .radio--inline {
-  @include relative();
   display: inline-block;
-  margin: 5px 15px 0 0;
-  font-weight: 400;
-  vertical-align: middle;
-  cursor: pointer;
+  margin: 0 12px 0 0;
 }
 
 // ======= Native Select Menu =======//
