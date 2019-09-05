@@ -194,7 +194,6 @@ input[type="password"],
 input[type="search"],
 input[type="time"],
 input[type="range"],
-input,
 textarea {
   @extend %focus-none;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
