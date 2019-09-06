@@ -154,7 +154,7 @@ a {
 
 a,
 button {
-  @extend %focus-none;
+  @extend %focus--off;
   @extend %arial-text;
   text-decoration: none;
   display: inline-block;
@@ -195,7 +195,7 @@ input[type="search"],
 input[type="time"],
 input[type="range"],
 textarea {
-  @extend %focus-none;
+  @extend %focus--on;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
   @include transition((border-color, box-shadow), .15s, ease-in-out);
@@ -234,7 +234,7 @@ textarea {
 }
 
 select {
-  @extend %focus-none;
+  @extend %focus--off;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   height: 36px;
   padding: 5px;
