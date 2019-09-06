@@ -433,8 +433,10 @@ textarea.am-textarea {
 
 // ======= Native Select Menu =======//
 
-.select {
+.select,
+.select-inline {
   @extend %focus--on;
+  margin: 4px 3px;
   cursor: pointer;
   height: 36px;
   padding-right: 5px;
@@ -443,10 +445,6 @@ textarea.am-textarea {
 
   &-squared {
     border-radius: 0;
-  }
-
-  & + .select {
-    margin-left: 5px;
   }
 
   select {
@@ -481,6 +479,10 @@ textarea.am-textarea {
 .select-inline {
   @extend .select;
   display: inline-flex !important;
+
+  & + .select-inline {
+    margin-left: 5px;
+  }
 }
 
 
