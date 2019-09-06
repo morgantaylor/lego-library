@@ -29,6 +29,11 @@ button {
   justify-content: center;
 }
 
+.btn,
+.link {
+  @extend %focus--on;
+}
+
 .btn {
   @extend button;
 
@@ -129,6 +134,7 @@ button {
 //////////// Custom Upload File Button /////////////
 
 .btn-upload-container {
+  @extend %focus--on;
 
   .inputfile {
     @include absolute();
@@ -152,6 +158,7 @@ button {
 //// Pure CSS Dropdown ////
 
 .lego-dropdown {
+  @extend %focus--on;
   @include relative();
   display: inline-block;
   z-index: 1000;

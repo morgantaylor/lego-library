@@ -49,11 +49,19 @@
   width: 100%;
 }
 
-%focus-none {
+%focus--off {
   &:focus,
   &:active,
   &:hover {
       outline: none;
+  }
+}
+
+%focus--on {
+  &:focus,
+  &:active {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
   }
 }
 

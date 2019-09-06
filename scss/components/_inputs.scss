@@ -265,7 +265,7 @@ textarea.field__input {
 // ===== Textarea that looks like Angular Material ==== //
 
 textarea.am-textarea {
-  @extend %focus-none;
+  @extend %focus--off;
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   overflow: auto;
   display: block;
@@ -293,7 +293,7 @@ textarea.am-textarea {
 // ===== Similarieties btw Ui-select and Autocomplete ==== //
 
 .ui-select-container .ui-select-match .ui-select-toggle {
-  @extend %focus-none;
+  @extend %focus--off;
   @include text($color: $lego-gray-5);
   @include border-radius(0);
   display: flex;
@@ -325,7 +325,7 @@ textarea.am-textarea {
   }
 
   .ui-select-match {
-    @extend %focus-none;
+    @extend %focus--off;
 
     .ui-select-toggle {
 
@@ -434,6 +434,7 @@ textarea.am-textarea {
 // ======= Native Select Menu =======//
 
 .select {
+  @extend %focus--on;
   cursor: pointer;
   height: 36px;
   padding-right: 5px;
