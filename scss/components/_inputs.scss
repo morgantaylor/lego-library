@@ -2,19 +2,6 @@
 // Inputs 
 // ==================
 
-// Inline input and label group //
-
-.input--inline {
-  display: inline-block;
-  width: auto;
-  min-width: 300px;
-  vertical-align: middle;
-}
-
-.label--inline {
-  display: inline-block;
-}
-
 // Input Groups //
 
 // Need to address two ways of looking at input groups
@@ -42,6 +29,8 @@
 
   .input-group__btn,
   .input-group__input {
+    margin: 0;
+
     &:first-child {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
@@ -71,7 +60,6 @@
 
   .input-group__input {
     display: block;
-    margin: 0;
     width: 100%;
 
     @include for-size(tablet-landscape-up) {
@@ -88,7 +76,6 @@
   }
 
   &__btn {
-    margin: 0;
     position: relative;
   }
 }
@@ -448,9 +435,6 @@ textarea.am-textarea {
   }
 
   select {
-    @extend %flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     outline: 0;
     box-shadow: none;
     border: 0 !important;
@@ -477,8 +461,7 @@ textarea.am-textarea {
 }
 
 .select-inline {
-  @extend .select;
-  display: inline-flex !important;
+  display: inline-flex;
 
   & + .select-inline {
     margin-left: 5px;
