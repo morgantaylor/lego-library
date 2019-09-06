@@ -199,6 +199,7 @@ textarea {
   @include text($font-sm, 1.4, $color: $lego-gray-5);
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
   @include transition((border-color, box-shadow), .15s, ease-in-out);
+  margin: 3px;
   padding: 5px;
   height: 38px;
   min-width: 250px;
@@ -227,10 +228,6 @@ select,
 textarea {
   font-weight: 100;
   letter-spacing: 0.01em;
-
-  ~ * {
-    margin-left: 5px;
-  }
 }
 
 select {
