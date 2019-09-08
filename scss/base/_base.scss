@@ -14,8 +14,8 @@ body  {
 }
 
 body {
-  @extend %arial-text;
   @include text(16px, 1.5, $color: $lego-gray-6);
+  font-family: $arial;
   margin: 0;
   height: auto;
   background-color: $white;
@@ -44,7 +44,8 @@ h3,
 h4,
 h5,
 h6 {
-  @extend %arial-bold-text;
+  font-family: $arial;
+  font-weight: 600;
   margin-bottom: .5em;
 }
 
@@ -69,13 +70,14 @@ h6 {
 
 p,
 .paragraph {
-  @extend %arial-text;
   @include text(1em, 1.7);
+  font-family: $arial;
   margin: 15px 0;
 } 
 
 blockquote {
-  @extend %arial-bold-text;
+  font-family: $arial;
+  font-weight: 600;
   font-size: 1.1em;
   padding: 10px 20px;
   margin: 0 0 20px;
@@ -159,7 +161,7 @@ a {
 a,
 button {
   @extend %focus--off;
-  @extend %arial-text;
+  font-family: $arial;
   text-decoration: none;
   display: inline-block;
   color: $lego-primary;
