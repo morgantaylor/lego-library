@@ -6,20 +6,53 @@
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: $lego-gray-1;
   border-radius: 4px;
-}
 
-.breadcrumb>li {
-  display: inline-block;
-}
+  .breadcrumb-item {
+    display: inline-block;
 
-.breadcrumb>.active {
-  color: $lego-gray-5;
-}
+    + .breadcrumb-item:before {
+      padding: 0 5px;
+      color: $lego-gray-2;
+      content: "/\00a0";
+    }
 
-.breadcrumb>li+li:before {
-  padding: 0 5px;
-  color: $lego-gray-2;
-  content: "/\00a0";
+    a {
+      color: $lego-gray-3;
+    }
+
+    &.active {
+      color: $lego-primary;
+    }
+  }
+
+  // Breadcrumb skins
+  &.breadcrumb--green {
+
+    .active {
+      color: $lego-success;
+    }
+  }
+
+  &.breadcrumb--gray {
+
+    .active {
+      color: $lego-gray-3;
+    }
+  }
+
+  &.breadcrumb--red {
+
+    .active {
+      color: $lego-danger;
+    }
+  }
+
+  &.breadcrumb--blue {
+
+    .active {
+      color: $lego-primary;
+    }
+  }
+
 }
