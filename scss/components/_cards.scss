@@ -1,41 +1,155 @@
 // ==================
 // Cards 
 // ==================
-.card,
-.card__display,
-.card__title,
-.card__name {
-  display: block;
-}
 
 .card {
-  @include box-shadow(1px, 2px, 3px, rgba(0, 0, 0, 0.2));
+  @extend %flex--column;
   @include relative();
-  width: 185px;
-  border: 1px solid $lego-gray-1;
+  @include box-shadow(1px, 2px, 3px, rgba(0, 0, 0, 0.2));
+  word-wrap: break-word;
+  background-color: $white;
+  background-clip: border-box;
+  border: 1px solid $lego-gray-2;
   border-radius: 4px;
+  padding: 0 15px;
   margin: 0 20px 20px 0;
-  padding: 115px 15px 15px;
+  width: 300px;
+  overflow: hidden;
+
+  &-body {
+    
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:last-child {
+      padding-bottom: 15px;
+    }
+  }
+
+  &-text {
+    @include text($font-sm, 1.5, $color: $lego-gray-5);
+    display: block;
+    margin-bottom: 1.3em;
+  }
+
+  &-title {
+    @include text(1em, $weight: 600, $color: $lego-gray-6);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: .4em;
+  }
+
+  &-link {
+    @include text($font-sm);
+
+    & + & {
+      margin-left: 15px;
+    }
+  }
+
+  &-button {
+    @extend button;
+    margin: 0;
+  }
 }
 
-.card__title {
-  @include text($font-sm, $color: $lego-gray-5);
-  text-transform: uppercase;
+// Card Display & Images 
+.card-display {
+  @include relative();
+  background-clip: border-box;
+  background-size: contain;
+  background-position: center;
+  background-origin: border-box;
+  width: calc(100% + 32px);
+  left: -16px;
+  height: 188.75px;
+
+  &--top {
+    @extend .card-display;
+    border-top-left-radius: calc(4px - 1px);
+    border-top-right-radius: calc(4px - 1px);
+    margin-bottom: 15px;
+    top: -1px;
+  }
+
+  &--middle {
+    @extend .card-display;
+    margin-bottom: 15px;
+
+    &:not(:first-child):not(:last-child) {
+      margin-top: -15px;
+    }
+  }
+
+  &--bottom {
+    @extend .card-display;
+    border-radius: 0;
+    border-bottom-left-radius: calc(4px - 1px);
+    border-bottom-right-radius: calc(4px - 1px);
+    margin-top: 15px;
+    bottom: -1px;
+  }
+
+  &-overlay {
+    @extend %flex;
+    @include text(1.3em, $color: $white);
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.card__name {
-  @include text($font-sm, $color: $lego-gray-3);
-  margin-bottom: 15px;
+// Header & Footer 
+.card {
+  &-header,
+  &-footer {
+    background-color: $lego-gray-1;
+    border-bottom: 1px solid $lego-gray-1;
+    padding: 15px;
+  }
+
+  &-header {
+    margin: 0 -15px 15px -15px;
+  }
+
+  &-footer {
+    margin: 15px -15px 0 -15px;
+  }
 }
 
-.card__display {
-  @include absolute();
-  width: -webkit-calc(100% + 3px);
-  width: calc(100% + 3px);
-  height: 100px;
-  left: -1px;
-  top: -1px;
-  border-radius: 3px 3px 0 0;
+  //////////
+
+// Card Sizing
+.card {
+  &.card--sm {
+    width: 150px;
+
+    .card-display-top,
+    .card-display-bottom {
+      height: 104.38px;
+    }
+  }
+  &.card--lg {
+    width: 450px;
+
+    .card-display-top,,
+    .card-display-bottom {
+      height: 273.13px;
+    }
+  }
+
+  // Card Alignment
+  &.card--left {
+    text-align: left;
+  }
+
+  &.card--centered {
+    text-align: center;
+  }
+
+  &.card--right {
+    text-align: right;
+  }
 }
 
 ///// Dashboard Cards
