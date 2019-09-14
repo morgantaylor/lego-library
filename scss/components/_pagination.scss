@@ -7,88 +7,161 @@
   margin: 40px 0 20px 0;
   padding-left: 0;
   border-radius: 4px;
+  background-color: transparent;
+
+  & > li {
+    display: inline;
+
+    &:not(.disabled):hover a,
+    &:not(.disabled):hover span {
+      background-color: lighten($lego-gray-4, 20);
+      border-color: $lego-gray-4;
+      color: $white;
+    }
+
+    &:first-child > a, 
+    &:first-child > span {
+      margin-left: 0;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &:last-child > a, 
+    &:last-child > span {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    &.disabled,
+    &.disabled a,
+    &.disabled span,
+    &.disabled:hover a,
+    &.disabled:hover span {
+      cursor: not-allowed;
+      opacity: 0.7;
+      background-color: inherit;
+    }
+
+    & > a, 
+    & > span {
+      @include relative();
+      @include text($height: 1.4, $color: $lego-gray-4);
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      text-decoration: none;
+      background-color: $white;
+      border: 1px solid $lego-gray-4;
+    }
+
+    &.active > a, 
+    &.active > span, 
+    &.active > a:hover, 
+    &.active > span:hover, 
+    &.active > a:focus, 
+    &.active > span:focus {
+      z-index: 2;
+      color: $white;
+      background-color: $lego-gray-4;
+      border-color: $lego-gray-4;
+    }
+
+    &.pagination--first {
+      margin-right: 10px;
+    }
+
+    &.pagination--last {
+      margin-left: 10px;
+    }
+  }
 }
 
-.pagination > li {
-  display: inline;
-}
+// with skin 
+// TO DO:
+// - make a mixin for this specifically
+.pagination {
 
-.pagination .pagination--first {
-  margin-right: 10px;
-}
+  &.skin--green {
+    & > li {
+      &:not(.disabled):hover a,
+      &:not(.disabled):hover span {
+        color: $white;
+        background-color: lighten($lego-success, 20);
+        border-color: $lego-success;
+      }
 
-.pagination > li > a, 
-.pagination > li > span {
-  @include relative();
-  @include text($height: 1.4, $color: $lego-primary);
-  float: left;
-  padding: 6px 12px;
-  margin-left: -1px;
-  text-decoration: none;
-  background-color: $white;
-  border: 1px solid $lego-gray-2;
-}
+      & > a, 
+      & > span {
+        @include text($color: $lego-success);
+        border: 1px solid $lego-success;
+      }
 
-.pagination li a {
-  color: $lego-primary;
-  background-color: $lego-gray-1;
-}
+      &.active > a, 
+      &.active > span, 
+      &.active > a:hover, 
+      &.active > span:hover, 
+      &.active > a:focus, 
+      &.active > span:focus {
+        color: $white;
+        background-color: $lego-success;
+        border-color: $lego-success;
+      }
+    }
+  }
 
-.pagination > .disabled > span, 
-.pagination > .disabled > span:hover, 
-.pagination > .disabled > span:focus, 
-.pagination > .disabled > a, 
-.pagination > .disabled > a:hover, 
-.pagination > .disabled > a:focus {
-  color: $lego-gray-5;
-  cursor: not-allowed;
-  background-color: $white;
-  border-color: $lego-gray-2;
-}
+  &.skin--red {
+    & > li {
+      &:not(.disabled):hover a,
+      &:not(.disabled):hover span {
+        color: $white;
+        background-color: lighten($lego-danger, 20);
+        border-color: $lego-danger;
+      }
 
-.pagination .pagination--first a {
-  border-radius: 4px;
-}
+      & > a, 
+      & > span {
+        @include text($color: $lego-danger);
+        border: 1px solid $lego-danger;
+      }
 
-.pagination > li:first-child > a, 
-.pagination > li:first-child > span {
-  margin-left: 0;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
+      &.active > a, 
+      &.active > span, 
+      &.active > a:hover, 
+      &.active > span:hover, 
+      &.active > a:focus, 
+      &.active > span:focus {
+        color: $white;
+        background-color: $lego-danger;
+        border-color: $lego-danger;
+      }
+    }
+  }
 
-.pagination .pagination--first.disabled a, 
-.pagination .pagination--last.disabled a, 
-.pagination .pagination--prev.disabled a, 
-.pagination .pagination--next.disabled a {
-  color: $lego-gray-2;
-  background-color: $lego-gray-1;
-  border-color: transparent;
-}
+  &.skin--blue {
+    & > li {
+      &:not(.disabled):hover a,
+      &:not(.disabled):hover span {
+        color: $white;
+        background-color: lighten($lego-primary, 20);
+        border-color: $lego-primary;
+      }
 
-.pagination > .active > a, 
-.pagination > .active > span, 
-.pagination > .active > a:hover, 
-.pagination > .active > span:hover, 
-.pagination > .active > a:focus, 
-.pagination > .active > span:focus {
-  z-index: 2;
-  color: $white;
-  cursor: default;
-  background-color: $lego-primary;
-  border-color: $lego-primary;
-}
+      & > a, 
+      & > span {
+        @include text($color: $lego-primary);
+        border: 1px solid $lego-primary;
+      }
 
-.pagination .pagination--last {
-  margin-left: 10px;
-}
-
-.pagination .pagination--last a {
-  border-radius: 4px;
-}
-
-.pagination > li:last-child > a, 
-.pagination > li:last-child > span {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+      &.active > a, 
+      &.active > span, 
+      &.active > a:hover, 
+      &.active > span:hover, 
+      &.active > a:focus, 
+      &.active > span:focus {
+        color: $white;
+        background-color: $lego-primary;
+        border-color: $lego-primary;
+      }
+    }
+  }
 }
