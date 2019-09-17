@@ -4,8 +4,6 @@
 
 .alert {
   @extend %flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   z-index: 2;
   padding: 15px;
 
