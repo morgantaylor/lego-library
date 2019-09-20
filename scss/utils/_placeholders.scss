@@ -199,25 +199,15 @@
 }
 
 %tab--base--bordered {
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5 {
-    @extend %show--tab--content;
 
-    border-top: 1px solid $lego-gray-1; 
-    border-bottom: 1px solid $lego-gray-1; 
-  }
-
-  .tab__container .tab__content p,
-  .tab__container .tab__content h3 {
+  .tab-wrapper .tab-content p,
+  .tab-wrapper .tab-content h3 {
     -webkit-animation: fadeInScale 0.7s ease-in-out;
     -moz-animation: fadeInScale 0.7s ease-in-out;
     animation: fadeInScale 0.7s ease-in-out;
   }
 
-  .tab__container [id^="tab"]:checked + label {
+  .tab-wrapper [id^="tab"]:checked + label {
     background: $white;
     border-bottom: 0;
 
@@ -230,7 +220,7 @@
     }
   }
 
-  .tab__container [id^="tab"]:checked + label .fa {
+  .tab-wrapper [id^="tab"]:checked + label .fa {
     color: $lego-primary;
   }
 }

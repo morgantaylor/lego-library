@@ -2,80 +2,69 @@
 // Tabs 
 // ==================
 
-.tab__container {
+$tabCount: 3;
+
+.tab-wrapper,
+.tab-wrapper--bordered {
+  @extend %tab--inside--base;
   @include relative();
   width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
 
-  &--bordered {
-    @extend .tab__container;
-    border: 1px solid $lego-gray-1;
-
-    @extend %tab--inside--base;
-    @extend %tab--base--bordered;
+  .tab-content p,
+  .tab-content h3 {
+    -webkit-animation: fadeInScale 0.7s ease-in-out;
+    -moz-animation: fadeInScale 0.7s ease-in-out;
+    animation: fadeInScale 0.7s ease-in-out;
   }
 
-  input, section {
-    clear: both;
-    padding-top: 10px;
-    display: none;
+  [id^="tab"]:checked + label,
+  [id^="tab"]:checked + label .fa {
+    color: $lego-primary;
   }
 
-  label {
-    float: left;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
+  [id^="tab"]:checked + label {
+    background: $white;
+    border-bottom: 0;
 
-    .fa {
-      font-size: 16px;
+    &.border--top {
+      box-shadow: inset 0 3px $lego-primary; // for top border
+    }
+
+    &.border--bottom {
+      box-shadow: inset 0 -3px $lego-primary; // for bottom border
     }
   }
 }
 
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4,
-#tab5:checked ~ #content5 {
-  @extend %show--tab--content;
-}
+.tab-wrapper--bordered {
+  border: 1px solid $lego-gray-1;
 
-.tab__container .tab__content p,
-.tab__container .tab__content h3 {
-  -webkit-animation: fadeInScale 0.7s ease-in-out;
-  -moz-animation: fadeInScale 0.7s ease-in-out;
-  animation: fadeInScale 0.7s ease-in-out;
-}
+  @for $i from 1 through $tabCount {
+    #tab-#{$i}:checked ~ #content-#{$i}{
+      @extend %show--tab--content;
 
-.tab__container [id^="tab"]:checked + label {
-  background: $white;
-  border-bottom: 0;
-
-  &.border--top {
-    box-shadow: inset 0 3px $lego-primary; // for top border
-  }
-
-  &.border--bottom {
-    box-shadow: inset 0 -3px $lego-primary; // for bottom border
+      border-top: 1px solid $lego-gray-1; 
+      border-bottom: 1px solid $lego-gray-1; 
+    }
   }
 }
 
-.tab__container [id^="tab"]:checked + label,
-.tab__container [id^="tab"]:checked + label .fa {
-  color: $lego-primary;
+@for $i from 1 through $tabCount {
+  #tab-#{$i}:checked ~ #content-#{$i}{
+    @extend %show--tab--content;
+  }
 }
 
 /*Media query*/
 @media only screen and (max-width: 900px) {
-  .tab__container {
+  .tab-wrapper {
     label span {
       display: none;
     }
     
-    .tab__container {
+    .tab-wrapper {
       width: 98%;
     }
   }
