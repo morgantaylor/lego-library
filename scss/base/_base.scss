@@ -301,65 +301,6 @@ pre {
   border: 0;
 }
 
-
-/////// Tables /////////
-
-
-table,
-.table {
-  width: 100%;
-  margin-bottom: 20px;
-  border-collapse: collapse;
-}
-
- table caption,
-.table caption {
-  @include text($font-sm, $color: $lego-gray-5);
-  caption-side: bottom;
-}
-
- table thead,
-.table thead {
-  @include text($weight: bold);
-  text-transform: capitalize;
-}
-
- table tbody,
-.table tbody {
-  color: $lego-gray-5;
-}
-
-.table > tbody > tr > td,
- table > tbody > tr > td,
-.table > tbody > tr > th, 
- table > tbody > tr > th, 
-.table > tfoot > tr > td, 
- table > tfoot > tr > td, 
-.table > tfoot > tr > th, 
- table > tfoot > tr > th, 
-.table > thead > tr > td, 
- table > thead > tr > td, 
-.table > thead > tr > th,
- table > thead > tr > th {
-  padding: 10px;
-  vertical-align: middle;
-  border-bottom: 1px solid $lego-gray-2;
-}
-
- table tbody tr,
-.table tbody tr {
-  height: 55px;
-}
-
-table.table-striped tbody tr:nth-child(odd) td {
-  background-color: $lego-gray-1;
-}
-
-table.table-bordered,
-table.table-bordered td {
-  border: 1px solid $lego-gray-1;
-}
-
 //////// Dividers ///////
 
 hr {

@@ -1,0 +1,49 @@
+/////// Tables /////////
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+
+  caption {
+    @include text($font-sm, $color: $lego-gray-5);
+    caption-side: bottom;
+  }
+
+  thead {
+    @include text($weight: bold);
+    text-transform: capitalize;
+  }
+
+  tbody {
+    color: $lego-gray-5;
+
+    tr {
+      height: 55px;
+    }
+  }
+
+   > tbody > tr > td,
+   > tbody > tr > th, 
+   > tfoot > tr > td, 
+   > tfoot > tr > th, 
+   > thead > tr > td,
+   > thead > tr > th {
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid $lego-gray-2;
+  }
+}
+
+////// Striped ///////
+
+table.table--stripe tbody tr:nth-child(odd) td {
+  background-color: $lego-gray-1;
+}
+
+////// Border ///////
+
+table.table--border,
+table.table--border td {
+  border: 1px solid $lego-gray-1;
+}
