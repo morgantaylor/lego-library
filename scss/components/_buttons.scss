@@ -2,6 +2,12 @@
 // Buttons 
 // ==================
 
+$skins: 
+  'primary' $lego-primary,
+  'success' $lego-success,
+  'danger' $lego-danger
+;
+
 button {
   @include text($font-sm, 1.4, 400);
   @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
@@ -210,6 +216,17 @@ button {
   &.lego-dropdown--show {
     ul {
       display: block;
+  @each $name, $color in $skins {
+    .btn--#{$name} {
+      & ~ .dropdown__container .dropdown__item:hover{
+        background-color: $color;
+      }
+    }
+    .btn--outline-#{$name} {
+      & ~ .dropdown__container .dropdown__item:hover{
+        background-color: $white;
+        color: $color;
+      }
     }
   }
 }
