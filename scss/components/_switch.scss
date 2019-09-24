@@ -142,18 +142,18 @@
 
 // default skin colors
 $skins: 
-  'primary' #0083c6,
-  'success' #5cb85c,
-  'danger' #d53e4f
+  'primary' $lego-primary,
+  'success' $lego-success,
+  'danger' $lego-danger
 ;
 
 .switch,
 .switch-inline {
 
-  @each $name, $hex in $skins {
-    &.skin--#{$name} {
+  @each $name, $color in $skins {
+    &.switch--#{$name} {
       input:checked + span {
-        background-color: #{$hex};
+        background-color: #{$color};
       }
     }
   }

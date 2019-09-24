@@ -2,6 +2,14 @@
 // Breadcrumbs 
 // ==================
 
+// default skin colors
+$skins: 
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger,
+  'gray' $lego-gray-3
+;
+
 .breadcrumb {
   padding: 8px 15px;
   margin-bottom: 20px;
@@ -26,33 +34,11 @@
     }
   }
 
-  // Breadcrumb skins
-  &.breadcrumb--green {
-
-    .active {
-      color: $lego-success;
+  @each $name, $color in $skins {
+    &.breadcrumb--#{$name} {
+      .active {
+        color: $color;
+      }
     }
   }
-
-  &.breadcrumb--gray {
-
-    .active {
-      color: $lego-gray-3;
-    }
-  }
-
-  &.breadcrumb--red {
-
-    .active {
-      color: $lego-danger;
-    }
-  }
-
-  &.breadcrumb--blue {
-
-    .active {
-      color: $lego-primary;
-    }
-  }
-
 }

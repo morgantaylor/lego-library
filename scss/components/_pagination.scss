@@ -76,92 +76,43 @@
   }
 }
 
-// with skin 
-// TO DO:
-// - make a mixin for this specifically
+$skins: 
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger
+;
+
 .pagination {
 
-  &.skin--green {
-    & > li {
-      &:not(.disabled):hover a,
-      &:not(.disabled):hover span {
-        color: $white;
-        background-color: lighten($lego-success, 20);
-        border-color: $lego-success;
-      }
+  @each $name, $color in $skins {
+    &.pagination--#{$name} {
+      & > li {
+        &:not(.disabled):hover a,
+        &:not(.disabled):hover span {
+          color: $white;
+          background-color: lighten($color, 20);
+          border-color: $color;
+        }
 
-      & > a, 
-      & > span {
-        @include text($color: $lego-success);
-        border: 1px solid $lego-success;
-      }
+        & > a, 
+        & > span {
+          @include text($color: $color);
+          border: 1px solid $color;
+        }
 
-      &.active > a, 
-      &.active > span, 
-      &.active > a:hover, 
-      &.active > span:hover, 
-      &.active > a:focus, 
-      &.active > span:focus {
-        color: $white;
-        background-color: $lego-success;
-        border-color: $lego-success;
+        &.active > a, 
+        &.active > span, 
+        &.active > a:hover, 
+        &.active > span:hover, 
+        &.active > a:focus, 
+        &.active > span:focus {
+          color: $white;
+          background-color: $color;
+          border-color: $color;
+        }
       }
     }
   }
 
-  &.skin--red {
-    & > li {
-      &:not(.disabled):hover a,
-      &:not(.disabled):hover span {
-        color: $white;
-        background-color: lighten($lego-danger, 20);
-        border-color: $lego-danger;
-      }
-
-      & > a, 
-      & > span {
-        @include text($color: $lego-danger);
-        border: 1px solid $lego-danger;
-      }
-
-      &.active > a, 
-      &.active > span, 
-      &.active > a:hover, 
-      &.active > span:hover, 
-      &.active > a:focus, 
-      &.active > span:focus {
-        color: $white;
-        background-color: $lego-danger;
-        border-color: $lego-danger;
-      }
-    }
-  }
-
-  &.skin--blue {
-    & > li {
-      &:not(.disabled):hover a,
-      &:not(.disabled):hover span {
-        color: $white;
-        background-color: lighten($lego-primary, 20);
-        border-color: $lego-primary;
-      }
-
-      & > a, 
-      & > span {
-        @include text($color: $lego-primary);
-        border: 1px solid $lego-primary;
-      }
-
-      &.active > a, 
-      &.active > span, 
-      &.active > a:hover, 
-      &.active > span:hover, 
-      &.active > a:focus, 
-      &.active > span:focus {
-        color: $white;
-        background-color: $lego-primary;
-        border-color: $lego-primary;
-      }
-    }
-  }
+  
 }

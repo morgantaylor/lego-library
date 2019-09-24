@@ -84,43 +84,29 @@
   }
 }
 
-// custom skins for accordions
+$skins: 
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger,
+  'gray' $lego-gray-3
+;
 
 .accordion,
 .accordion--panel {
-  background-color: transparent;
 
-  &.skin-green,
-  &.skin-red,
-  &.skin-gray,
-  &.skin-blue {
+  @each $name, $color in $skins {
+    &.skin-#{$name} {
+      
+      .accordion__title {
+        color: $white;
+        background-color: transparent;
+        border-color: transparent;
+      }
 
-    &:hover {
-      color: inherit;
-      background-color: inherit;
-      border-color: inherit;
-    }
-
-    .accordion__title {
-      color: $white;
-    }
-
-    i:before,
-    i:after {
-      background-color: $white;
-    }
-  }
-}
-
-.accordion--panel {
-  &.skin-green,
-  &.skin-red,
-  &.skin-gray,
-  &.skin-blue {
-
-    .accordion__title {
-      background-color: transparent;
-      border-color: transparent;
+      i:before,
+      i:after {
+        background-color: $white;
+      }
     }
   }
 }

@@ -1,88 +1,74 @@
 // Button Mixin //
 
-@mixin skin($prefix, $main-color) {
-  @if $prefix == 'skin-' {
-    background-color: $main-color;
-    color: $white;
-    border: 1px solid $main-color;
-
-    &:not([disabled]):hover,
-    &:hover:not(.disabled) {
-      color: $white;
-      background-color: darken($main-color, 10%);
-      border-color: darken($main-color, 12%);
-    }
-
-    &:not([disabled]).active,
-    &:not(.disabled).active {
-      color: $white;
-      background-color: darken($main-color, 20%);
-      border-color: darken($main-color, 22%);
-    }
-    
-    &.active {
-      color: darken($main-color, 15%);
-    }
-
-    &.selected {
-      color: $white;
-      border-color: darken($main-color, 15%);
-      background-color: darken($main-color, 15%);
+@mixin button-states($btn-type, $background, $color, $border) {
+  &:disabled {
+    &:hover {
+      background-color: $background;
+      color: $color;
+      border: 1px solid $border;
     }
   }
-  @else if $prefix == 'skin-outline-' {
-    color: $main-color;
-    background-color: $white;
-    border: 1px solid $main-color;
 
-    &:not([disabled]):hover,
-    &:not(.disabled):hover {
-      color: $white;
-      background-color: $main-color;
-      border-color: darken($main-color, 12%);
-    }
-
-    &:not([disabled]).active,
-    &:not(.disabled).active {
-      color: $white;
-      background-color: darken($main-color, 20%);
-      border-color: darken($main-color, 22%);
-    }
-    
-    &.active {
-      color: darken($main-color, 15%);
-    }
-
-    &.selected {
-      border-color: darken($main-color, 15%);
-      color: $white;
-      background-color: darken($main-color, 15%);
+  &:hover {
+    @if $btn-type == 'btn' {
+      color: $color;
+      background-color: darken($background, 10%);
+      border-color: darken($border, 12%);
+    } @else if $btn-type == 'btn-outline' {
+      color: $background;
+      background-color: $color;
+      border-color: darken($border, 12%);
+    } @else if $btn-type == 'btn-link' {
+      color: darken($color, 15%);
+      background-color: $background;
+      border-color: $border;
+    } @else {
+      @error "#{$btn-type} is an unknown type of button.";
     }
   }
-  @else if $prefix == 'link-' {
-    color: $main-color;
-    background-color: transparent;
-    border: 1px solid transparent;
 
-    &:not([disabled]):hover,
-    &:not(.disabled):hover {
-      color: darken($main-color, 12%);
-      background-color: transparent;
-      border-color: transparent;
-    }
+  // can put in .active and .selected states later
+}
 
-    &.active {
-      color: darken($main-color, 15%);
-    }
+@mixin custom-skin($type: null, $background: null, $color: null, $border: null) {
+  background-color: $background;
+  color: $color;
+  border: 1px solid $border;
+
+  @if $type == 'btn' {
+    @include button-states('btn', $background, $color, $border);
   }
-  
+
+  @if $type == 'btn-outline' {
+    @include button-states('btn-outline', $background, $color, $border);
+  }
+
+  @if $type == 'btn-link' {
+    @include button-states('btn-link', $background, $color, $border);
+  }
+
   &.disabled,
-  &[disabled] {
+  &:disabled,
+  [disabled] {
     @extend %input--disabled;
-    cursor: not-allowed !important;
   }
 }
 
+// This skin doesn't need different states, just color
+@mixin skin($prefix, $main-color) {
+
+  @if $prefix == 'filled' {
+    background-color: $main-color;
+    color: $white;
+    border: 1px solid $main-color;
+  }
+
+  @if $prefix == 'outline' {
+    color: $main-color;
+    background-color: $white;
+    border: 1px solid $main-color;
+  }
+}
 
 // Text Mixin //
 

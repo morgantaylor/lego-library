@@ -37,35 +37,26 @@ button {
 .btn {
   @extend button;
 
-  &--primary { @include skin('skin-', $lego-primary); }
-
-  &--success { @include skin('skin-', $lego-success); }
-
-  &--danger { @include skin('skin-', $lego-danger); }
-
-  &--default { @include skin('skin-', $lego-gray-3); }
-
-  &--outline-primary { @include skin('skin-outline-', $lego-primary); }
-
-  &--outline-success { @include skin('skin-outline-', $lego-success); }
-
-  &--outline-danger { @include skin('skin-outline-', $lego-danger); }
-
-  &--outline-default { @include skin('skin-outline-', $lego-gray-3); }
+  &--primary {@include custom-skin('btn', $lego-primary, $white, $lego-primary);}
+  &--success {@include custom-skin('btn', $lego-success, $white, $lego-success);}
+  &--danger {@include custom-skin('btn', $lego-danger, $white, $lego-danger);}
+  &--default {@include custom-skin('btn', $lego-gray-3, $white, $lego-gray-3);}
+  
+  &--outline-primary {@include custom-skin('btn-outline', $white, $lego-primary, $lego-primary);}
+  &--outline-success {@include custom-skin('btn-outline', $white, $lego-success, $lego-success);}
+  &--outline-danger {@include custom-skin('btn-outline', $white, $lego-danger, $lego-danger);}
+  &--outline-default {@include custom-skin('btn-outline', $white, $lego-gray-4, $lego-gray-3);}
 }
 
 .link {
   @extend button;
 
-  &--success {@include skin('link-', $lego-success);}
-
-  &--default {@include skin('link-', $lego-gray-5);}
-    
-  &--danger {@include skin('link-', $lego-danger);}
-    
-  &--primary {@include skin('link-', $lego-primary);}
-    
-  &--white {@include skin('link-', $white);}
+  &--primary,
+  &--default {@include custom-skin('btn-link', transparent, $lego-primary, transparent);}
+  &--success {@include custom-skin('btn-link', transparent, $lego-success, transparent);}
+  &--danger {@include custom-skin('btn-link', transparent, $lego-danger, transparent);}
+  &--gray {@include custom-skin('btn-link', transparent, $lego-gray-4, transparent);}
+  &--white {@include custom-skin('btn-link', transparent, $white, transparent);}
 }
 
 

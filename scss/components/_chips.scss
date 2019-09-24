@@ -25,21 +25,30 @@
   }
 }
 
+// default skin colors
+$skins: 
+  'blue' rgba(51,122,183,.5),
+  'green' rgba(131,188,32,.5),
+  'red' rgb(213, 62, 79.5),
+  'gray' rgba(99,102,106,.5),
+  'input' rgba(184,186,187,.5)
+;
+
 .chip {
   &-default {
     background-color: #e0e0e0;
     color: $black;
   }
 
-  &.skin-green {box-shadow: 0 2px rgba(131,188,32,.5);}
-  &.skin-gray {box-shadow: 0 2px rgba(99,102,106,.5);}
-  &.skin-red {box-shadow: 0 2px rgb(213, 62, 79.5);}
-  &.skin-blue {box-shadow: 0 2px rgba(51,122,183,.5);}
-  &.skin-input {box-shadow: 0 2px rgba(184,186,187,.5);}
+  @each $name, $shadow in $skins {
+    &.skin-#{$name} {
+      box-shadow: 0 2px $shadow;
+    }
+  }
 
-  &.skin-reverse-green {box-shadow: 0 2px rgba(131,188,32,.5);}
-  &.skin-reverse-gray {box-shadow: 0 2px rgba(99,102,106,.5);}
-  &.skin-reverse-red {box-shadow: 0 2px rgb(213, 62, 79.5);}
-  &.skin-reverse-blue {box-shadow: 0 2px rgba(51,122,183,.5);}
-  &.skin-reverse-input {box-shadow: 0 2px rgba(184,186,187,.5);}
+  @each $name, $shadow in $skins {
+    &.skin-outline-#{$name} {
+      box-shadow: 0 2px $shadow;
+    }
+  }
 }

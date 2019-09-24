@@ -2,30 +2,30 @@
 // Alerts 
 // ==================
 
+$skins:
+  'primary' #2390b0 #c5e9f3 #31b0d5,
+  'success' #357935 #c7e6c7 #449d44,
+  'warning' #8a6d3b #fcf8e3 #faebcc,
+  'danger' #8e1f2b #f0bcc2 #b82838
+;
+
 .alert {
   @extend %flex;
   z-index: 2;
   padding: 15px;
 
-  &__close {
-    opacity: .6;
-    color: inherit;
-    margin-left: auto;
-    background-color: inherit;
-    margin-right: 15px;
-    padding-right: 0;
-  }
-
-  &--notification {
+  // small no close btn
+  &.alert-notification {
     @extend .alert;
     opacity: .8;
-    position: absolute;
-    border-radius: 6px;
+    position: fixed;
     max-width: 250px;
-    border: 1px solid transparent;
+    top: 10px;
+    right: 10px;
   }
 
-  &--global {
+  // fixed to top of screen, has close btn
+  &.alert-global {
     @extend .alert;
     opacity: 1;
     position: fixed;
@@ -33,53 +33,28 @@
     right: 0;
     left: 0;
     padding: 15px 0 15px 15px;
-    color: $lego-gray-5;
-    background-color: $lego-gray-1;
   }
 
-  &--danger {
-    @extend .alert;
-    color: darken($lego-danger, 20%);
-    background-color: lighten($lego-danger, 30%);
+  .alert-close {
+    opacity: .6;
+    margin-left: auto;
+    background-color: inherit;
+    margin-right: 15px;
+    padding-right: 0;
+  }
 
-    &-border {
-      @extend .alert--danger;
-      border-color: darken($lego-danger, 10%);
+  @each $name, $color, $background, $border-color in $skins {
+    &.alert--#{$name},
+    &.alert--#{$name}-border {
+      .alert-close {
+        color: $color;
+      }
     }
-  }
-
-  &--warning {
-    @extend .alert;
-    color: darken(#8a6d3b, 20%);
-    background-color: #fcf8e3;
-
-    &-border {
-      @extend .alert--warning;
-      border-color: #faebcc;
+    &.alert--#{$name} {
+      @include custom-skin('alert', $background, $color, $background);
     }
-  }
-
-  &--success {
-    @extend .alert;
-    color: darken($lego-success, 20%);
-    background-color: lighten($lego-success, 30%);
-
-    &-border {
-      @extend .alert--success;
-      border-color: darken($lego-success, 10%);
-    }
-  }
-
-  &--info {
-    @extend .alert;
-    color: darken($lego-info, 20%);
-    background-color: lighten($lego-info, 25%);
-
-    &-border {
-      @extend .alert--info;
-      border-color: darken($lego-info, 10%);      
+    &.alert--#{$name}-border {
+      @include custom-skin('alert', $background, $color, $border-color);
     }
   }
 }
-
-
