@@ -41,8 +41,6 @@ button {
 }
 
 .btn {
-  @extend button;
-
   &--primary {@include custom-skin('btn', $lego-primary, $white, $lego-primary);}
   &--success {@include custom-skin('btn', $lego-success, $white, $lego-success);}
   &--danger {@include custom-skin('btn', $lego-danger, $white, $lego-danger);}
@@ -55,8 +53,6 @@ button {
 }
 
 .link {
-  @extend button;
-
   &--primary,
   &--default {@include custom-skin('btn-link', transparent, $lego-primary, transparent);}
   &--success {@include custom-skin('btn-link', transparent, $lego-success, transparent);}
@@ -81,39 +77,39 @@ button {
 
 /////// Button Grous ///////
 
-.btn-groups {
+.btn-group {
   @include relative();
   display: inline-block;
   vertical-align: middle;
   margin: 5px 0;
 }
 
-.btn-groups > .btn-groups__btn {
+.btn-group > .btn-group__btn {
   @include relative();
   float: left;
   margin: 0;
 }
 
-.btn-groups > .btn-groups__btn:first-child {
+.btn-group > .btn-group__btn:first-child {
   margin-left: 0;
 }
 
-.btn-groups > .btn-groups__btn:first-child:not(:last-child):not(.dropdown__toggle) {
+.btn-group > .btn-group__btn:first-child:not(:last-child):not(.dropdown__toggle) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.btn-groups .btn-groups__btn + .btn-groups__btn, 
-.btn-groups .btn-groups + .btn-groups__btn {
+.btn-group .btn-group__btn + .btn-group__btn, 
+.btn-group .btn-group + .btn-group__btn {
   margin-left: -1px;
 }
 
-.btn-groups > .btn-groups__btn:not(:first-child):not(:last-child):not(.dropdown__toggle) {
+.btn-group > .btn-group__btn:not(:first-child):not(:last-child):not(.dropdown__toggle) {
   border-radius: 0;
 }
 
-.btn-groups > .btn-groups__btn:last-child:not(:first-child), 
-.btn-groups > .dropdown__toggle:not(:first-child) {
+.btn-group > .btn-group__btn:last-child:not(:first-child), 
+.btn-group > .dropdown__toggle:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -133,7 +129,7 @@ button {
     width: 100%;
     height: 100%;
 
-    & + .btn--upload {
+    & + .btn-upload {
       @include text($font-sm, 1.4);
       display: inline-block;
       border-radius: 4px;
@@ -147,7 +143,7 @@ button {
 
 //// Pure CSS Dropdown ////
 
-.lego-dropdown {
+.dropdown {
   @extend %focus--on;
   @include relative();
   display: inline-block;
@@ -159,7 +155,7 @@ button {
   it we will be done via the label element.
   */
 
-  input[type='checkbox'] {
+  .dropdown__toggle {
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -171,11 +167,15 @@ button {
     + .btn {
       margin: 0;
     }
+
+    &:checked ~ .dropdown__container {
+      display: block;
+    }
   }
 
-  /*  The ul will have display:none by default */
+  /*  The .dropdown__container will have display:none by default */
 
-  ul {
+  .dropdown__container {
     @include box-shadow(0, 6px, 12px, rgba(0,0,0,0.175));
     @include absolute();
     list-style: none;
@@ -183,7 +183,7 @@ button {
     float: left;
     width: 100%;
     z-index: 1000;
-    margin:0;
+    margin: 1px 0 0 0;
     padding:0;
     min-width: 153px;
     background-color: $white;
@@ -193,29 +193,28 @@ button {
     display: none;
     max-height: 350px;
     overflow-y: scroll;
+
+    .dropdown__item {
+      padding: 8px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lego-gray-3;
+        color: $white;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
   }
 
-  ul li {
-    padding: 8px 20px;
-    cursor: pointer;
-  }
-
-  ul li:hover {
-    background-color: $lego-gray-3;
-    color: $white;
-  }
-
-  ul li a {
-    color: inherit;
-  }
-
-  input[type=checkbox]:checked ~ ul {
-    display: block;
-  }
-
-  &.lego-dropdown--show {
-    ul {
+  &.dropdown--show {
+    .dropdown__container {
       display: block;
+    }
+  }
+
   @each $name, $color in $skins {
     .btn--#{$name} {
       & ~ .dropdown__container .dropdown__item:hover{

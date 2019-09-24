@@ -421,7 +421,7 @@ textarea.am-textarea {
 // ======= Native Select Menu =======//
 
 .select,
-.select-inline {
+.select--inline {
   @extend %focus--on;
   margin: 3px;
   cursor: pointer;
@@ -430,7 +430,7 @@ textarea.am-textarea {
   border-radius: 4px;
   border: 1px solid $lego-gray-3;
 
-  &-squared {
+  &--squared {
     border-radius: 0;
   }
 
@@ -460,10 +460,10 @@ textarea.am-textarea {
   }
 }
 
-.select-inline {
+.select--inline {
   display: inline-flex;
 
-  & + .select-inline {
+  & + .select--inline {
     margin-left: 5px;
   }
 }

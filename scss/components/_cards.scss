@@ -16,7 +16,7 @@
   width: 300px;
   overflow: hidden;
 
-  &-body {
+  &__body {
     
     &:first-child {
       padding-top: 15px;
@@ -27,20 +27,20 @@
     }
   }
 
-  &-text {
+  &__text {
     @include text($font-sm, 1.5, $color: $lego-gray-5);
     display: block;
     margin-bottom: 1.3em;
   }
 
-  &-title {
+  &__title {
     @include text(1em, $weight: 600, $color: $lego-gray-6);
     text-transform: uppercase;
     display: block;
     margin-bottom: .4em;
   }
 
-  &-link {
+  &__link {
     @include text($font-sm);
 
     & + & {
@@ -48,14 +48,14 @@
     }
   }
 
-  &-button {
+  &__button {
     @extend button;
     margin: 0;
   }
 }
 
 // Card Display & Images 
-.card-display {
+.card__display {
   @include relative();
   background-clip: border-box;
   background-size: contain;
@@ -66,7 +66,7 @@
   height: 188.75px;
 
   &--top {
-    @extend .card-display;
+    @extend .card__display;
     border-top-left-radius: calc(4px - 1px);
     border-top-right-radius: calc(4px - 1px);
     margin-bottom: 15px;
@@ -74,7 +74,7 @@
   }
 
   &--middle {
-    @extend .card-display;
+    @extend .card__display;
     margin-bottom: 15px;
 
     &:not(:first-child):not(:last-child) {
@@ -83,7 +83,7 @@
   }
 
   &--bottom {
-    @extend .card-display;
+    @extend .card__display;
     border-radius: 0;
     border-bottom-left-radius: calc(4px - 1px);
     border-bottom-right-radius: calc(4px - 1px);
@@ -91,28 +91,27 @@
     bottom: -1px;
   }
 
-  &-overlay {
+  &--overlay {
     @extend %flex;
     @include text(1.3em, $color: $white);
     justify-content: center;
-    align-items: center;
   }
 }
 
 // Header & Footer 
 .card {
-  &-header,
-  &-footer {
+  &__header,
+  &__footer {
     background-color: $lego-gray-1;
     border-bottom: 1px solid $lego-gray-1;
     padding: 15px;
   }
 
-  &-header {
+  &__header {
     margin: 0 -15px 15px -15px;
   }
 
-  &-footer {
+  &__footer {
     margin: 15px -15px 0 -15px;
   }
 }
@@ -124,16 +123,16 @@
   &.card--sm {
     width: 150px;
 
-    .card-display-top,
-    .card-display-bottom {
+    .card__display-top,
+    .card__display-bottom {
       height: 104.38px;
     }
   }
   &.card--lg {
     width: 450px;
 
-    .card-display-top,,
-    .card-display-bottom {
+    .card__display-top,,
+    .card__display-bottom {
       height: 273.13px;
     }
   }

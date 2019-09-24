@@ -15,7 +15,7 @@ $skins:
   padding: 15px;
 
   // small no close btn
-  &.alert-notification {
+  &.alert--notification {
     @extend .alert;
     opacity: .8;
     position: fixed;
@@ -25,7 +25,7 @@ $skins:
   }
 
   // fixed to top of screen, has close btn
-  &.alert-global {
+  &.alert--global {
     @extend .alert;
     opacity: 1;
     position: fixed;
@@ -35,7 +35,7 @@ $skins:
     padding: 15px 0 15px 15px;
   }
 
-  .alert-close {
+  .alert__close {
     opacity: .6;
     margin-left: auto;
     background-color: inherit;
@@ -45,15 +45,15 @@ $skins:
 
   @each $name, $color, $background, $border-color in $skins {
     &.alert--#{$name},
-    &.alert--#{$name}-border {
-      .alert-close {
+    &.alert--#{$name}--border {
+      .alert__close {
         color: $color;
       }
     }
     &.alert--#{$name} {
       @include custom-skin('alert', $background, $color, $background);
     }
-    &.alert--#{$name}-border {
+    &.alert--#{$name}--border {
       @include custom-skin('alert', $background, $color, $border-color);
     }
   }

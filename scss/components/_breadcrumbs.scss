@@ -16,10 +16,10 @@ $skins:
   list-style: none;
   border-radius: 4px;
 
-  .breadcrumb-item {
+  .breadcrumb__item {
     display: inline-block;
 
-    + .breadcrumb-item:before {
+    + .breadcrumb__item:before {
       padding: 0 5px;
       color: $lego-gray-2;
       content: "/\00a0";
