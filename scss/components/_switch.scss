@@ -22,7 +22,7 @@
   justify-content: flex-start;
   width: auto;
 
-  &-inline {
+  &--inline {
     @extend .switch;
     display: inline-flex; // make inline-flex for inline items
     margin-right: 25px;
@@ -30,7 +30,7 @@
 }
 
 .switch,
-.switch-inline {
+.switch--inline {
     
   input[type=checkbox], 
   input[type=radio] {
@@ -58,13 +58,13 @@
   input[disabled] {
     cursor: not-allowed;
 
-    & + .title {
+    & + .switch__title {
       color: $lego-gray-3;
       cursor: not-allowed;
     }
   }
 
-  .title {
+  .switch__title {
     padding: 5px 10px 5px 10px;
   }
 
@@ -148,7 +148,7 @@ $skins:
 ;
 
 .switch,
-.switch-inline {
+.switch--inline {
 
   @each $name, $color in $skins {
     &.switch--#{$name} {

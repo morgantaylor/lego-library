@@ -16,9 +16,10 @@
     align-items: center;
     cursor: pointer;
 
-    &.removable {
+    &--removable {
+      @extend .chip;
 
-      .close-chip {
+      .chip__close-btn {
         padding-left: 10px;
       }
     }
@@ -30,15 +31,10 @@ $skins:
   'blue' rgba(51,122,183,.5),
   'green' rgba(131,188,32,.5),
   'red' rgb(213, 62, 79.5),
-  'gray' rgba(99,102,106,.5),
-  'input' rgba(184,186,187,.5)
+  'gray' rgba(99,102,106,.5)
 ;
 
 .chip {
-  &-default {
-    background-color: #e0e0e0;
-    color: $black;
-  }
 
   @each $name, $shadow in $skins {
     &.skin-#{$name} {

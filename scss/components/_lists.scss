@@ -12,7 +12,10 @@ that will remove styles or apply styles */
 .list--unstyled {
   margin: 0;
   padding: 0;
-  list-style: none;
+
+  li {
+    list-style-type: none;
+  }
 }
 
 .list--inline {

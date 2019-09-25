@@ -8,16 +8,9 @@
   padding-left: 0;
   border-radius: 4px;
   background-color: transparent;
+  list-style-type: none;
 
-  & > li {
-    display: inline;
-
-    &:not(.disabled):hover a,
-    &:not(.disabled):hover span {
-      background-color: lighten($lego-gray-4, 20);
-      border-color: $lego-gray-4;
-      color: $white;
-    }
+  .pagination__item {
 
     &:first-child > a, 
     &:first-child > span {
@@ -32,47 +25,63 @@
       border-bottom-right-radius: 4px;
     }
 
-    &.disabled,
-    &.disabled a,
-    &.disabled span,
-    &.disabled:hover a,
-    &.disabled:hover span {
-      cursor: not-allowed;
-      opacity: 0.7;
-      background-color: inherit;
-    }
-
-    & > a, 
-    & > span {
-      @include relative();
-      @include text($height: 1.4, $color: $lego-gray-4);
-      float: left;
-      padding: 6px 12px;
-      margin-left: -1px;
-      text-decoration: none;
-      background-color: $white;
-      border: 1px solid $lego-gray-4;
-    }
-
-    &.active > a, 
-    &.active > span, 
-    &.active > a:hover, 
-    &.active > span:hover, 
-    &.active > a:focus, 
-    &.active > span:focus {
-      z-index: 2;
-      color: $white;
-      background-color: $lego-gray-4;
-      border-color: $lego-gray-4;
-    }
-
-    &.pagination--first {
+    &--first {
       margin-right: 10px;
     }
 
-    &.pagination--last {
+    &--last {
       margin-left: 10px;
     }
+  }
+}
+
+// pagination item children
+.pagination__item {
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--first,
+  &--last {
+    @extend .pagination__item;
+  }
+
+  & > a, 
+  & > span {
+    @include relative();
+    @include text($height: 1.4, $color: $lego-gray-4);
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    text-decoration: none;
+    background-color: $white;
+    border: 1px solid $lego-gray-4;
+  }
+
+  &:not(.disabled):hover a,
+  &:not(.disabled):hover span {
+    background-color: lighten($lego-gray-4, 20);
+    border-color: $lego-gray-4;
+    color: $white;
+  }
+
+  &.disabled a,
+  &.disabled span,
+  &.disabled:hover a,
+  &.disabled:hover span {
+    cursor: not-allowed;
+    opacity: 0.4;
+    background-color: initial;
+    color: inherit;
+  }
+
+  &.active > a {
+    z-index: 2;
+    color: $white;
+    background-color: $lego-gray-4;
+    border-color: $lego-gray-4;
   }
 }
 
@@ -86,7 +95,7 @@ $skins:
 
   @each $name, $color in $skins {
     &.pagination--#{$name} {
-      & > li {
+      .pagination__item {
         &:not(.disabled):hover a,
         &:not(.disabled):hover span {
           color: $white;
@@ -101,14 +110,14 @@ $skins:
         }
 
         &.active > a, 
-        &.active > span, 
-        &.active > a:hover, 
-        &.active > span:hover, 
-        &.active > a:focus, 
-        &.active > span:focus {
+        &.active:hover > a {
           color: $white;
           background-color: $color;
           border-color: $color;
+
+          &:hover {
+            background-color: lighten($color, 20);
+          }
         }
       }
     }

@@ -172,7 +172,8 @@
 
 
 %tab--inside--base {
-  input, section {
+  input, 
+  section {
     clear: both;
     padding-top: 10px;
     display: none;
@@ -199,14 +200,14 @@
 
 %tab--base--bordered {
 
-  .tab-wrapper .tab-content p,
-  .tab-wrapper .tab-content h3 {
+  .tab .tab__content p,
+  .tab .tab__content h3 {
     -webkit-animation: fadeInScale 0.7s ease-in-out;
     -moz-animation: fadeInScale 0.7s ease-in-out;
     animation: fadeInScale 0.7s ease-in-out;
   }
 
-  .tab-wrapper [id^="tab"]:checked + label {
+  .tab [id^="tab"]:checked + label {
     background: $white;
     border-bottom: 0;
 
@@ -219,7 +220,7 @@
     }
   }
 
-  .tab-wrapper [id^="tab"]:checked + label .fa {
+  .tab [id^="tab"]:checked + label .fa {
     color: $lego-primary;
   }
 }
