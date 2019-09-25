@@ -12,13 +12,13 @@
 
 .accordion,
 .accordion--panel {
-  @extend %accordion--closed;
+  @extend %accordion--open;
   @extend %accordion__i--base;
   @include relative();
   margin-bottom: 2px;
 
   &.accordion--open {
-    @extend %accordion--open;
+    @extend %accordion--closed;
   }
 
   .accordion__title {
@@ -40,18 +40,17 @@
   }
 
   .accordion__container {
-    @extend %accordion__container--closed;
+    @extend %accordion__container--open;
     @extend %flex--column;
     @include text($font-sm, $weight: 100, $color: $lego-gray-5);
     @include transition(all, 1s, ease);
     @include relative();
     overflow: hidden;
     z-index: 2;
-    padding: 10px;
     background-color: $white;
 
     &--open {
-      @extend %accordion__container--open;
+      @extend %accordion__container--closed;
     }
   }
 }
