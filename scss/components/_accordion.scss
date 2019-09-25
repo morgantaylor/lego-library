@@ -16,6 +16,7 @@
   @extend %accordion__i--base;
   @include relative();
   margin-bottom: 2px;
+  overflow: hidden;
 
   &.accordion--open {
     @extend %accordion--closed;
