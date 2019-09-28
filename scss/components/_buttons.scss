@@ -9,15 +9,11 @@ $skins:
 ;
 
 button {
-  @include text($font-sm, 1.4, 400);
   @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
-  font-style: inherit;
-  font-variant: inherit;
-  font-family: inherit;
   text-decoration: none;
   text-align: center;
   white-space: nowrap;
-  min-height: 38px;
+  min-height: 42px;
   margin: 3px;
   padding: 8px 18px;
   border: 1px solid transparent;

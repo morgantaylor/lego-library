@@ -1,5 +1,7 @@
 *, ::after, ::before {
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
 }
 
 html,
@@ -13,12 +15,19 @@ body  {
   -moz-osx-font-smoothing: grayscale; 
 }
 
+// Base Size 16px = 1em
 body {
-  @include text(16px, 1.5, $color: $lego-gray-6);
+  @include text(16px, 1.5, 400, $color: $lego-gray-6);
   font-family: $arial;
   margin: 0;
   height: auto;
   background-color: $white;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
 }
 
 ///// Elements //////
@@ -37,6 +46,13 @@ blockquote footer {
 }
 
 //// Typography /////
+/**
+EM vs. REM Values
+The rem value is the same as the em value displayed above. 
+Both units are scalable; the only difference between the two is 
+that em is proportionate to its nearest parent that has a font-size, 
+whereas rem is always relative to the html font-size.
+**/
 
 h1,
 h2,
@@ -44,41 +60,46 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $arial;
+  @include text($weight: 500, $color: $lego-gray-6);
+  font-family: $helvetica;
+  margin: 1rem 0;
+}
+
+h4,
+h5,
+h6 {
   font-weight: 600;
-  margin-bottom: .5em;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 4.209em;
+  margin-bottom: 1.25em;
 }
 h2 {
-  font-size: 2em;;
+  font-size: 3.157em;
 }
 h3 {
-  font-size: 1.75em;
+  font-size: 2.369em;
 }
 h4 {
-  font-size: 1.5em
+  font-size: 1.777em;
 }
 h5 {
-  font-size: 1.25em;;
+  font-size: 1.333em;
 }
 h6 {
   font-size: 1em;
 }
 
-p,
-.paragraph {
+p {
   @include text(1em, 1.7);
   font-family: $arial;
-  margin: 15px 0;
+  margin: 1em 0 1.25em 0;
 } 
 
 blockquote {
+  @include text(1.1em, $weight: 600);
   font-family: $arial;
-  font-weight: 600;
-  font-size: 1.1em;
   padding: 10px 20px;
   margin: 0 0 20px;
   border-left: 5px solid $lego-gray-1;
@@ -98,7 +119,7 @@ mark {
 }
 
 small {
-  font-size: $font-xs;
+  font-size: 0.75em;
 }
 
 sub,
@@ -203,12 +224,12 @@ input[type="time"],
 input[type="range"],
 textarea {
   @extend %focus--on;
-  @include text($font-sm, 1.4, $color: $lego-gray-5);
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
   @include transition((border-color, box-shadow), .15s, ease-in-out);
+  color: $lego-gray-5;
   margin: 3px;
   padding: 5px;
-  height: 38px;
+  height: 42px;
   min-width: 250px;
   display: inline-block;
   border: 1px solid $lego-gray-3;
@@ -229,18 +250,19 @@ textarea {
   color: $lego-gray-5;
 }
 
+a,
 button, 
 input, 
 select,
 textarea {
-  font-weight: 100;
+  font: inherit;
   letter-spacing: 0.01em;
 }
 
 select {
   @extend %focus--off;
-  @include text($font-sm, 1.4, $color: $lego-gray-5);
-  height: 36px;
+  color: $lego-gray-5;
+  height: 42px;
   padding: 5px;
   min-width: 250px;
   border: 1px solid $lego-gray-3;
