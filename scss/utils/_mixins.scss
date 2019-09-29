@@ -1,11 +1,17 @@
 // Button Mixin //
 
-@mixin button-states($btn-type, $background, $color, $border) {
-  &:disabled {
+@mixin button-states($btn-type, $background: null, $color, $border: null) {
+  &.disabled,
+  &:disabled,
+  &[disabled] {
     &:hover {
-      background-color: $background;
-      color: $color;
-      border: 1px solid $border;
+      @if $btn-type == 'link' {
+        color: $color;
+      } @else {
+        background-color: $background;
+        color: $color;
+        border: 1px solid $border;
+      }
     }
   }
 
@@ -18,10 +24,8 @@
       color: $background;
       background-color: $color;
       border-color: darken($border, 12%);
-    } @else if $btn-type == 'btn-link' {
+    } @else if $btn-type == 'link' {
       color: darken($color, 15%);
-      background-color: $background;
-      border-color: $border;
     } @else {
       @error "#{$btn-type} is an unknown type of button.";
     }
@@ -30,10 +34,14 @@
   // can put in .active and .selected states later
 }
 
-@mixin custom-skin($type: null, $background: null, $color: null, $border: null) {
-  background-color: $background;
-  color: $color;
-  border: 1px solid $border;
+@mixin custom-skin($type, $background: null, $color: null, $border: null) {
+  @if $type == 'link' {
+    color: $color;
+  } @else {
+    background-color: $background;
+    color: $color;
+    border: 1px solid $border;
+  }
 
   @if $type == 'btn' {
     @include button-states('btn', $background, $color, $border);
@@ -43,13 +51,13 @@
     @include button-states('btn-outline', $background, $color, $border);
   }
 
-  @if $type == 'btn-link' {
-    @include button-states('btn-link', $background, $color, $border);
+  @if $type == 'link' {
+    @include button-states('link', $background, $color, $border);
   }
 
   &.disabled,
   &:disabled,
-  [disabled] {
+  &[disabled] {
     @extend %input--disabled;
   }
 }

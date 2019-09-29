@@ -50,11 +50,11 @@ button {
 
 .link {
   &--primary,
-  &--default {@include custom-skin('btn-link', transparent, $lego-primary, transparent);}
-  &--success {@include custom-skin('btn-link', transparent, $lego-success, transparent);}
-  &--danger {@include custom-skin('btn-link', transparent, $lego-danger, transparent);}
-  &--gray {@include custom-skin('btn-link', transparent, $lego-gray-4, transparent);}
-  &--white {@include custom-skin('btn-link', transparent, $white, transparent);}
+  &--default {@include custom-skin('link', $color: $lego-primary);}
+  &--success {@include custom-skin('link', $color: $lego-success);}
+  &--danger {@include custom-skin('link', $color: $lego-danger);}
+  &--gray {@include custom-skin('link', $color: $lego-gray-4);}
+  &--white {@include custom-skin('link', $color: $white);}
 }
 
 /////// Button Sizing /////////
