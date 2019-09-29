@@ -315,13 +315,12 @@ code {
 }
 
 pre {
-  display: inline-block;
   overflow: auto;
   padding: 16px;
   margin: 0;
-  max-width: 950px;
-  width: auto;
   border: 0;
+  width: fit-content;
+  max-width: 100%;
 }
 
 //////// Dividers ///////
@@ -332,7 +331,14 @@ hr {
   border-top: 1px solid $lego-gray-2;
 }
 
+figure {
+  margin: 0 0 1em 0;
+}
 
-
+figcaption {
+  @include text(.9em, $color: $lego-gray-3);
+  font-style: italic;
+  margin-top: calc(1em / 2);
+}
 
 
