@@ -1,5 +1,5 @@
 // ==================
-// Alerts 
+// Alert 
 // ==================
 
 $skins:
@@ -12,26 +12,13 @@ $skins:
 .alert {
   @extend %flex;
   z-index: 2;
-  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $lego-gray-2;
 
-  // small no close btn
-  &.alert--notification {
-    @extend .alert;
-    opacity: .8;
-    position: fixed;
-    max-width: 250px;
-    top: 10px;
-    right: 10px;
-  }
-
-  // fixed to top of screen, has close btn
-  &.alert--global {
-    @extend .alert;
-    opacity: 1;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+  &__body {
     padding: 15px 0 15px 15px;
   }
 
@@ -41,6 +28,7 @@ $skins:
     background-color: inherit;
     margin-right: 15px;
     padding-right: 0;
+    color: $lego-gray-6;
   }
 
   @each $name, $color, $background, $border-color in $skins {
