@@ -297,6 +297,13 @@ code,kbd,samp,pre {
 
 }
 
+kbd {
+  background-color: $lego-gray-5;
+  color: $white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 code,
 pre {
   @include text($font-sm, 17px, $color: $black);
@@ -321,6 +328,11 @@ pre {
   border: 0;
   width: fit-content;
   max-width: 100%;
+}
+
+sup,
+sub {
+  padding: 0 2px;
 }
 
 //////// Dividers ///////
