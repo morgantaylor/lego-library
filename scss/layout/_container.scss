@@ -2,6 +2,20 @@
 // Containers 
 // ==================
 
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include for-size(tablet-landscape-up) {
+    flex-direction: row;
+  }
+}
+
 .container {
   @extend %container--default;
 

@@ -15,7 +15,6 @@
   @extend %accordion--open;
   @extend %accordion__i--base;
   @include relative();
-  margin-bottom: 2px;
   overflow: hidden;
 
   &.accordion--open {
@@ -47,12 +46,16 @@
     @include transition(all, 1s, ease);
     @include relative();
     overflow: hidden;
-    z-index: 2;
+    padding: 10px;
     background-color: $white;
 
     &--open {
       @extend %accordion__container--closed;
     }
+  }
+
+  input[type=checkbox]:checked ~ .accordion__container {
+    padding: 10px;
   }
 }
 
