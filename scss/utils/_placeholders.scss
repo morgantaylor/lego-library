@@ -93,9 +93,9 @@
   }
 
   i {
-    @include absolute(right 14px);
+    @include absolute(right 10px);
     @include transform(translate(-6px, 0));
-    margin-top: 17px;
+    margin-top: 16px;
     z-index: 1;
   }
 

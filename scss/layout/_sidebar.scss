@@ -2,10 +2,9 @@
 // Sidebar 
 // ==================
 
-.sidebar,
-.mobile-menu {
+.sidebar {
 
-  .menu__title {
+  .sidebar__title {
     padding-bottom: 6px;
     margin-bottom: 6px;
     border-bottom: 1px solid $lego-gray-2;
@@ -14,46 +13,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
-  .menu__item,
-  .menu__item--nested {
-    padding: 0 0 8px 10px;
-
-    &:hover {
-      background-color: $lego-primary;
-      color: $white;
-    }
-  }
-
-  .menu__item {
-    @extend %flex;
-    @include text($font-sm, $weight: bold);
-    @include relative();
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 0;
-    cursor: pointer;
-    user-select: none;
-    color: $lego-gray-5;
-    padding: 10px 40px 10px 10px;
-
-    // &:active {
-      //   border-left: 2px solid $lego-primary;
-      // }
-
-    &--nested {
-      padding: 5px 5px 5px 10px;
-      display: block;
-    }
-  }
-
-  // if there's an accordion inside a menu
-  .accordion input[type=checkbox]:checked ~ .accordion__container,
-  .accordion--panel input[type=checkbox]:checked ~ .accordion__container {
-    padding: 0 10px;
-  }
 }
-
 
 aside {
 
@@ -70,6 +30,7 @@ aside {
       height: 100vh;
       max-width: 230px;
       overflow: auto;
+      left: 0;
     }
 
     & ~ .content {
@@ -80,60 +41,6 @@ aside {
         padding: 40px;
         margin-left: 230px;
       }
-    }
-  }
-}
-
-.mobile-menu {
-  position: fixed;
-  padding: 20px;
-  width: 100vw;
-  background-color: $white;
-  border-bottom: 1px solid $lego-gray-2;
-  z-index: 2;
-
-  @include for-size(tablet-landscape-up) {
-    display: none;
-  }
-
-  input {
-    @include absolute();
-    opacity: 0;
-    margin: 0;
-    width: 20px;
-    height: 20px;
-  }
-
-  .menu__hamburger,
-  .menu__close {
-    width: 20px;
-    height: 20px;
-  }
-
-  .menu__hamburger {
-    display: block;
-  }
-
-  .menu__close {
-    display: none;
-  }
-
-  .mobile-menu__content {
-    display: none;
-    margin-top: 6px;
-  }
-
-  .menu__item--nested {
-    padding-bottom: 10px;
-  }
-
-  input:checked {
-    & ~ .menu__close,
-    & ~ .mobile-menu__content {
-      display: block;
-    }
-    & ~ .menu__hamburger {
-      display: none;
     }
   }
 }

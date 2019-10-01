@@ -30,7 +30,7 @@
     margin: 0;
     cursor: pointer;
     user-select: none;
-    padding: 10px 40px 10px 10px;
+    padding: 10px 30px 10px 10px;
     color: $lego-gray-5;
 
     &--secondary {
@@ -61,7 +61,6 @@
 
 .accordion {
   color: $lego-gray-5;
-  background-color: $white;
 }
 
 .accordion--panel {

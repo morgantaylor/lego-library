@@ -2,6 +2,73 @@
 // Navigation 
 // ==================
 
+.nav {
+  @extend %flex;
+  margin-left: auto;
+  padding: 10px 15px;
+
+  .nav__item {
+    padding: 10px 15px;
+  }
+
+  &--vert {
+    @extend %flex--column;
+
+    .nav__item {
+      padding: 10px;
+    }
+  }
+
+  &.nav--center {
+    margin: 0 auto;
+  }
+  &.nav--left {
+    margin: 0;
+  }
+}
+
+.nav,
+.nav--vert {
+
+  .nav__item,
+  .nav__item--nested {
+
+    &:hover {
+      background-color: $lego-primary;
+      color: $white;
+    }
+  }
+
+  .nav__item {
+    @extend %flex;
+    @include text($font-sm, $weight: bold);
+    cursor: pointer;
+    user-select: none;
+    color: $lego-gray-5;
+
+    // &:active {
+      //   border-left: 2px solid $lego-primary;
+      // }
+
+    &--nested {
+      padding: 5px 5px 5px 10px;
+      display: block;
+    }
+
+    &.accordion__title {
+      padding: 10px 30px 10px 10px;
+    }
+  }
+
+  // if there's an accordion inside a nav
+  .accordion input[type=checkbox]:checked ~ .accordion__container,
+  .accordion--panel input[type=checkbox]:checked ~ .accordion__container {
+    padding: 0 10px;
+  }
+}
+
+
+
 .lego-nav {
   display: flex;
   align-items: center;
