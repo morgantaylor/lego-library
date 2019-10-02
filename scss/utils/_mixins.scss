@@ -1,9 +1,7 @@
 // Button Mixin //
 
 @mixin button-states($btn-type, $background: null, $color, $border: null) {
-  &.disabled,
-  &:disabled,
-  &[disabled] {
+  &:disabled {
     &:hover {
       @if $btn-type == 'link' {
         color: $color;
