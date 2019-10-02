@@ -1,9 +1,7 @@
 // ==================
 // Switches 
-// https://ghinda.net/css-toggle-switch/index.html
 // ==================
 
-.switch-toggle a,
 .switch span span {
   display: none;
 }
@@ -134,8 +132,7 @@
 }
 
 .switch input ~ span:before,
-.switch input ~ span:after,
-.switch.switch-toggle input + label:after {
+.switch input ~ span:after {
   visibility: hidden;
 }
 

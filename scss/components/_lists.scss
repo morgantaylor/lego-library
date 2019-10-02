@@ -2,23 +2,3 @@
 // List Styles 
 // ==================
 
-/* we don't reset lists, instead we have classes 
-that will remove styles or apply styles */
-
-.list--styled {
-  margin: 0 0 0 40px;
-}
-
-.list--unstyled {
-  margin: 0;
-  padding: 0;
-
-  li {
-    list-style-type: none;
-  }
-}
-
-.list__item {
-  padding: 5px 5px 5px 10px;
-  display: block;
-}

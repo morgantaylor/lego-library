@@ -33,17 +33,18 @@ table {
     vertical-align: middle;
     border-bottom: 1px solid $lego-gray-2;
   }
+
+  ////// Striped ///////
+
+  &.table--stripe tbody tr:nth-child(odd) td {
+    background-color: $lego-gray-1;
+  }
+
+  ////// Border ///////
+
+  &.table--border,
+  &.table--border td {
+    border: 1px solid $lego-gray-1;
+  }
 }
 
-////// Striped ///////
-
-table.table--stripe tbody tr:nth-child(odd) td {
-  background-color: $lego-gray-1;
-}
-
-////// Border ///////
-
-table.table--border,
-table.table--border td {
-  border: 1px solid $lego-gray-1;
-}

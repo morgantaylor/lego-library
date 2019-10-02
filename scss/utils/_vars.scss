@@ -20,24 +20,11 @@ $lego-warning   :   #fdae61;
 $lego-danger    :   #d53e4f;
 
 
-// Font Sizes
+// Special Font Sizes
 
-$font-lg      :   1.8em;
-$font-md      :   1.3em;
 $font-sm      :   .9em;
-$font-xs      :   .65em;
 
 // Font Families
 
 $arial        :  'Arial', sans-serif;
 $helvetica    :  'Helvetica', sans-serif;
-
-// Components
-
-$custom-checkbox-border-color :  $lego-success;
-$custom-checkbox-bg-color     :  $lego-success;
-$custom-checkbox-label-color  :  $lego-gray-2;
-
-$custom-radio-border-color    :  $lego-success;
-$custom-radio-bg-color        :  $white;
-$custom-radio-circle-color    :  $lego-success;

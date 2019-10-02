@@ -8,7 +8,13 @@ $skins:
   'danger' $lego-danger
 ;
 
-button {
+a {
+  @extend %focus--off;
+  color: $lego-primary;
+}
+
+.btn {
+  @extend %focus--on;
   @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
   text-decoration: none;
   text-align: center;
@@ -145,7 +151,7 @@ button {
     height: 100%;
 
     & + .btn-upload {
-      @include text($font-sm, 1.4);
+      @include text($height: 1.4);
       display: inline-block;
       border-radius: 4px;
       padding: 10px 18px;
@@ -162,8 +168,11 @@ button {
   @extend %focus--on;
   @include relative();
   display: inline-block;
-  z-index: 1000;
   margin: 3px;
+
+  &.disabled {
+    @extend %input--disabled;
+  }
 
   /**
   Hide the checkbox itself. Checking and unchecking 
@@ -174,10 +183,13 @@ button {
     opacity: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
     cursor: pointer;
     position: absolute;
     margin: 0;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
 
     + .btn {
       margin: 0;

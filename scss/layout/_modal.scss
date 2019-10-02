@@ -103,7 +103,7 @@
 
   // add a p tag with this class for error messages
   .error {
-    @include text($font-xs, $color: $lego-danger);
+    @include text(.65em, $color: $lego-danger);
     margin: 10px 0;
   }
 }
