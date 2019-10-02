@@ -55,9 +55,7 @@
     @include button-states('link', $background, $color, $border);
   }
 
-  &.disabled,
-  &:disabled,
-  &[disabled] {
+  &:disabled {
     @extend %input--disabled;
   }
 }
