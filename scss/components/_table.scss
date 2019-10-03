@@ -4,6 +4,7 @@ table {
   width: 100%;
   margin-bottom: 20px;
   border-collapse: collapse;
+  text-align: left;
 
   caption {
     @include text($font-sm, $color: $lego-gray-5);
