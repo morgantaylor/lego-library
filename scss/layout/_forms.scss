@@ -2,100 +2,101 @@
 // Form, Form Items and Classes
 // ======================
 
-.searchbar {
-  input[type="search"] {
-    height: 42px;
-    max-width: 400px;
+.form {
+
+  input {
+    margin: 0 0 20px 0;
+  }
+
+  input,
+  label {
+    display: block;
     width: 100%;
   }
-}
 
-input[disabled] {
-  cursor: not-allowed;
-  color: $lego-gray-2;
-}
-
-fieldset .btn {
-  margin: 0;
-}
-
-fieldset {
-  padding: 10px 20px 20px;
-  border-radius: 4px;
-  border: 2px solid $lego-gray-3;
-}
-
-// Form Groupings & Spacing
-
-.lego-form {
-  input[type=password], 
-  input[type=email], 
-  input[type=url], 
-  input[type=date], 
-  input[type=month], 
-  input[type=time], 
-  input[type=datetime], 
-  input[type=datetime-local], 
-  input[type=week], 
-  input[type=tel], 
-  input[type=color], 
-  input[type=number], 
-  input[type=search], 
-  input[type=text], 
-  select, 
-  textarea {
-    padding: 10px 12px;
-    display: inline-block;
-    border: 1px solid $lego-gray-3;
-    box-shadow: inset 0 1px 3px $lego-gray-2;
-    border-radius: 4px;
-    vertical-align: middle;
-    box-sizing: border-box;
-    margin: 5px 5px 5px 0;
-  }
   label {
-    display: inline-block;
-    margin: 8px 10px 3px 0;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    color: $lego-gray-5;
+  }
+
+  .form__group {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    margin: 10px 0 0 0;
+    display: block;
+  }
+
+  @include for-size(tablet-portrait-up) {
+
+    input,
+    label {
+      display: inline-flex;
+      width: auto;
+    }
+
+    input {
+      margin: 0 25px 0 0;
+    }
+
+    label {
+      margin-right: 15px;
+    }
+
+    .form__group {
+      display: inline-block;
+    }
   }
 }
 
-.lego-form.lego-form--stacked {
-  @extend .lego-form;
+.form--stacked {
 
-  input[type=password], 
-  input[type=email], 
-  input[type=url], 
-  input[type=date], 
-  input[type=month], 
-  input[type=time], 
-  input[type=datetime], 
-  input[type=datetime-local], 
-  input[type=week], 
-  input[type=tel], 
-  input[type=color], 
-  input[type=number], 
-  input[type=search], 
-  input[type=text], 
+  input, 
   select, 
   textarea,
   label {
     display: block;
-    margin: 5px 0;
-    width: 300px;
   }
-  .form__controls {
-    margin: 15px 0 0 0;
-  }
-  .btn {
-    margin: 0;
-  }
-}
-
-.lego-form.lego-form--aligned {
-  @extend .lego-form;
 
   .form__group {
     margin-bottom: 15px;
+  }
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  .btn {
+    margin: 10px 0 0 0;
+  }
+}
+
+.form--aligned {
+
+  &-left,
+  &-center,
+  &-right {
+
+    .form__group {
+      display: block;
+      margin-bottom: 15px;
+      align-items: baseline;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      .form__group {
+        display: flex;
+      }
+    }
+  }
+
+  &-center {
 
     label {
       margin-bottom: 5px;
@@ -104,69 +105,52 @@ fieldset {
       width: 100%;
 
        @include for-size(tablet-portrait-up) {
-        width: 13em;
-        margin: 0 15px 0 0;
+        width: 50%;
+        margin: 0;
         text-align: right;
         display: inline-block;
+        margin-right: 7.5px;
        }
     }
     input,
     select,
     textarea {
-      display: inline-block;
-      vertical-align: middle;
-      width: 300px;
+      display: block;
 
-      @include for-size(phone) {
-        margin-bottom: .3em;
-        display: block;
+      @include for-size(tablet-portrait-up) {
+        display: inline-block;
+          vertical-align: middle;
+          width: 50%;
+          margin-left: 7.5px;
       }
     }
-  }
-  .form__controls {
-    margin: 1.5em 0 0 11em;
 
-    @include for-size(phone) {
-      margin: 1.5em 0 0 0;
+    .btn {
+      margin: 0 auto;
+      position: relative;
+      display: block;
+    }
+  }
+
+  &-right {
+    text-align: right;
+
+    .form__group {
+      justify-content: flex-end;
+    }
+
+    input {
+      margin-right: 0;
     }
   }
 }
 
-// Form Styles
+fieldset {
+  padding: 10px 20px 20px;
+  border-radius: 4px;
+  border: 2px solid $lego-gray-3;
 
-.form__heading,
-.form__label {
-  @extend %flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  -webkit-box-align: baseline;
-  align-items: baseline;
-}
-
-.form__heading {
-  @extend %capitalize;
-  justify-content: space-between;
-  color: $black;
-  font-weight: bold;
-  margin: 24px 20px 8px 0;
-
-  &:first-of-type {
-    margin-top: 0;
+  .btn {
+    margin: 0;
   }
 }
-
-.form__label {
-  margin: 0 0 5px 0;
-  font-weight: normal;
-  color: $lego-gray-5;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-}
-
-
-
-
-
-
-
-
