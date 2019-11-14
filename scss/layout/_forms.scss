@@ -4,43 +4,40 @@
 
 .form {
 
-  input {
-    margin: 0 0 20px 0;
-  }
-
   input,
   label {
-    display: block;
-    width: 100%;
+    display: inline-flex;
+    width: auto;
   }
 
   label {
-    display: block;
-    margin-right: 0;
     margin-bottom: 10px;
     color: $lego-gray-5;
   }
 
   .form__group {
-    display: block;
-    width: 100%;
-    position: relative;
+    display: inline-flex;
+    align-items: baseline;
     margin-bottom: 15px;
   }
 
   .btn {
-    margin: 10px 0 0 0;
-    display: block;
+    margin: 0;
+  }
+
+  @include for-size(phone-only) {
+
+    input {
+      width: 100%;
+      margin: 0;
+    }
+
+    .form__group {
+      display: block;
+    }
   }
 
   @include for-size(tablet-portrait-up) {
-
-    input,
-    label {
-      display: inline-flex;
-      width: auto;
-    }
-
     input {
       margin: 0 25px 0 0;
     }
@@ -48,10 +45,16 @@
     label {
       margin-right: 15px;
     }
+  }
+}
 
-    .form__group {
-      display: inline-block;
-    }
+.form--stacked,
+.form--aligned-left,
+.form--aligned-center,
+.form--aligned-right {
+
+  .form__group {
+    width: 100%;
   }
 }
 
@@ -64,12 +67,12 @@
     display: block;
   }
 
-  .form__group {
-    margin-bottom: 15px;
-  }
-
   label {
     margin-bottom: 8px;
+  }
+
+  .form__group {
+    flex-direction: column;
   }
 
   .btn {
@@ -83,12 +86,6 @@
   &-center,
   &-right {
 
-    .form__group {
-      display: block;
-      margin-bottom: 15px;
-      align-items: baseline;
-    }
-
     @include for-size(tablet-portrait-up) {
       .form__group {
         display: flex;
@@ -100,7 +97,7 @@
 
     label {
       margin-bottom: 5px;
-      text-align: left;
+      text-align: center;
       display: block;
       width: 100%;
 
@@ -119,9 +116,9 @@
 
       @include for-size(tablet-portrait-up) {
         display: inline-block;
-          vertical-align: middle;
-          width: 50%;
-          margin-left: 7.5px;
+        vertical-align: middle;
+        width: 50%;
+        margin-left: 7.5px;
       }
     }
 
@@ -137,6 +134,12 @@
 
     .form__group {
       justify-content: flex-end;
+    }
+
+    @include for-size(phone-only) {
+      label {
+        margin-right: 0;
+      }
     }
 
     input {
