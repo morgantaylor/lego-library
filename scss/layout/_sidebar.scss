@@ -20,7 +20,7 @@ aside {
   &.sidebar {
     display: none;
 
-    @include for-size(tablet-landscape-up) {
+    @media #{$desktop} {
       @include fixed();
       display: block;
       background-color: $white;
@@ -37,7 +37,7 @@ aside {
       padding: 40px 25px;
       width: 100%;
 
-      @include for-size(tablet-landscape-up) {
+      @media #{$desktop} {
         padding: 15px 40px;
         margin-left: 230px;
       }

@@ -24,7 +24,15 @@ $lego-danger    :   #d53e4f;
 
 $font-sm      :   .9em;
 
+
 // Font Families
 
 $arial        :  'Arial', sans-serif;
 $helvetica    :  'Helvetica', sans-serif;
+
+
+// Breakpoints
+
+$phone: '(max-width: 599px)';
+$tablet: '(min-width: 599px) and (max-width: 1024px)';
+$desktop: '(min-width: 1025px)';

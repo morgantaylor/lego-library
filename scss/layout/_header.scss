@@ -12,7 +12,7 @@ header {
   .nav {
     display: none;
     
-    @include for-size(tablet-landscape-up) {
+    @media #{$desktop} {
       display: flex;
     }
   }
