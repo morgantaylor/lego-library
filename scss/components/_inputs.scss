@@ -26,6 +26,27 @@ textarea {
   box-sizing: border-box;
 }
 
+.checkbox,
+.radio {
+  display: flex;
+}
+
+.checkbox--inline,
+.radio--inline {
+  display: inline-flex;
+  margin-right: 12px;
+}
+
+.checkbox,
+.radio,
+.checkbox--inline,
+.radio--inline {
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin: 3px 8px 3px 0;
+  }
+}
+
 // Input Groups //
 
 // Need to address two ways of looking at input groups
