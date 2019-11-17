@@ -59,19 +59,9 @@
 }
 
 // This skin doesn't need different states, just color
-@mixin skin($prefix, $main-color) {
-
-  @if $prefix == 'filled' {
-    background-color: $main-color;
-    color: $white;
-    border: 1px solid $main-color;
-  }
-
-  @if $prefix == 'outline' {
-    color: $main-color;
-    background-color: $white;
-    border: 1px solid $main-color;
-  }
+@mixin skin($main, $secondary) {
+  color: $secondary;
+  background-color: $main;
 }
 
 // Text Mixin //

@@ -1,14 +1,9 @@
-////////// Skin Colors //////////
+// Global 
 
 
-// basic skins - no states
-.skin-green {@include skin('filled', $lego-success);}
-.skin-gray {@include skin('filled', $lego-gray-3);}
-.skin-red {@include skin('filled', $lego-danger);}
-.skin-blue {@include skin('filled', $lego-primary);}
+// Skins only for color and background
 
-.skin-outline-green {@include skin('outline', $lego-success);}
-.skin-outline-gray {@include skin('outline', $lego-gray-3);}
-.skin-outline-red {@include skin('outline', $lego-danger);}
-.skin-outline-blue {@include skin('outline', $lego-primary);}
-
+.skin-green {@include skin($lego-success, $white);}
+.skin-gray {@include skin($lego-gray-3, $white);}
+.skin-red {@include skin($lego-danger, $white);}
+.skin-blue {@include skin($lego-primary, $white);}
