@@ -23,6 +23,10 @@
     width: 20px;
     height: 20px;
   }
+
+  .divider {
+    display: none;
+  }
 }
 
 .mobile-nav {
@@ -44,6 +48,13 @@
   .mobile-nav__content {
     display: none;
     margin-top: 6px;
+
+    .accordion__container {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      height: 37px;
+    }
   }
 
   .nav__item--nested {
@@ -60,3 +71,9 @@
     }
   }
 }
+
+.mobile-nav__title {
+  @include text(1.333em, $weight: 100, $color: inherit);
+  @include absolute(top 0 right 20px);
+}
+
