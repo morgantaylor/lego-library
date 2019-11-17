@@ -9,6 +9,8 @@ table {
   caption {
     @include text($font-sm, $color: $lego-gray-5);
     caption-side: bottom;
+    margin-top: 3px;
+    font-style: italic;
   }
 
   thead {
