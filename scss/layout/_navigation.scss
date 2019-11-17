@@ -17,10 +17,6 @@
     .nav__item {
       padding: 10px;
     }
-
-    .divider {
-      border-bottom: 1px dashed $lego-gray-1;
-    }
   }
 
   &.nav--center {
@@ -28,6 +24,10 @@
   }
   &.nav--left {
     margin: 0;
+  }
+
+  .divider {
+    border-bottom: 1px dashed $lego-gray-1;
   }
 }
 

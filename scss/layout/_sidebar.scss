@@ -5,13 +5,15 @@
 .sidebar {
 
   .sidebar__title {
+    @extend %ellipses;
+    @include text(1.333em, $weight: 100);
+    padding-left: 10px;
     padding-bottom: 6px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid $lego-gray-2;
-    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $white;
+    cursor: default;
     text-transform: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
@@ -23,7 +25,6 @@ aside {
     @media #{$desktop} {
       @include fixed();
       display: block;
-      background-color: $white;
       z-index: 1;
       width: 100%;
       padding: 20px;
