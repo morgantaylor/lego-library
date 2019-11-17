@@ -6,7 +6,7 @@
 
   .sidebar__title {
     @extend %ellipses;
-    @include text(1.333em, $weight: 100);
+    @include text(1.333em, $weight: 100, $color: inherit);
     padding-left: 10px;
     padding-bottom: 6px;
     margin-top: 0;
