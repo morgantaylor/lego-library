@@ -60,8 +60,9 @@
 
     &--nested {
       border-left: 2px solid transparent;
-      padding: 5px 5px 5px 8px;
+      padding: 5px 7px 5px 8px;
       display: block;
+      white-space: nowrap;
     }
 
     &.accordion__title {
