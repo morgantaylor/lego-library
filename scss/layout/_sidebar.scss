@@ -5,15 +5,12 @@
 .sidebar {
 
   .sidebar__title {
-    @extend %ellipses;
-    @include text(1.333em, $weight: 100, $color: inherit);
+    @include text($weight: 100, $color: inherit);
     padding-left: 10px;
     padding-bottom: 6px;
     margin-top: 0;
     margin-bottom: 10px;
     border-bottom: 1px solid $white;
-    cursor: default;
-    text-transform: none;
   }
 }
 

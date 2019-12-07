@@ -17,8 +17,6 @@ body  {
 
 // Base Size 16px = 1em
 body {
-  @include text(16px, 1.5, 400, $color: $lego-gray-6);
-  font-family: $arial;
   margin: 0;
   height: auto;
   background-color: $white;
