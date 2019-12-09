@@ -46,3 +46,27 @@
     margin-left: 5px;
   }
 }
+
+// default skin colors
+$skins: 
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger,
+  'gray' $lego-gray-3
+;
+
+.select {
+
+  @each $name, $border in $skins {
+    &.skin-#{$name} {
+      border-color: $border;
+    }
+  }
+
+  @each $name, $border in $skins {
+    &.skin-outline-#{$name} {
+      color: $border;
+      border-color: $border;
+    }
+  }
+}

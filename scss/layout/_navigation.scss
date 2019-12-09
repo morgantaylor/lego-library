@@ -52,7 +52,7 @@
 
   .nav__item {
     @extend %flex;
-    @include text($font-sm, $weight: bold);
+    @include text(.9em, $weight: bold);
     cursor: pointer;
     user-select: none;
     color: $lego-gray-5;

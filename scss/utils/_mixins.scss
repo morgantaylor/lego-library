@@ -59,9 +59,10 @@
 }
 
 // This skin doesn't need different states, just color
-@mixin skin($main, $secondary) {
+@mixin skin($main, $secondary, $tertiary: null) {
   color: $secondary;
   background-color: $main;
+  border-color: $tertiary;
 }
 
 // Text Mixin //
