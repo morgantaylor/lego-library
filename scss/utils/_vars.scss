@@ -20,11 +20,6 @@ $lego-warning   :   #fdae61;
 $lego-danger    :   #d53e4f;
 
 
-// Special Font Sizes
-
-$font-sm      :   .9em;
-
-
 // Font Families
 
 $arial        :  'Arial', sans-serif;
@@ -33,6 +28,15 @@ $helvetica    :  'Helvetica', sans-serif;
 
 // Breakpoints
 
+// for font mixin
+$breakpoints:
+  'phone' '(max-width: 599px)',
+  'tablet' '(min-width: 600px) and (max-width: 1024px)',
+  'desktop' '(min-width: 1025px)'
+;
+
+// for media queries throughout
 $phone: '(max-width: 599px)';
-$tablet: '(min-width: 599px) and (max-width: 1024px)';
+$tablet: '(min-width: 600px) and (max-width: 1024px)';
 $desktop: '(min-width: 1025px)';
+

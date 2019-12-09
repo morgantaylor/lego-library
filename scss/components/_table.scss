@@ -7,7 +7,7 @@ table {
   text-align: left;
 
   caption {
-    @include text($font-sm, $color: $lego-gray-5);
+    @include text(.9em);
     caption-side: bottom;
     margin-top: 3px;
     font-style: italic;

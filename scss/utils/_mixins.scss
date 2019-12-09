@@ -73,6 +73,28 @@
   color: $color;
 }
 
+// Responsive Font Sizes //
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null { // default
+      font-size: $fs-font-size;
+    }
+    @else if $fs-breakpoint == 'phone' {
+      font-size: $fs-font-size;
+    }
+    @else if $fs-breakpoint == 'tablet' {
+      @media screen and (min-width: 600px) and (max-width: 1024px) {
+        font-size: $fs-font-size;
+      }
+    }
+    @else if $fs-breakpoint == 'desktop' {
+      @media screen and (min-width: 1025px) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
 // Position Mixins //
 // position mixin: http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
 

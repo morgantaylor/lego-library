@@ -17,48 +17,91 @@ that em is proportionate to its nearest parent that has a font-size,
 whereas rem is always relative to the html font-size.
 **/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include text($weight: 500, $color: $lego-gray-6);
+$h1-font-sizes: (
+  'phone'  : 2.1em,
+  'tablet' : 2.3em,
+  'desktop': 2.5em
+);
+$h2-font-sizes: (
+  'phone'  : 1.6em,
+  'tablet' : 1.8em,
+  'desktop': 2em
+);
+$h3-font-sizes: (
+  'phone'  : 1.25em,
+  'tablet' : 1.55em,
+  'desktop': 1.75em
+);
+$h4-font-sizes: (
+  'phone'  : 1.1em,
+  'tablet' : 1.3em,
+  'desktop': 1.5em
+);
+$h5-font-sizes: (
+  'phone'  : 1.15em,
+  'tablet' : 1.2em,
+  'desktop': 1.25em
+);
+$h6-font-sizes: (
+  'phone'  : 1em,
+  'tablet' : 1em,
+  'desktop': 1em
+);
+$p-font-sizes: (
+  null  : 1em
+);
+
+h1, h2, h3, h4, h5, h6 {
+  color: $lego-gray-6;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: $helvetica;
   margin: 1rem 0;
 }
 
-h4,
-h5,
-h6 {
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+h4, h5, h6 {
   font-weight: 600;
 }
 
 h1 {
-  font-size: 4.209rem;
+  @include font-size($h1-font-sizes);
   margin-bottom: 1.25rem;
 }
+
 h2 {
-  font-size: 3.157rem;
+  @include font-size($h2-font-sizes);
 }
+
 h3 {
-  font-size: 2.369rem;
+  @include font-size($h3-font-sizes);
 }
+
 h4 {
-  font-size: 1.777rem;
+  @include font-size($h4-font-sizes);
 }
+
 h5 {
-  font-size: 1.333rem;
+  @include font-size($h5-font-sizes);
 }
+
 h6 {
-  font-size: 1rem;
+  @include font-size($h6-font-sizes);
+}
+
+p, ul, ol, blockquote {
+  @include font-size($p-font-sizes);
 }
 
 p {
-  @include text(1rem, 1.7);
+  line-height: 1.5;
   font-family: $arial;
   margin: 1rem 0 1.25rem 0;
-} 
+}
 
 blockquote {
   @include text(1.1rem, $weight: 600);
@@ -68,16 +111,13 @@ blockquote {
   border-left: 5px solid $lego-gray-1;
 
   footer {
+    @include text(80%, 1.4, $color: $lego-gray-5);
     display: block;
+
+    &:before {
+      content: '\2014 \00A0';
+    }
   }
-}
-
-blockquote footer {
-  @include text(80%, 1.4, $color: $lego-gray-5);
-}
-
-blockquote footer:before {
-  content: '\2014 \00A0';
 }
 
 mark {
