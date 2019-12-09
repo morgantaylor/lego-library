@@ -26,10 +26,6 @@ a {
   cursor: pointer;
   user-select: none;
   background-image: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
   align-items: center;
   display: inline-flex;
@@ -213,7 +209,6 @@ a {
     padding:0;
     min-width: 153px;
     background-color: $white;
-    -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border-radius: 4px;
     display: none;

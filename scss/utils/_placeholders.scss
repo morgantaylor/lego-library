@@ -42,7 +42,6 @@
 }
 
 %input--disabled {
-  -webkit-box-shadow: none;
   box-shadow: none;
   opacity: 0.4;
   cursor: not-allowed;
@@ -194,7 +193,6 @@
   .tab .tab__content p,
   .tab .tab__content h3 {
     -webkit-animation: fadeInScale 0.7s ease-in-out;
-    -moz-animation: fadeInScale 0.7s ease-in-out;
     animation: fadeInScale 0.7s ease-in-out;
   }
 

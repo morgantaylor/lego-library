@@ -127,66 +127,26 @@
 // Transform 
 // Ex: @include transform(translateY, 10px);
 @mixin transform($transforms) {
-  -webkit-transform: $transforms;
-     -moz-transform: $transforms;
-      -ms-transform: $transforms;
-       -o-transform: $transforms;
-          transform: $transforms;
+  transform: $transforms;
 }
 
 // Box Shadow 
 // Ex: box-shadow(2px, 2px, 6px, rgba(0, 0, 0, 0.28));
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
-    -webkit-box-shadow: inset $top $left $blur $color;
-       -moz-box-shadow: inset $top $left $blur $color;
-        -ms-box-shadow: inset $top $left $blur $color;
-         -o-box-shadow: inset $top $left $blur $color;
-            box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
   } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-       -moz-box-shadow: $top $left $blur $color;
-        -ms-box-shadow: $top $left $blur $color;
-         -o-box-shadow: $top $left $blur $color;
-            box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
   }
 }
-
-// Box-sizing
-// Ex: @include box-sizing(border-box);
-@mixin box-sizing($arg) {
-  -webkit-box-sizing: $arg;
-     -moz-box-sizing: $arg;
-          box-sizing: $arg;
-}
-
-// Transition 
-// Ex: transition(all, .25s, ease-out);
-// $transition-property = the property you want to transition
-// $transition-time = seconds you want the transition to last
-// $method = how you want it to transition - e.g. ease-in-out
-// @mixin transition($transition-property, $transition-time, $method) {
-//   -webkit-transition: $transition-property $transition-time $method;
-//      -moz-transition: $transition-property $transition-time $method;
-//       -ms-transition: $transition-property $transition-time $method;
-//        -o-transition: $transition-property $transition-time $method;
-//           transition: $transition-property $transition-time $method;
-// }
 
 // This is the old mixin for transitions,
 // going to need to trasition theses
 @mixin transition($var...) {
-    -webkit-transition: $var;
-    -moz-transition: $var;
-    -ms-transition: $var;
-    -o-transition: $var;
-    transition: $var;
+  transition: $var;
 }
 
 // Border-radius //
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+  border-radius: $radius;
 }

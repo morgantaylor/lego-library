@@ -9,7 +9,7 @@
 .switch *, 
 .switch *:before, 
 .switch *:after {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 .switch {
@@ -85,9 +85,6 @@
     float: left;
     width: 50%;
     text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 

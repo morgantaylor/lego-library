@@ -1,18 +1,10 @@
 *, ::after, ::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box
 }
 
 html,
 body  {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
   min-height: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
 }
 
 // Base Size 16px = 1em
@@ -68,7 +60,6 @@ button,
 [type="button"],
 [type="reset"], 
 [type="submit"] {
-  -webkit-appearance: button;
   overflow: visible;
 }
 
@@ -157,7 +148,7 @@ sub {
 }
 
 hr {
-  @include box-sizing(content-box);
+  box-sizing: content-box;
   margin: 20px 0;
   border-top: 1px solid $lego-gray-2;
 }
