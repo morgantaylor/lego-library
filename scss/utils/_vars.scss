@@ -28,13 +28,6 @@ $helvetica    :  'Helvetica', sans-serif;
 
 // Breakpoints
 
-// for font mixin
-$breakpoints:
-  'phone' '(max-width: 599px)',
-  'tablet' '(min-width: 600px) and (max-width: 1024px)',
-  'desktop' '(min-width: 1025px)'
-;
-
 // for media queries throughout
 $phone: '(max-width: 599px)';
 $tablet: '(min-width: 600px) and (max-width: 1024px)';
