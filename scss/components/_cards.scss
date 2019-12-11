@@ -12,10 +12,14 @@
   border: 1px solid $lego-gray-2;
   border-radius: 4px;
   padding: 0 15px;
-  margin: 0 20px 20px 0;
-  width: 300px;
+  margin: 0 auto 20px;
+  width: 100%;
   overflow: hidden;
   line-height: 1.3;
+
+  @media #{$tablet}, #{$desktop}  {
+    width: 300px;
+  }
 
   &__body {
     
@@ -147,5 +151,17 @@
 
   &.card--right {
     text-align: right;
+  }
+}
+
+.card.card--sm,
+.card.card--lg {
+
+  @media #{$phone} {
+    width: 100%;
+  }
+
+  @media #{$tablet}, #{$desktop}  {
+    margin: 0 20px 20px 0;
   }
 }
