@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "expanded": "node-sass --output-style expanded --source-comments scss/legos.scss legos.css",
-    "compressed": "node-sass --output-style compressed --source-comments scss/legos.scss legos.css",
+    "dev-css": "node-sass --output-style expanded --source-map-embed scss/legos.scss legos.css",
+    "compressed": "node-sass --output-style compressed scss/legos.scss legos.css",
     "autoprefixer": "postcss -u autoprefixer -r legos.css",
-    "compile": "npm run expanded && npm run autoprefixer",
-    "watch:css": "onchange 'scss/*.scss' -- npm run expanded",
+    "compile": "npm run dev-css && npm run autoprefixer",
+    "watch": "onchange 'scss/*' -- npm run dev-css",
     "final:css": "npm run compressed && npm run autoprefixer"
   },
   "repository": {
