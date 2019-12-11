@@ -4,7 +4,13 @@
   "description": "css component library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "expanded": "node-sass --output-style expanded --source-comments scss/legos.scss legos.css",
+    "compressed": "node-sass --output-style compressed --source-comments scss/legos.scss legos.css",
+    "autoprefixer": "postcss -u autoprefixer -r legos.css",
+    "compile": "npm run expanded && npm run autoprefixer",
+    "watch:css": "onchange 'scss/*.scss' -- npm run expanded",
+    "final:css": "npm run compressed && npm run autoprefixer"
   },
   "repository": {
     "type": "git",
@@ -17,12 +23,10 @@
   },
   "homepage": "https://github.com/morgantaylor/lego-library#readme",
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.1.0",
-    "node-sass": "^4.13.0"
+    "autoprefixer": "^9.7.3",
+    "node-sass": "^4.13.0",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3"
   },
   "dependencies": {}
 }
