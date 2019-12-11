@@ -1,6 +1,6 @@
 // Button Mixin //
 
-@mixin button-states($btn-type, $background: null, $color, $border: null) {
+@mixin button-states($btn-type, $color, $background: null, $border: null) {
   &:disabled {
     &:hover {
       @if $btn-type == 'link' {
@@ -42,15 +42,15 @@
   }
 
   @if $type == 'btn' {
-    @include button-states('btn', $background, $color, $border);
+    @include button-states('btn', $color, $background, $border);
   }
 
   @if $type == 'btn-outline' {
-    @include button-states('btn-outline', $background, $color, $border);
+    @include button-states('btn-outline', $color, $background, $border);
   }
 
   @if $type == 'link' {
-    @include button-states('link', $background, $color, $border);
+    @include button-states('link', $color, $background, $border);
   }
 
   &:disabled {
