@@ -10,11 +10,9 @@ View the full documentation and demo to see the components in action. The showca
 
 LegoCSS Library 1.0 Demo [add link here]
 
-## Installation
+## Setup & Installation
 
 For basic use in your project there is no installation required.
-
-### Setup & Installation
 
 1. Download the minified file and include it in your project file.
 ```
@@ -30,13 +28,12 @@ OR
 <link rel="stylesheet" href="mtwebmedia.com/legoproject/legos.min.css">
 ```
 
-
 ## Contributing
 
-- Issue Tracker: github.com/lego-library/issues
-- Source Code: github.com/lego-library
+- Issue Tracker: http://www.github.com/lego-library/issues
+- Source Code: http://www.github.com/lego-library
 
-### Requirements for Development
+## Requirements for Development
 
 - Autoprefixer: https://www.npmjs.com/package/autoprefixer
 - Node-Sass: https://www.npmjs.com/package/node-sass
