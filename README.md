@@ -31,7 +31,7 @@ OR
 ## Contributing
 
 - [Issue Tracker](http://www.github.com/lego-library/issues)
-- [Source Code[(http://www.github.com/lego-library)
+- [Source Code](http://www.github.com/lego-library)
 
 ## Requirements for Development
 
