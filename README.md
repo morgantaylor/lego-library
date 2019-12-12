@@ -8,7 +8,7 @@ The purpose of this LegoCSS Library is to function as a very small component lib
 
 View the full documentation and demo to see the components in action. The showcase provides a full list of component examples, code snippets and demos of each.
 
-LegoCSS Library 1.0 Demo [add link here]
+[LegoCSS Library 1.0 Demo](#)
 
 ## Setup & Installation
 
@@ -30,15 +30,15 @@ OR
 
 ## Contributing
 
-- Issue Tracker: http://www.github.com/lego-library/issues
-- Source Code: http://www.github.com/lego-library
+- [Issue Tracker](http://www.github.com/lego-library/issues)
+- [Source Code[(http://www.github.com/lego-library)
 
 ## Requirements for Development
 
-- Autoprefixer: https://www.npmjs.com/package/autoprefixer
-- Node-Sass: https://www.npmjs.com/package/node-sass
-- Onchange: https://www.npmjs.com/package/onchange
-- PostCSS-cli: https://www.npmjs.com/package/postcss-cli
+- [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
+- [Node-Sass](https://www.npmjs.com/package/node-sass)
+- [Onchange](https://www.npmjs.com/package/onchange)
+- [PostCSS-cli](https://www.npmjs.com/package/postcss-cli)
 
 <!-- ### Configuration
 
@@ -46,6 +46,6 @@ After having installed the software, the user may need to configure it. List con
 
 ## Credits
 
-LegoCSS Library was created by Morgan Taylor @morgantaylor.
+LegoCSS Library was created by Morgan Taylor [@morgantaylor](https://github.com/morgantaylor).
 
 <!-- ## Changelog -->
