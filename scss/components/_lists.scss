@@ -2,3 +2,28 @@
 // List Styles 
 // ==================
 
+.list {
+
+  li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.list--unstyled {
+  @extend .list;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.list--numbered {
+  @extend .list;
+  padding-left: 20px;
+  list-style-type: decimal;
+}
+
+.list--nav {
+  @extend .list;
+  padding-left: 0;
+  list-style-type: none;
+}
