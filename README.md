@@ -2,7 +2,9 @@
 
 ## Introduction
 
-The purpose of this LegoCSS Library is to function as a very small component library that you can use in your projects. I was tired of linking to massive style libraries like Boostrap and Angular Material that are, of course, well written, but have far too much code for what I need. This is a slimmed down version of what I felt was important in a component library with my personal style and tweaks baked in.
+The name is slightly cheesy and obvious. I'm a LEGO<sup>&reg;</sup> fan and have been ever since childhood. With reusable pieces of code, I can make larger components just like using LEGO<sup>&reg;</sup> bricks to make a castle.</p>
+
+When first learning programming I used Twitter Bootstrap and Material Design libraries. The CSS libraries made creating a website painless and easy. On the downside, there was a considerable amount of code that came along that would never be used. I would spend countless hours rewriting specific styles to my liking. When I started doing this for every project I noticed how much time I was wasting. That is how this project was born.
 
 ## Demo
 
