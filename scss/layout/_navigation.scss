@@ -15,7 +15,7 @@
     @extend %flex--column;
 
     .nav__item {
-      padding: 10px;
+      padding: 10px 10px 10px 8px;
     }
   }
 
@@ -25,17 +25,19 @@
   &.nav--left {
     margin: 0;
   }
-
-  .divider {
-    border-bottom: 1px dashed $lego-gray-1;
-  }
 }
 
 .nav,
 .nav--vert {
 
+  .divider {
+    border-bottom: 1px dashed $lego-gray-1;
+  }
+
   .nav__item,
   .nav__item--nested {
+    cursor: pointer;
+    
     &:active,
     &:focus {
       border-left-color: $lego-primary;
