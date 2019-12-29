@@ -37,3 +37,5 @@ Thumbs.db
 
 # Ignore compiled files
 /compiled
+scss/demo.scss
+scss/lego.scss
