@@ -28,8 +28,8 @@ OR
 
 ## Contributing
 
-- [Issue Tracker](http://www.github.com/lego-library/issues)
-- [Source Code](http://www.github.com/lego-library)
+- [Issue Tracker](http://www.github.com/morgantaylor/lego-library/issues)
+- [Source Code](http://www.github.com/morgantaylor/lego-library)
 
 ## Requirements for Development
 
