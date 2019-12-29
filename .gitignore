@@ -34,3 +34,6 @@ Thumbs.db
 
 *.css
 *.map
+
+# Ignore compiled files
+/compiled
