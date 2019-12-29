@@ -39,3 +39,6 @@ Thumbs.db
 /compiled
 scss/demo.scss
 scss/lego.scss
+scss/reset/c-reset.scss
+scss/base/c-base.scss
+scss/components/c-components.scss
