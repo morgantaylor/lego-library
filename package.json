@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node-sass --output-style expanded --source-map-embed scss/legos.scss legos.css",
-    "compressed": "node-sass --output-style compressed scss/legos.scss legos.css",
+    "dev": "node-sass --output-style expanded --source-map-embed scss/demo.scss lego.css",
     "autoprefixer": "postcss -u autoprefixer -r legos.css",
-    "compile": "npm run dev && npm run autoprefixer",
-    "final": "npm run compressed && npm run autoprefixer"
+    "compile-dev": "npm run dev && npm run autoprefixer",
+    "final": "npm run compressed && npm run autoprefixer",
+    "compile-reset": "node-sass --output-style compressed --omit-source-map-url true scss/reset/c-reset.scss scss/compiled/reset.css && postcss -u --no-map autoprefixer -r scss/compiled/reset.css",
+    "compile-base": "node-sass --output-style compressed --omit-source-map-url scss/base/c-base.scss scss/compiled/base.css && postcss -u --no-map autoprefixer -r scss/compiled/base.css",
+    "compile-components": "node-sass --output-style compressed --omit-source-map-url scss/components/c-components.scss scss/compiled/components.css && postcss -u --no-map autoprefixer -r scss/compiled/components.css",
+    "compile-full": "node-sass --output-style compressed --omit-source-map-url scss/legos.scss scss/compiled/lego.css && postcss -u --no-map autoprefixer -r scss/compiled/lego.css"
   },
   "repository": {
     "type": "git",
