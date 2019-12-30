@@ -16,6 +16,11 @@
   }
 }
 
+.content {
+  max-width: 1100px;
+  min-width: 20px;
+}
+
 .container {
   @extend %container--default;
 

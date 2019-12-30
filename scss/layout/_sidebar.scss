@@ -23,7 +23,7 @@ aside {
       @include fixed();
       display: block;
       z-index: 1;
-      width: 100%;
+      width: 20%;
       padding: 20px;
       height: 100vh;
       max-width: 230px;
@@ -33,11 +33,11 @@ aside {
 
     & ~ .content {
       padding: 40px 25px;
-      width: 100%;
 
       @media #{$desktop} {
         padding: 15px 40px 30px;
         margin-left: 230px;
+        width: 80%;
       }
     }
   }
