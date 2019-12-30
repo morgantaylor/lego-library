@@ -73,8 +73,7 @@
   }
 
   // if there's an accordion inside a nav
-  .accordion input[type=checkbox]:checked ~ .accordion__container,
-  .accordion--panel input[type=checkbox]:checked ~ .accordion__container {
+  .accordion__toggle:checked ~ .accordion__container {
     padding: 0 10px;
   }
 }

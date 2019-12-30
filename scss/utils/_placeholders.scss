@@ -79,7 +79,7 @@
 
   &.behavior {
     i,
-    input {
+    .accordion__toggle { // input
       display: none;
     }
   }
@@ -100,7 +100,7 @@
     height: 9px;
   }
 
-  input[type=checkbox] {
+  .accordion__toggle {
     @include absolute();
     cursor: pointer;
     width: 100%;
@@ -119,16 +119,16 @@
     @include transform(translate(2px, 0) rotate(-45deg));
     @include transition(all, 1s, ease);
   }
-  input[type=checkbox]:checked ~ .accordion__container {
+  .accordion__toggle:checked ~ .accordion__container {
     margin: 0;
     max-height: 800px;
     opacity: 1;
     display: flex;
   }
-  input[type=checkbox]:checked ~ i:before {
+  .accordion__toggle:checked ~ i:before {
     @include transform(translate(2px, 0) rotate(45deg));
   }
-  input[type=checkbox]:checked ~ i:after {
+  .accordion__toggle:checked ~ i:after {
     @include transform(translate(-2px, 0) rotate(-45deg));
   }
 }
@@ -142,16 +142,16 @@
     @include transform(translate(2px, 0) rotate(45deg));
     @include transition(all, 1s, ease);
   }
-  input[type=checkbox]:checked ~ .accordion__container {
+  .accordion__toggle:checked ~ .accordion__container {
     @include transform(translate(0, 50%));
     margin-top: 0;
     max-height: 0;
     opacity: 0;
   }
-  input[type=checkbox]:checked ~ i:before {
+  .accordion__toggle:checked ~ i:before {
     @include transform(translate(2px, 0) rotate(-45deg));
   }
-  input[type=checkbox]:checked ~ i:after {
+  .accordion__toggle:checked ~ i:after {
     @include transform(translate(-2px, 0) rotate(45deg));
   }
 }
