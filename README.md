@@ -10,20 +10,20 @@ When first learning programming I used Twitter Bootstrap and Material Design lib
 
 View the full documentation and demo to see the components in action. The showcase provides a full list of component examples, code snippets and demos of each.
 
-[LegoCSS Library 1.0 Demo](http://legocss.com/)
+[LegoCSS Library 1.0 Demo](https://legocss.com/)
 
 ## Setup & Installation
 
 For basic use in your project there is no installation required.
 
-1. [Download the minified file](http://legocss.com/legocss/lego.min.css) and include it in your project file.
+1. [Download the minified file](https://legocss.com/legocss/lego.min.css) and include it in your project file.
 
 OR
 
 2. Include one of our hosted versions.
 ```
 <!-- Lego Core -->
-<link rel="stylesheet" href="http://legocss.com/legocss/lego.min.css">
+<link rel="stylesheet" href="https://legocss.com/legocss/lego.min.css">
 ```
 
 ## Contributing
