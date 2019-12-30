@@ -16,10 +16,6 @@
       width: 100%;
       margin: 0;
     }
-
-    @media #{$tablet} {
-      margin: 0 25px 0 0;
-    }
   }
 
   label {
@@ -35,6 +31,7 @@
     display: inline-flex;
     align-items: baseline;
     margin-bottom: 15px;
+    margin-right: 20px;
 
     @media #{$phone} {
       display: block;
@@ -96,9 +93,9 @@
 
     label {
       margin-bottom: 5px;
-      text-align: center;
+      text-align: right;
       display: block;
-      width: 100%;
+      width: 50%;
 
        @media #{$tablet} {
         width: 50%;
