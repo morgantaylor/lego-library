@@ -42,7 +42,7 @@
   .accordion__container {
     @extend %accordion__container--open;
     @extend %flex--column;
-    @include text($weight: 100, $color: $lego-gray-5);
+    @include text($weight: 100);
     @include transition(all, 1s, ease);
     @include relative();
     overflow: hidden;
@@ -56,10 +56,6 @@
   .accordion__toggle:checked ~ .accordion__container {
     padding: 10px;
   }
-}
-
-.accordion {
-  color: $lego-gray-5;
 }
 
 .accordion--panel {

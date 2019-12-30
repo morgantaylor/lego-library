@@ -57,7 +57,7 @@
     @include text(.9em, $weight: bold);
     cursor: pointer;
     user-select: none;
-    color: $lego-gray-5;
+    color: inherit;
     border-left: 2px solid transparent;
 
     &--nested {
