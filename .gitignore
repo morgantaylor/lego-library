@@ -46,3 +46,4 @@ scss/components/c-components.scss
 # Files only for demo currently
 scss/components/_mobile-menu.scss
 scss/components/_tooltip.scss
+scss/components/_toast.scss
