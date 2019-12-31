@@ -33,7 +33,6 @@
 .flex-container {
   @extend %flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .column {

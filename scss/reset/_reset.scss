@@ -148,9 +148,10 @@ sub {
 }
 
 hr {
-  box-sizing: content-box;
   margin: 20px 0;
-  border-top: 1px solid $lego-gray-2;
+  background-color: $lego-gray-2;
+  height: 1px;
+  border: none;
 }
 
 figure {
