@@ -30,20 +30,9 @@ textarea {
 .checkbox,
 .radio {
   display: flex;
-}
 
-.checkbox--inline,
-.radio--inline {
-  display: inline-flex;
-  margin-right: 12px;
-}
-
-.checkbox,
-.radio,
-.checkbox--inline,
-.radio--inline {
-  input[type="checkbox"],
-  input[type="radio"] {
+  input {
+    height: 15px;
     margin: 3px 8px 3px 0;
   }
 }
@@ -117,9 +106,20 @@ textarea {
 
   &--stacked {
     @extend %flex--column;
+
+    .radio,
+    .checkbox {
+      margin-top: 8px;
+      margin-left: 10px;
+    }
   }
 
   &__btn {
     position: relative;
+  }
+
+  .radio,
+  .checkbox {
+    margin-left: 10px;
   }
 }
