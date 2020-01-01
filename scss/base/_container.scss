@@ -3,10 +3,9 @@
 // ==================
 
 .page {
-  max-width: 1400px;
   margin: 0 auto;
   height: 100%;
-  overflow: hidden;
+  width: 100vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,8 +16,7 @@
 }
 
 .content {
-  max-width: 1100px;
-  min-width: 20px;
+  width: 100%;
 }
 
 .container {

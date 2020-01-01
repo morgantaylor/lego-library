@@ -20,24 +20,22 @@ aside {
     display: none;
 
     @media #{$desktop} {
-      @include fixed();
+      @include fixed(left 0);
       display: block;
       z-index: 1;
-      width: 20%;
       padding: 20px;
       height: 100vh;
-      max-width: 230px;
+      width: 230px;
       overflow: auto;
-      left: 0;
     }
 
     & ~ .content {
       padding: 40px 25px;
+      position: relative;
 
       @media #{$desktop} {
         padding: 15px 40px 30px;
         margin-left: 230px;
-        width: 80%;
       }
     }
   }
