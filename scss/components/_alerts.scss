@@ -29,6 +29,7 @@ $skins:
     margin-right: 15px;
     padding-right: 0;
     color: $lego-gray-6;
+    height: 18px;
   }
 
   @each $name, $color, $background, $border-color in $skins {

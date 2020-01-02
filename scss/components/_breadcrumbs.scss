@@ -18,6 +18,7 @@ $skins:
 
   .breadcrumb__item {
     display: inline-block;
+    text-transform: capitalize;
 
     + .breadcrumb__item:before {
       padding: 0 5px;
