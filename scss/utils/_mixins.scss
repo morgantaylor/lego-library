@@ -3,13 +3,15 @@
 @mixin button-states($btn-type, $color, $background: null, $border: null) {
   &:disabled {
     &:hover {
-      @if $btn-type == 'link' {
-        color: $color;
-      } @else {
-        background-color: $background;
-        color: $color;
-        border: 1px solid $border;
-      }
+      background-color: $background;
+      color: $color;
+      border: 1px solid $border;
+    }
+  }
+
+  &[aria-disabled="true"] {
+    &:hover {
+      color: $color;
     }
   }
 
@@ -50,11 +52,7 @@
   }
 
   @if $type == 'link' {
-    @include button-states('link', $color, $background, $border);
-  }
-
-  &:disabled {
-    @extend %input--disabled;
+    @include button-states('link', $color);
   }
 }
 

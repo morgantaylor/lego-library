@@ -11,6 +11,10 @@ $skins:
 a {
   @extend %focus--off;
   color: $lego-primary;
+
+  &[aria-disabled="true"] {
+    @extend %input--disabled;
+  }
 }
 
 .btn {
