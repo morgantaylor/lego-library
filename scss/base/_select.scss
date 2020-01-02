@@ -3,9 +3,10 @@
 .select,
 .select--inline {
   position: relative;
-  margin: 3px;
-  cursor: pointer;
   height: 42px;
+  margin: 3px;
+  padding-right: 5px;
+  cursor: pointer;
   border-radius: 4px;
   border: 1px solid $lego-gray-3;
 
@@ -13,16 +14,45 @@
     border-radius: 0;
   }
 
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    // pointer-events: none; // Arrow clickable in some browsers
+    border: 1px solid transparent;
+    right: 10px;
+  }
+
+  // top arrow
+  &::before {
+    bottom: 55%;
+    border-width: 0 5px 8px 5px;
+    border-bottom-color: $lego-gray-5;
+  }
+
+  // bottom arrow
+  &::after {
+    border-width: 8px 5px 0 5px;
+    border-top-color: $lego-gray-5;
+    top: 55%;
+  }
+
   select {
     border: 0 !important;
-    background: transparent;
-    background-image: none;
     width: 100%;
-    color: inherit;
+    color: $lego-gray-5;
     height: 41px;
-    min-width: 250px;
     cursor: pointer;
 
+    // reset 
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    padding: 8px 24px 8px 8px;
 
     &.skin-lg {
       padding-right: 40px !important;
@@ -30,10 +60,15 @@
 
     &.skin-md {
       padding-right: 40px !important;
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
     }
 
     &.skin-sm {
       padding-right: 40px !important;
+    &:focus {
+      outline: none;
     }
   }
 }
@@ -56,16 +91,37 @@ $skins:
 
 .select {
 
-  @each $name, $border in $skins {
+  @each $name, $color in $skins {
     &.skin-#{$name} {
-      border-color: $border;
-    }
-  }
+      border-color: $color;
 
-  @each $name, $border in $skins {
+      select {
+        color: $white;
+      }
+
+      &::before {
+        border-bottom-color: $white;
+      }
+
+      &::after {
+        border-top-color: $white;
+      }
+    }
+
     &.skin-outline-#{$name} {
-      color: $border;
-      border-color: $border;
+      border-color: $color;
+
+      select {
+        color: $color;
+      }
+
+      &::before {
+        border-bottom-color: $color;
+      }
+
+      &::after {
+        border-top-color: $color;
+      }
     }
   }
 }
