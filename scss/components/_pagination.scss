@@ -3,7 +3,7 @@
 // ==================
 
 .pagination {
-  @include relative();
+  position: relative;
   margin: 40px 0 20px 0;
   padding-left: 0;
   border-radius: 4px;
@@ -50,7 +50,7 @@
 
   & > a, 
   & > span {
-    @include relative();
+    position: relative;
     @include text($height: 1.4, $color: $lego-gray-4);
     float: left;
     padding: 6px 12px;

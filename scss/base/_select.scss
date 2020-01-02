@@ -2,7 +2,7 @@
 
 .select,
 .select--inline {
-  @extend %focus--on;
+  position: relative;
   margin: 3px;
   cursor: pointer;
   height: 42px;
@@ -23,7 +23,6 @@
     min-width: 250px;
     cursor: pointer;
 
-    @extend %size-styles;
 
     &.skin-lg {
       padding-right: 40px !important;

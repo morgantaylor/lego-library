@@ -20,7 +20,8 @@ aside {
     display: none;
 
     @media #{$desktop} {
-      @include fixed(left 0);
+      position: fixed;
+      left: 0;
       display: block;
       z-index: 1;
       padding: 20px;

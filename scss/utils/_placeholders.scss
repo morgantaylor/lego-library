@@ -1,13 +1,5 @@
 // Containers //
 
-%container--default {
-  @include relative();
-  margin: 0 auto 20px auto;
-  padding: 0;
-  width: 100%;
-  max-width: 600px;
-}
-
 %flex {
   display: flex;
   align-items: center;
@@ -18,146 +10,11 @@
   flex-direction: column;
 }
 
-%capitalize {
-  text-transform: capitalize;
-}
-
-%uppercase {
-  text-transform: uppercase;
-}
-
-%focus--off {
-  &:focus,
-  &:active,
-  &:hover {
-      outline: none;
-  }
-}
-
-%focus--on {
-  &:focus,
-  &:active {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
-}
-
 %input--disabled {
   box-shadow: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
-
-///// Accordion Styles ////
-
-%accordion__container--open {
-  margin: 0;
-  max-height: 0;
-  opacity: 0;
-  display: none;
-}
-
-%accordion__container--closed {
-  margin: 0;
-  max-height: 800px;
-  opacity: 1;
-}
-
-%accordion__i--base {
-  &:last-of-type {
-    padding-bottom: 0;
-  }
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-
-  .transition,
-  i:before, 
-  i:after {
-    @include transition(all, 1s, ease);
-  }
-
-  &.behavior {
-    i,
-    .accordion__toggle { // input
-      display: none;
-    }
-  }
-
-  i {
-    @include absolute(right 10px);
-    @include transform(translate(-6px, 0));
-    margin-top: 16px;
-    z-index: 1;
-  }
-
-  i:before, 
-  i:after {
-    @include absolute();
-    content: "";
-    background-color: $black;
-    width: 3px;
-    height: 9px;
-  }
-
-  .accordion__toggle {
-    @include absolute();
-    cursor: pointer;
-    width: 100%;
-    height: 40px;
-    z-index: 2;
-    opacity: 0;
-  }
-}
-
-%accordion--open {
-  i:before {
-    @include transform(translate(-2px, 0) rotate(45deg));
-    @include transition(all, 1s, ease);
-  }
-  i:after {
-    @include transform(translate(2px, 0) rotate(-45deg));
-    @include transition(all, 1s, ease);
-  }
-  .accordion__toggle:checked ~ .accordion__container {
-    margin: 0;
-    max-height: 800px;
-    opacity: 1;
-    display: flex;
-  }
-  .accordion__toggle:checked ~ i:before {
-    @include transform(translate(2px, 0) rotate(45deg));
-  }
-  .accordion__toggle:checked ~ i:after {
-    @include transform(translate(-2px, 0) rotate(-45deg));
-  }
-}
-
-%accordion--closed {
-  i:before {
-    @include transform(translate(-2px, 0) rotate(-45deg));
-    @include transition(all, 1s, ease);
-  }
-  i:after {
-    @include transform(translate(2px, 0) rotate(45deg));
-    @include transition(all, 1s, ease);
-  }
-  .accordion__toggle:checked ~ .accordion__container {
-    @include transform(translate(0, 50%));
-    margin-top: 0;
-    max-height: 0;
-    opacity: 0;
-  }
-  .accordion__toggle:checked ~ i:before {
-    @include transform(translate(2px, 0) rotate(-45deg));
-  }
-  .accordion__toggle:checked ~ i:after {
-    @include transform(translate(-2px, 0) rotate(45deg));
-  }
-}
-
-///// Accordion Styles ////
 
 ///// Tab Styles ////
 
@@ -187,52 +44,4 @@
   display: block;
   padding: 20px;
   background: $white;
-}
-
-%tab--base--bordered {
-
-  .tab .tab__content p,
-  .tab .tab__content h3 {
-    -webkit-animation: fadeInScale 0.7s ease-in-out;
-    animation: fadeInScale 0.7s ease-in-out;
-  }
-
-  .tab [id^="tab"]:checked + label {
-    background: $white;
-    border-bottom: 0;
-
-    &.border--top {
-      box-shadow: inset 0 3px $lego-primary; // for top border
-    }
-
-    &.border--bottom {
-      box-shadow: inset 0 -3px $lego-primary; // for bottom border
-    }
-  }
-
-  .tab [id^="tab"]:checked + label .fa {
-    color: $lego-primary;
-  }
-}
-
-///// Tab Styles ////
-
-
-%size-styles {
-
-  &.skin-sm,
-  &.skin-md,
-  &.skin-lg {
-    margin: 0;
-  }
-
-  &.skin-sm::after {
-    font-size: 12px;
-  }
-  &.skin-md::after {
-    font-size: 14px;
-  }
-  &.skin-lg::after {
-    font-size: 18px;
-  }
 }

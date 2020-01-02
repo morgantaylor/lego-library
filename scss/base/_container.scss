@@ -20,7 +20,11 @@
 }
 
 .container {
-  @extend %container--default;
+  position: relative;
+  margin: 0 auto 20px auto;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
 
   & .container {
     padding-left: 25px;

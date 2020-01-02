@@ -12,19 +12,117 @@
 
 .accordion,
 .accordion--panel {
-  @extend %accordion--open;
-  @extend %accordion__i--base;
-  @include relative();
+  position: relative;
   overflow: hidden;
 
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  i {
+    @include transform(translate(-6px, 0));
+    position: absolute;
+    right: 10px;
+    margin-top: 16px;
+    z-index: 1;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      background-color: $black;
+      width: 3px;
+      height: 9px;
+    }
+
+    &:before {
+      @include transform(translate(-2px, 0) rotate(45deg));
+      @include transition(all, 1s, ease);
+    }
+
+    &:after {
+      @include transform(translate(2px, 0) rotate(-45deg));
+      @include transition(all, 1s, ease);
+    }
+  }
+
+  .transition,
+  i:before, 
+  i:after {
+    @include transition(all, 1s, ease);
+  }
+
+  &.behavior {
+    i,
+    .accordion__toggle {
+      display: none;
+    }
+  }
+
+  .accordion__toggle {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    z-index: 2;
+    opacity: 0;
+
+    &:checked ~ .accordion__container {
+      margin: 0;
+      max-height: 800px;
+      opacity: 1;
+      display: flex;
+      padding: 10px;
+    }
+
+    &:checked ~ i:before {
+      @include transform(translate(2px, 0) rotate(45deg));
+    }
+
+    &:checked ~ i:after {
+      @include transform(translate(-2px, 0) rotate(-45deg));
+    }
+  }
+
   &.accordion--open {
-    @extend %accordion--closed;
+
+    i:before {
+      @include transform(translate(-2px, 0) rotate(-45deg));
+      @include transition(all, 1s, ease);
+    }
+
+    i:after {
+      @include transform(translate(2px, 0) rotate(45deg));
+      @include transition(all, 1s, ease);
+    }
+
+    .accordion__toggle {
+
+      &:checked ~ .accordion__container {
+        @include transform(translate(0, 50%));
+        margin-top: 0;
+        max-height: 0;
+        opacity: 0;
+      }
+      
+      &:checked ~ i:before {
+        @include transform(translate(2px, 0) rotate(-45deg));
+      }
+
+      &:checked ~ i:after {
+        @include transform(translate(-2px, 0) rotate(45deg));
+      }
+    }
   }
 
   .accordion__title {
     @extend %flex;
     @include text($weight: bold);
-    @include relative();
+    position: relative;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: 0;
@@ -40,21 +138,22 @@
   }
 
   .accordion__container {
-    @extend %accordion__container--open;
     @extend %flex--column;
     @include text($weight: 100);
     @include transition(all, 1s, ease);
-    @include relative();
+    position: relative;
     overflow: hidden;
     padding: 10px;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    display: none;
 
     &--open {
-      @extend %accordion__container--closed;
+      margin: 0;
+      max-height: 800px;
+      opacity: 1;
     }
-  }
-
-  .accordion__toggle:checked ~ .accordion__container {
-    padding: 10px;
   }
 }
 

@@ -94,57 +94,6 @@
   }
 }
 
-// Position Mixins //
-// position mixin: http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
-
-@mixin position($position, $args: ()) {
-  $offsets: top right bottom left;
-  position: $position;
-  
-  @each $offset in $offsets {
-    $index: index($args, $offset);
-    
-    @if $index {
-      @if $index == length($args) {
-        #{$offset}: 0;
-      }
-      @else {
-        $next: nth($args, $index + 1);
-        @if is-valid-length($next) {
-          #{$offset}: $next;
-        }
-        @else if index($offsets, $next) {
-          #{$offset}: 0;
-        }
-        @else {
-          @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
-        }
-      }
-    }
-  }
-}
-
-@function is-valid-length($value) {
-  @return (type-of($value) == "number" and not unitless($value)) 
-  or (index(auto initial inherit 0, $value) != null);
-}
-
-@mixin absolute($args: ()) {
-  @include position(absolute, $args);
-}
- 
-@mixin fixed($args: ()) {
-  @include position(fixed, $args);
-}
- 
-@mixin relative($args: ()) {
-  @include position(relative, $args);
-}
-
-
-// === Autoprefixer === //
-// ==================== //
-
 // Transform 
 // Ex: @include transform(translateY, 10px);
 @mixin transform($transforms) {
@@ -167,7 +116,3 @@
   transition: $var;
 }
 
-// Border-radius //
-@mixin border-radius($radius) {
-  border-radius: $radius;
-}

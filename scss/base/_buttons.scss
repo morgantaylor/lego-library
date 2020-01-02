@@ -9,7 +9,6 @@ $skins:
 ;
 
 a {
-  @extend %focus--off;
   color: $lego-primary;
 
   &[aria-disabled="true"] {
@@ -18,7 +17,6 @@ a {
 }
 
 .btn {
-  @extend %focus--on;
   @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
   text-decoration: none;
   text-align: center;
@@ -38,7 +36,9 @@ a {
 
 .btn,
 .link {
-  @extend %focus--on;
+  &:disabled {
+    @extend %input--disabled;
+  }
 }
 
 .btn {
@@ -98,14 +98,14 @@ a {
 /////// Button Grous ///////
 
 .btn-group {
-  @include relative();
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   margin: 5px 0;
 }
 
 .btn-group > .btn-group__btn {
-  @include relative();
+  position: relative;
   float: left;
   margin: 0;
 }
@@ -137,13 +137,12 @@ a {
 //////////// Custom Upload File Button /////////////
 
 .btn-upload-container {
-  @extend %focus--on;
   position: relative;
   display: inline-block;
   margin: 3px;
 
   .inputfile {
-    @include absolute();
+    position: absolute;
     opacity: 0;
     z-index: -1;
     width: 100%;
@@ -155,8 +154,6 @@ a {
       border-radius: 4px;
       padding: 10px 18px;
       text-transform: capitalize;
-
-      @extend %size-styles;
     }
   }
 }
@@ -164,8 +161,7 @@ a {
 //// Pure CSS Dropdown ////
 
 .dropdown {
-  @extend %focus--on;
-  @include relative();
+  position: relative;
   display: inline-block;
   margin: 3px;
 
@@ -203,7 +199,7 @@ a {
 
   .dropdown__container {
     @include box-shadow(0, 6px, 12px, rgba(0,0,0,0.175));
-    @include absolute();
+    position: absolute;
     list-style: none;
     text-align: left;
     float: left;

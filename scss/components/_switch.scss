@@ -14,7 +14,7 @@
 
 .switch {
   @extend %flex; 
-  @include relative();
+  position: relative;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
@@ -39,7 +39,7 @@
   }
 
   input {
-    @include absolute();
+    position: absolute;
     opacity: 0;
     z-index: 3;
 
@@ -67,7 +67,7 @@
   }
 
   & > span {
-    @include relative();
+    position: relative;
     display: block;
     overflow: visible;
     width: 3.25em;
@@ -78,7 +78,7 @@
   }
 
   span span {
-    @include absolute();
+    position: absolute;
     clip: rect(0 0 0 0);
     z-index: 2;
     display: block;
@@ -90,7 +90,8 @@
 
   a {
     @include transition(right, 0.28s, cubic-bezier(0.4, 0, 0.2, 1));
-    @include absolute(top 0.25em);
+    position: absolute;
+    top: 0.25em;
     right: 60%;
     z-index: 1;
     display: block;
@@ -115,7 +116,9 @@
 .switch > span:after {
   @include transform(scale(0));
   @include transition(opacity, 0.4s, ease-in);
-  @include absolute(top 0 left 0);
+  position: absolute;
+  top: 0;
+  left: 0;
   content: '';
   z-index: 3;
   display: block;
