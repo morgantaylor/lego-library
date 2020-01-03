@@ -29,10 +29,11 @@ textarea {
 .checkbox,
 .radio {
   display: flex;
+  align-items: center;
 
   input {
-    height: 15px;
-    margin: 3px 8px 3px 0;
+    height: 16px;
+    margin: 0px 8px 0 0;
   }
 }
 
