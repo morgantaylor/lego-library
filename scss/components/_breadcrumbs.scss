@@ -36,7 +36,7 @@ $skins:
   }
 
   @each $name, $color in $skins {
-    &.breadcrumb--#{$name} {
+    &.skin--#{$name} {
       .active {
         color: $color;
       }
