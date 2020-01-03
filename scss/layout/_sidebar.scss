@@ -2,33 +2,25 @@
 // Sidebar 
 // ==================
 
-.sidebar {
+@media #{$desktop} {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    display: block;
+    z-index: 1;
+    padding: 20px;
+    height: 100vh;
+    width: 230px;
+    overflow: auto;
 
-  .sidebar__title {
-    @include text($weight: 100, $color: inherit);
-    padding-left: 10px;
-    padding-bottom: 6px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    border-bottom: 1px solid $white;
-    cursor: pointer;
-  }
-}
-
-aside {
-
-  &.sidebar {
-    display: none;
-
-    @media #{$desktop} {
-      position: fixed;
-      left: 0;
-      display: block;
-      z-index: 1;
-      padding: 20px;
-      height: 100vh;
-      width: 230px;
-      overflow: auto;
+    .sidebar__title {
+      @include text($weight: 100, $color: inherit);
+      padding-left: 10px;
+      padding-bottom: 6px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $white;
+      cursor: pointer;
     }
 
     & ~ .content {
@@ -40,5 +32,11 @@ aside {
         margin-left: 230px;
       }
     }
+  }
+}
+
+@media #{$phone}, #{$tablet} {
+  .sidebar {
+    display: none;
   }
 }
