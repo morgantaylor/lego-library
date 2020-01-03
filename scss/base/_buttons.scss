@@ -42,22 +42,27 @@ a {
 }
 
 .btn {
-  &--primary {@include custom-skin('btn', $lego-primary, $white, $lego-primary);}
-  &--success {@include custom-skin('btn', $lego-success, $white, $lego-success);}
-  &--danger {@include custom-skin('btn', $lego-danger, $white, $lego-danger);}
-  &--default {@include custom-skin('btn', $lego-gray-3, $white, $lego-gray-3);}
+  &--blue {@include custom-skin('btn', $lego-primary, $white, $lego-primary);}
+  &--green {@include custom-skin('btn', $lego-success, $white, $lego-success);}
+  &--red {@include custom-skin('btn', $lego-danger, $white, $lego-danger);}
+  &--orange {@include custom-skin('btn', $lego-warning, $white, $lego-warning);}
+  &--default,
+  &--gray {@include custom-skin('btn', $lego-gray-3, $white, $lego-gray-3);}
   
-  &--outline-primary {@include custom-skin('btn-outline', $white, $lego-primary, $lego-primary);}
-  &--outline-success {@include custom-skin('btn-outline', $white, $lego-success, $lego-success);}
-  &--outline-danger {@include custom-skin('btn-outline', $white, $lego-danger, $lego-danger);}
-  &--outline-default {@include custom-skin('btn-outline', $white, $lego-gray-4, $lego-gray-3);}
+  &--outline-blue {@include custom-skin('btn-outline', $white, $lego-primary, $lego-primary);}
+  &--outline-green {@include custom-skin('btn-outline', $white, $lego-success, $lego-success);}
+  &--outline-red {@include custom-skin('btn-outline', $white, $lego-danger, $lego-danger);}
+  &--outline-orange {@include custom-skin('btn-outline', $white, $lego-warning, $lego-warning);}
+  &--outline-default,
+  &--outline-gray {@include custom-skin('btn-outline', $white, $lego-gray-4, $lego-gray-3);}
 }
 
 .link {
-  &--primary,
+  &--blue,
   &--default {@include custom-skin('link', $color: $lego-primary);}
-  &--success {@include custom-skin('link', $color: $lego-success);}
-  &--danger {@include custom-skin('link', $color: $lego-danger);}
+  &--green {@include custom-skin('link', $color: $lego-success);}
+  &--red {@include custom-skin('link', $color: $lego-danger);}
+  &--orange {@include custom-skin('link', $color: $lego-warning);}
   &--gray {@include custom-skin('link', $color: $lego-gray-4);}
   &--white {@include custom-skin('link', $color: $white);}
 }
