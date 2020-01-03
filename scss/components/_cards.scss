@@ -4,7 +4,6 @@
 
 .card {
   @extend %flex--column;
-  position: relative;
   @include box-shadow(1px, 2px, 3px, rgba(0, 0, 0, 0.2));
   word-wrap: break-word;
   background-color: $white;
@@ -13,7 +12,7 @@
   border-radius: 4px;
   padding: 0 15px;
   margin: 0 20px 20px 0;
-  width: 100%;
+  max-width: 300px;
   overflow: hidden;
   line-height: 1.3;
 
@@ -22,13 +21,15 @@
   }
 
   &__body {
-    
-    &:first-child {
-      padding-top: 15px;
-    }
+    margin: 15px 0;
+  }
 
+  &__text,
+  &__title,
+  &__link,
+  &__button {
     &:last-child {
-      padding-bottom: 15px;
+      margin-bottom: 0;
     }
   }
 
@@ -39,7 +40,7 @@
   }
 
   &__title {
-    font-weight: 600;
+    @include text(1.2em, $weight: 600);
     display: block;
     margin-bottom: .4em;
   }
@@ -65,31 +66,24 @@
   background-origin: border-box;
   width: calc(100% + 32px);
   left: -16px;
-  height: 188.75px;
+  height: 169px;
+
+  &--top,
+  &--middle,
+  &--bottom {
+    @extend .card__display;
+  }
 
   &--top {
-    @extend .card__display;
     border-top-left-radius: calc(4px - 1px);
     border-top-right-radius: calc(4px - 1px);
-    margin-bottom: 15px;
     top: -1px;
   }
 
-  &--middle {
-    @extend .card__display;
-    margin-bottom: 15px;
-
-    &:not(:first-child):not(:last-child) {
-      margin-top: -15px;
-    }
-  }
-
   &--bottom {
-    @extend .card__display;
     border-radius: 0;
     border-bottom-left-radius: calc(4px - 1px);
     border-bottom-right-radius: calc(4px - 1px);
-    margin-top: 15px;
     bottom: -1px;
   }
 
@@ -107,35 +101,27 @@
     background-color: $lego-gray-1;
     border-bottom: 1px solid $lego-gray-1;
     padding: 15px;
-  }
-
-  &__header {
-    margin: 0 -15px 15px -15px;
-  }
-
-  &__footer {
-    margin: 15px -15px 0 -15px;
+    margin: 0 -15px;
   }
 }
-
-  //////////
 
 // Card Sizing
 .card {
   &.card--sm {
     width: 150px;
 
-    .card__display-top,
-    .card__display-bottom {
-      height: 104.38px;
+    .card__display--top,
+    .card__display--bottom {
+      height: 84px;
     }
   }
   &.card--lg {
     width: 450px;
+    max-width: 450px;
 
-    .card__display-top,,
-    .card__display-bottom {
-      height: 273.13px;
+    .card__display--top,,
+    .card__display--bottom {
+      height: 273px;
     }
   }
 
@@ -150,17 +136,5 @@
 
   &.card--right {
     text-align: right;
-  }
-}
-
-.card.card--sm,
-.card.card--lg {
-
-  @media #{$phone} {
-    width: 100%;
-  }
-
-  @media #{$tablet}, #{$desktop}  {
-    margin: 0 20px 20px 0;
   }
 }
