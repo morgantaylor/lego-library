@@ -15,6 +15,7 @@
     border-radius: 24px;
     align-items: center;
     cursor: pointer;
+    border: 1px solid transparent;
 
     &--removable {
       @extend .chip;
@@ -37,15 +38,17 @@ $skins:
 
 .chip {
 
-  @each $name, $shadow in $skins {
-    &.skin-#{$name} {
-      box-shadow: 0 2px $shadow;
+  @each $name, $color, $shadow in $skins {
+    &.chip--#{$name} {
+      box-shadow: 0 2px #{$shadow};
+      background-color: #{$color};
+      color: $white;
     }
-  }
 
-  @each $name, $shadow in $skins {
-    &.skin-outline-#{$name} {
-      box-shadow: 0 2px $shadow;
+    &.chip--outline-#{$name} {
+      box-shadow: 0 2px #{$shadow};
+      border-color: #{$color};
+      color: #{$color};
     }
   }
 }
