@@ -6,7 +6,24 @@ $tabCount: 3;
 
 .tab,
 .tab--bordered {
-  @extend %tab--inside--base;
+  input, 
+  section {
+    clear: both;
+    padding-top: 10px;
+    display: none;
+  }
+
+  label {
+    float: left;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+
+    .fa {
+      font-size: 16px;
+    }
+  }
 
   .tab__content p,
   .tab__content h3 {
@@ -75,6 +92,38 @@ $tabCount: 3;
   100% {
     @include transform(scale(1));
     opacity: 1;
+  }
+}
+
+// default skin colors
+$skins: 
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger,
+  'orange' $lego-warning,
+  'gray' $lego-gray-3
+;
+
+.tab,
+.tab--bordered {
+
+  @each $name, $color in $skins {
+    &.tab--#{$name} {
+      [id^="tab"]:checked + label,
+      [id^="tab"]:checked + label .fa {
+        color: #{$color};
+      }
+
+      [id^="tab"]:checked + label {
+        &.border--top {
+          box-shadow: inset 0 3px #{$color}; // for top border
+        }
+
+        &.border--bottom {
+          box-shadow: inset 0 -3px #{$color}; // for bottom border
+        }
+      }
+    }
   }
 }
 
