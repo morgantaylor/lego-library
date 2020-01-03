@@ -54,19 +54,11 @@
     appearance: none;
     padding: 8px 24px 8px 8px;
 
-    &.skin-lg {
-      padding-right: 40px !important;
-    }
-
-    &.skin-md {
-      padding-right: 40px !important;
     /* Remove IE arrow */
     &::-ms-expand {
       display: none;
     }
 
-    &.skin-sm {
-      padding-right: 40px !important;
     &:focus {
       outline: none;
     }
