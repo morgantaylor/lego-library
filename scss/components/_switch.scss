@@ -149,9 +149,9 @@ $skins:
 .switch,
 .switch--inline {
 
-  @each $name, $color in $skins {
-    &.switch--#{$name} {
-      input:checked + span {
+  input:checked {
+    @each $name, $color in $skins {
+      &.skin-#{$name} + span {
         background-color: #{$color};
       }
     }
