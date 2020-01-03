@@ -4,6 +4,7 @@
 // Skins only for color and background
 
 .skin-green {@include skin($lego-success, $white);}
-.skin-gray {@include skin($lego-gray-3, $white);}
-.skin-red {@include skin($lego-danger, $white);}
 .skin-blue {@include skin($lego-primary, $white);}
+.skin-red {@include skin($lego-danger, $white);}
+.skin-orange {@include skin($lego-warning, $white);}
+.skin-gray {@include skin($lego-gray-3, $white);}

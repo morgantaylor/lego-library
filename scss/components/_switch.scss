@@ -139,9 +139,11 @@
 
 // default skin colors
 $skins: 
-  'primary' $lego-primary,
-  'success' $lego-success,
-  'danger' $lego-danger
+  'blue' $lego-primary,
+  'green' $lego-success,
+  'red' $lego-danger,
+  'orange' $lego-warning,
+  'gray' $lego-gray-3
 ;
 
 .switch,

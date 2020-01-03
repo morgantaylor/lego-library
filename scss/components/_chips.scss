@@ -28,10 +28,11 @@
 
 // default skin colors
 $skins: 
-  'blue' rgba(51,122,183,.5),
-  'green' rgba(131,188,32,.5),
-  'red' rgb(213, 62, 79.5),
-  'gray' rgba(99,102,106,.5)
+  'blue' $lego-primary rgba(51,122,183,.5),
+  'green' $lego-success rgba(131,188,32,.5),
+  'red' $lego-danger rgba(213, 62, 79.5,.5),
+  'orange' $lego-warning rgba(253, 174, 97,.5),
+  'gray' $lego-gray-3 rgba(99,102,106,.5)
 ;
 
 .chip {
