@@ -27,9 +27,13 @@
     right: 10px;
   }
 
+  &::before,
+  &::after {
+    bottom: 55%;
+  }
+
   // top arrow
   &::before {
-    bottom: 55%;
     border-width: 0 5px 8px 5px;
     border-bottom-color: $lego-gray-5;
   }
@@ -38,7 +42,6 @@
   &::after {
     border-width: 8px 5px 0 5px;
     border-top-color: $lego-gray-5;
-    top: 55%;
   }
 
   select {

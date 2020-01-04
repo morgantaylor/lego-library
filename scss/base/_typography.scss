@@ -53,9 +53,6 @@ $p-font-sizes: (
 
 h1, h2, h3, h4, h5, h6 {
   color: $lego-gray-6;
-}
-
-h1, h2, h3, h4, h5, h6 {
   font-family: $helvetica;
   margin: 1rem 0;
 }
@@ -73,29 +70,17 @@ h1 {
   margin-bottom: 1.25rem;
 }
 
-h2 {
-  @include font-size($h2-font-sizes);
-}
+h2 { @include font-size($h2-font-sizes); }
 
-h3 {
-  @include font-size($h3-font-sizes);
-}
+h3 { @include font-size($h3-font-sizes); }
 
-h4 {
-  @include font-size($h4-font-sizes);
-}
+h4 { @include font-size($h4-font-sizes); }
 
-h5 {
-  @include font-size($h5-font-sizes);
-}
+h5 { @include font-size($h5-font-sizes); }
 
-h6 {
-  @include font-size($h6-font-sizes);
-}
+h6 { @include font-size($h6-font-sizes); }
 
-p, ul, ol, blockquote {
-  @include font-size($p-font-sizes);
-}
+p, ul, ol, blockquote { @include font-size($p-font-sizes); }
 
 p {
   line-height: 1.5;

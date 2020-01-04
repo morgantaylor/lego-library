@@ -90,14 +90,17 @@
 
   &.accordion--open {
 
+    i:before,
+    i:after {
+      @include transition(all, 1s, ease);
+    }
+
     i:before {
       @include transform(translate(-2px, 0) rotate(-45deg));
-      @include transition(all, 1s, ease);
     }
 
     i:after {
       @include transform(translate(2px, 0) rotate(45deg));
-      @include transition(all, 1s, ease);
     }
 
     .accordion__toggle {
