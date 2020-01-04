@@ -76,15 +76,12 @@ a {
 /////// Button Grous ///////
 
 .btn-group {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
   margin: 5px 0;
 }
 
 .btn-group > .btn-group__btn {
   position: relative;
-  float: left;
   margin: 0;
 }
 
@@ -141,7 +138,7 @@ a {
 .dropdown {
   position: relative;
   display: inline-block;
-  margin: 3px;
+  margin: 3px 3px 3px 0;
 
   &.disabled {
     @extend %input--disabled;
@@ -179,8 +176,6 @@ a {
     @include box-shadow(0, 6px, 12px, rgba(0,0,0,0.175));
     position: absolute;
     list-style: none;
-    text-align: left;
-    float: left;
     width: 100%;
     z-index: 1000;
     margin: 1px 0 0 0;

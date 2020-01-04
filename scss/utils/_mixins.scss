@@ -32,6 +32,18 @@
   }
 
   // can put in .active and .selected states later
+  &.active,
+  &.active:hover {
+    @if $btn-type == 'btn' {
+      color: $color;
+      background-color: darken($border, 20%);
+      border-color: darken($border, 20%);
+    } @else if $btn-type == 'btn-outline' {
+      color: $background;
+      background-color: darken($border, 20%);
+      border-color: darken($border, 20%);
+    }
+  }
 }
 
 @mixin custom-skin($type, $background: null, $color: null, $border: null) {
