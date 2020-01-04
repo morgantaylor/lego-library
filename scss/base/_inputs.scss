@@ -86,9 +86,14 @@ textarea {
 }
 
 .input-group {
-  display: inline;
+  @extend %flex;
+
+  & .checkbox,
+  & .radio {
+    margin-left: 8px;
+  }
 
   &--stacked {
-    @extend %flex;
+    display: inline;
   }
 }
