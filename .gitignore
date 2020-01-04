@@ -47,3 +47,4 @@ scss/components/c-components.scss
 scss/components/_mobile-menu.scss
 scss/components/_tooltip.scss
 scss/components/_toast.scss
+scss/components/_alert.scss
