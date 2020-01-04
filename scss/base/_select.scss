@@ -26,20 +26,17 @@
     border: 1px solid transparent;
     right: 10px;
   }
-
-  &::before,
-  &::after {
-    bottom: 55%;
-  }
-
+  
   // top arrow
   &::before {
+    bottom: 55%;
     border-width: 0 5px 8px 5px;
     border-bottom-color: $lego-gray-5;
   }
 
   // bottom arrow
   &::after {
+    top: 55%;
     border-width: 8px 5px 0 5px;
     border-top-color: $lego-gray-5;
   }
