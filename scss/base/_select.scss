@@ -14,6 +14,9 @@
     border-radius: 0;
   }
 
+  &.disabled {
+    @extend %input--disabled;
+  }
 
   &::before,
   &::after {
@@ -53,6 +56,10 @@
     -ms-appearance: none;
     appearance: none;
     padding: 8px 24px 8px 8px;
+
+    &:disabled {
+      @extend %input--disabled;
+    }
 
     /* Remove IE arrow */
     &::-ms-expand {
