@@ -3,85 +3,63 @@
 // ==================
 
 .pagination {
-  position: relative;
-  margin: 40px 0 20px 0;
-  padding-left: 0;
-  border-radius: 4px;
-  background-color: transparent;
-  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   .pagination__item {
 
-    &:first-child > a, 
-    &:first-child > span {
-      margin-left: 0;
+    &:first-child > a {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
     }
 
-    &:last-child > a, 
-    &:last-child > span {
+    &:last-child > a {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
-    }
-
-    &--first {
-      margin-right: 10px;
-    }
-
-    &--last {
-      margin-left: 10px;
     }
   }
 }
 
 // pagination item children
 .pagination__item {
-  display: inline-block;
+  display: inline-flex;
 
-  &:focus {
-    outline: none;
+  // &--first,
+  // &--last {
+  //   &.disabled span,
+  //   &.disabled:hover span:hover {
+  //     @extend %disabled--pagination;
+  //   }
+  // }
+
+  &--first {
+    margin-right: 10px;
   }
 
-  &--first,
   &--last {
-    @extend .pagination__item;
+    margin-left: 10px;
   }
 
-  & > a, 
-  & > span {
-    position: relative;
-    @include text($height: 1.4, $color: $lego-gray-4);
-    float: left;
+  & > a {
+    @include text($color: $lego-gray-4);
     padding: 6px 12px;
-    margin-left: -1px;
-    text-decoration: none;
     background-color: $white;
     border: 1px solid $lego-gray-4;
   }
 
-  &:not(.disabled):hover a,
-  &:not(.disabled):hover span {
+  &:not(.disabled):hover a {
     background-color: lighten($lego-gray-4, 20);
-    border-color: $lego-gray-4;
     color: $white;
   }
 
   &.disabled a,
-  &.disabled span,
-  &.disabled:hover a,
-  &.disabled:hover span {
-    cursor: not-allowed;
-    opacity: 0.4;
-    background-color: initial;
-    color: inherit;
+  &.disabled:hover a:hover {
+    @extend %disabled--pagination;
   }
 
   &.active > a {
-    z-index: 2;
     color: $white;
     background-color: $lego-gray-4;
-    border-color: $lego-gray-4;
   }
 }
 
@@ -89,33 +67,40 @@ $skins:
   'blue' $lego-primary,
   'green' $lego-success,
   'red' $lego-danger,
-  'orange' $lego-warning,
-  'gray' $lego-gray-3
+  'orange' $lego-warning
 ;
 
 .pagination {
 
   @each $name, $color in $skins {
     &.pagination--#{$name} {
+
       .pagination__item {
-        &:not(.disabled):hover a,
-        &:not(.disabled):hover span {
-          color: $white;
-          background-color: lighten($color, 20);
-          border-color: $color;
+
+        &.disabled a,
+        &.disabled:hover a:hover,
+        &:not(.disabled) a {
+          @include text($color: #{$color});
+          border: 1px solid #{$color};
+          background-color: $white;
         }
 
-        & > a, 
-        & > span {
-          @include text($color: $color);
-          border: 1px solid $color;
+        &.disabled a,
+        &.disabled:hover a:hover {
+          @extend %disabled--pagination;
         }
 
-        &.active > a, 
-        &.active:hover > a {
+        &:not(.disabled) > a:hover,
+        &.active > a {
+          background-color: #{$color};
+        }
+
+        &:not(.disabled) > a:hover {
           color: $white;
-          background-color: $color;
-          border-color: $color;
+        }
+
+        &.active > a {
+          @include text($color: $white);
 
           &:hover {
             background-color: lighten($color, 20);

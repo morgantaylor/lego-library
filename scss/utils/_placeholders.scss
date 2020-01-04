@@ -23,3 +23,8 @@
   padding: 20px;
   background: $white;
 }
+
+%disabled--pagination {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
