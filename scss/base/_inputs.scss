@@ -42,17 +42,11 @@ textarea {
 // Need to address two ways of looking at input groups
 // 1. can be used to group inputs and buttons in the same container
 // 1. can be used to group labels and checkbox/radio inputs in the same container
-// 2. can be used for forms with labels above inputs
 
-
-// Needs:
-// [add] default horizontal
-// [add] input-group--stacked
-
-.input-group {
-  @extend %flex;
-  border-radius: 4px;
+.input-group,
+.input-group--stacked {
   width: auto;
+  margin-right: 10px;
 
   @media #{$phone} {
     width: 100%;
@@ -79,7 +73,7 @@ textarea {
   }
 
   .input-group__input {
-    display: block;
+    display: inline;
 
     @media #{$phone} {
       width: 100%;
@@ -89,8 +83,12 @@ textarea {
       border-left-width: 0;
     }
   }
+}
 
-  &__btn {
-    position: relative;
+.input-group {
+  display: inline;
+
+  &--stacked {
+    @extend %flex;
   }
 }
