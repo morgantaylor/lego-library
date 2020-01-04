@@ -32,26 +32,25 @@ textarea {
   align-items: center;
 
   input {
-    height: 16px;
-    margin: 0px 8px 0 0;
+    height: 24px;
+    margin: 0px 8px 1px 0;
   }
 }
 
 // Input Groups //
 
 // Need to address two ways of looking at input groups
-// 1. can be used for forms with labels next to inputs
+// 1. can be used to group inputs and buttons in the same container
+// 1. can be used to group labels and checkbox/radio inputs in the same container
 // 2. can be used for forms with labels above inputs
-// 3. can be used to group inputs and buttons in the same container
+
 
 // Needs:
 // [add] default horizontal
 // [add] input-group--stacked
 
 .input-group {
-  display: flex;
-  align-items: center;
-  margin: 0 28px 20px 0;
+  @extend %flex;
   border-radius: 4px;
   width: auto;
 
@@ -59,37 +58,24 @@ textarea {
     width: 100%;
   }
 
+  *:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
+
+  *:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+  }
+
   // border radius corners depending on who comes first
 
   .input-group__btn,
   .input-group__input {
-    margin: 0;
-
-    &:first-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-right: 0;
-    }
-
-    &:last-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-      border-left: 0;
-    }
-  }
-
-  label {
-    margin-right: 8px;
-
-    & + .input-group__input {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border-left: 1px;
-    }
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .input-group__input {
@@ -104,22 +90,7 @@ textarea {
     }
   }
 
-  &--stacked {
-    @extend %flex--column;
-
-    .radio,
-    .checkbox {
-      margin-top: 8px;
-      margin-left: 10px;
-    }
-  }
-
   &__btn {
     position: relative;
-  }
-
-  .radio,
-  .checkbox {
-    margin-left: 10px;
   }
 }
