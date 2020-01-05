@@ -69,19 +69,6 @@ $tabCount: 3;
   }
 }
 
-/*Media query*/
-@media only screen and (max-width: 900px) {
-  .tab {
-    label span {
-      display: none;
-    }
-    
-    .tab {
-      width: 98%;
-    }
-  }
-}
-
 /*Content Animation*/
 @keyframes fadeInScale {
   0% {
