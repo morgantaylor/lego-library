@@ -135,7 +135,7 @@
     color: $lego-gray-5;
 
     &--secondary {
-      font-weight: normal;
+      @include text(.8em, $weight: normal);
       padding: 0px 5px;
     }
   }
@@ -204,6 +204,10 @@ $skins:
 
       i:before,
       i:after {
+        background-color: $white;
+      }
+
+      .accordion__container {
         background-color: $white;
       }
     }
