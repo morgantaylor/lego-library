@@ -1,7 +1,9 @@
 // ======= Native Select Menu =======//
 
 .select,
-.select--inline {
+.select--stacked {
+  display: block;
+  width: 100%;
   position: relative;
   height: 42px;
   margin: 3px;
@@ -72,10 +74,14 @@
   }
 }
 
-.select--inline {
-  display: inline-flex;
+.select {
 
-  & + .select--inline {
+  @media #{$phone-up} {
+    display: inline-flex;
+    width: auto;
+  }
+
+  & + .select {
     margin-left: 5px;
   }
 }
