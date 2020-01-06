@@ -2,23 +2,14 @@
 // Inputs 
 // ==================
 
-input[type="text"],
-input[type="color"],
-input[type="date"],
-input[type="email"],
-input[type="phone"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="time"],
-input[type="range"],
-textarea {
+// not for checkbox, radio, progress, range, file
+.input {
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
   @include transition((border-color, box-shadow), .15s, ease-in-out);
   color: $lego-gray-5;
   margin: 3px;
   padding: 5px;
-  height: 42px;
+  min-height: 42px;
   min-width: auto;
   display: inline;
   border: 1px solid $lego-gray-3;
