@@ -26,17 +26,25 @@ table {
     }
   }
 
-   > tbody > tr > td,
-   > tbody > tr > th, 
-   > tfoot > tr > td, 
-   > tfoot > tr > th, 
-   > thead > tr > td,
-   > thead > tr > th {
+  > tbody > tr > td,
+  > tbody > tr > th, 
+  > tfoot > tr > td, 
+  > tfoot > tr > th, 
+  > thead > tr > td,
+  > thead > tr > th {
     padding: 10px;
     vertical-align: middle;
     border-bottom: 1px solid $lego-gray-2;
-  }
 
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+
+    @media #{$phone} {
+      display: block;
+    }
+  }
   ////// Striped ///////
 
   &.table--stripe tbody tr:nth-child(odd) td {
