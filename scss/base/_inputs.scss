@@ -19,7 +19,7 @@ textarea {
   margin: 3px;
   padding: 5px;
   height: 42px;
-  min-width: 250px;
+  min-width: auto;
   display: inline;
   border: 1px solid $lego-gray-3;
   border-radius: 4px;
@@ -44,12 +44,8 @@ textarea {
 
 .input-group,
 .input-group--stacked {
-  width: auto;
+  @extend %mobile-full-width;
   margin-right: 10px;
-
-  @media #{$phone} {
-    width: 100%;
-  }
 
   *:first-child {
     border-top-right-radius: 0;
@@ -72,11 +68,8 @@ textarea {
   }
 
   .input-group__input {
+    @extend %mobile-full-width;
     display: inline;
-
-    @media #{$phone} {
-      width: 100%;
-    }
 
     .input-group__input + .input-group__input {
       border-left-width: 0;
@@ -85,7 +78,7 @@ textarea {
 }
 
 .input-group {
-  @extend %flex;
+  display: inline-flex;
 
   & .checkbox,
   & .radio {
@@ -93,6 +86,6 @@ textarea {
   }
 
   &--stacked {
-    display: inline;
+    display: flex;
   }
 }

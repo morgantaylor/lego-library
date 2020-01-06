@@ -2,14 +2,10 @@
 // Form, Form Items and Classes
 // ======================
 
-.form-group,
 fieldset,
 label,
 input:not([type='checkbox']):not([type='radio']) {
-
-  @media #{$phone} {
-    width: 100%;
-  }
+  @extend %mobile-full-width;
 }
 
 .form {
@@ -106,6 +102,7 @@ input:not([type='checkbox']):not([type='radio']) {
 
 .form-group {
   @extend %flex--column;
+  @extend %mobile-full-width;
   align-items: baseline;
 
   @media #{$phone-up} {
