@@ -10,10 +10,13 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 20px;
-  margin-right: 20px;
   overflow: hidden;
   line-height: 1.3;
   width: 300px;
+
+  @media #{$phone-up} {
+    margin-right: 20px;
+  }
 
   &__body {
     margin-top: 15px;
