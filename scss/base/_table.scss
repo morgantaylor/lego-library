@@ -40,10 +40,6 @@ table {
     overflow-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
-
-    @media #{$phone} {
-      display: block;
-    }
   }
   ////// Striped ///////
 

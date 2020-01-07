@@ -12,7 +12,7 @@ a {
 
 .btn {
   @include transition((box-shadow, background-color), .4s, cubic-bezier(.25,.8,.25,1));
-  min-height: 42px;
+  min-height: 43px;
   margin: 3px;
   padding: 8px 18px;
   border: 1px solid transparent;

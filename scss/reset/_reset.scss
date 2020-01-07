@@ -11,21 +11,13 @@ body  {
 
 // Base Size 16px = 1em
 body {
-  margin: 0;
   height: auto;
   background-color: $white;
-}
-
-///// Elements //////
-
-label {
-  display: block;
 }
 
 ////////// IMG & SVG //////
 
 img {
-  border-style: none;
   vertical-align: middle;
 }
 
@@ -43,20 +35,6 @@ a,
 button {
   font-family: $arial;
   cursor: pointer;
-}
-
-button {
-  font-size: 100%;
-  font-family: inherit;
-  border: none;
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 ////////// Inputs ////////
@@ -77,12 +55,7 @@ button::-moz-focus-inner,
 input, 
 select,
 textarea {
-  font: inherit;
   letter-spacing: 0.01em;
-}
-
-legend {
-  color: inherit;
 }
 
 code,kbd,samp,pre {
@@ -116,10 +89,12 @@ code {
 pre {
   overflow: auto;
   padding: 16px;
-  margin: 0;
-  border: 0;
   width: fit-content;
   max-width: 100%;
+
+  @media #{$phone} {
+    width: 100%;
+  }
 }
 
 sup,
@@ -129,7 +104,7 @@ sub {
 
 hr {
   margin: 20px 0;
-  background-color: $lego-gray-2;
+  background-color: $lego-gray-1;
   height: 1px;
   border: none;
 }
