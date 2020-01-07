@@ -45,6 +45,9 @@
     &:focus {
       border-left-color: $lego-primary;
     }
+    &:focus {
+      outline: none;
+    }
   }
 
   .nav__item--nested:hover {
