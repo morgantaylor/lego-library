@@ -31,9 +31,7 @@ OR
 - [Issue Tracker](http://www.github.com/morgantaylor/lego-library/issues)
 - [Source Code](http://www.github.com/morgantaylor/lego-library)
 
-## Requirements for Development
-
-To help contribute to this project clone/fork the project. Make sure you have `npm` and all of the dependencies installed before running the project. Be sure to check the `package.json` file and run `npm run final`. This will compile the scss to css in a compressed format as well as autoprefix where needed.
+## Dependencies
 
 - [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 - [Node-Sass](https://www.npmjs.com/package/node-sass)
