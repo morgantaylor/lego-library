@@ -16,7 +16,7 @@ View the full documentation and demo to see the components in action. The showca
 
 For basic use in your project there is no installation required.
 
-1. [Download the minified file](https://legocss.com/build/lego.min.css) and include it in your project file.
+1. [Preview the minified file](https://legocss.com/build/lego.min.css) and include it in your project file.
 
 OR
 
