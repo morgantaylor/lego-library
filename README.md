@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The name is slightly cheesy and obvious. I'm a LEGO<sup>&reg;</sup> fan and have been ever since childhood. With reusable pieces of code, I can make larger components just like using LEGO<sup>&reg;</sup> bricks to make a castle.</p>
+It's no secret I'm a LEGO<sup>&reg;</sup> fan and have been ever since childhood. The name is slightly cheesy and obvious. With reusable pieces of code, I made components similar to LEGO<sup>&reg;</sup> bricks being used to make different objects.
 
-When first learning programming I used Twitter Bootstrap and Material Design libraries. The CSS libraries made creating a website painless and easy. On the downside, there was a considerable amount of code that came along that would never be used. I would spend countless hours rewriting specific styles to my liking. When I started doing this for every project I noticed how much time I was wasting. That is how this project was born.
+When I was first learning to program I used the Twitter Bootstrap and Material Design libraries. They made creating websites painless and easy. The downside, a considerable amount of code that came with those libraries that I would never use. I would spend a countless amount of time rewriting specific styles to my liking. When I noticed I was doing this for every project the idea for the LegoCSS project was born.
 
 ## Demo
 
