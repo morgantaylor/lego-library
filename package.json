@@ -27,7 +27,6 @@
   "devDependencies": {
     "autoprefixer": "^9.7.3",
     "node-sass": "^4.13.0",
-    "onchange": "^6.1.0",
     "postcss-cli": "^6.1.3"
   },
   "dependencies": {}

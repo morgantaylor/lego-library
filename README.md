@@ -16,7 +16,7 @@ View the full documentation and demo to see the components in action. The showca
 
 For basic use in your project there is no installation required.
 
-1. [Download the minified file](https://legocss.com/legocss/lego.min.css) and include it in your project file.
+1. [Download the minified file](https://legocss.com/build/lego.min.css) and include it in your project file.
 
 OR
 
@@ -37,7 +37,6 @@ To help contribute to this project clone/fork the project. Make sure you have `n
 
 - [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 - [Node-Sass](https://www.npmjs.com/package/node-sass)
-- [Onchange](https://www.npmjs.com/package/onchange)
 - [PostCSS-cli](https://www.npmjs.com/package/postcss-cli)
 
 <!-- ### Configuration
