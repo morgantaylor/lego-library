@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node-sass --output-style expanded --source-map-embed scss/demo.scss demo.css",
     "autoprefixer": "postcss -u autoprefixer -r legos.css",
-    "compile-reset": "node-sass --output-style compressed --omit-source-map-url true scss/reset/c-reset.scss scss/dist/reset.min.css && postcss -u --no-map autoprefixer -r scss/dist/reset.min.css",
-    "compile-base": "node-sass --output-style compressed --omit-source-map-url scss/base/c-base.scss scss/dist/base.min.css && postcss -u --no-map autoprefixer -r scss/dist/base.min.css",
-    "compile-components": "node-sass --output-style compressed --omit-source-map-url scss/components/c-components.scss scss/dist/component.min.css && postcss -u --no-map autoprefixer -r scss/dist/component.min.css",
-    "compile-lego": "node-sass --output-style compressed --omit-source-map-url scss/lego.scss scss/dist/lego.min.css && postcss -u --no-map autoprefixer -r scss/dist/lego.min.css",
-    "compile-demo": "node-sass --output-style compressed --omit-source-map-url scss/demo.scss scss/dist/demo.min.css && postcss -u --no-map autoprefixer -r scss/dist/demo.min.css",
-    "compile-all": "npm run compile-reset && npm run compile-base && npm run compile-components && npm run compile-lego && npm run compile-demo"
+    "compile-reset": "node-sass --output-style compressed --omit-source-map-url true scss/reset/c-reset.scss dist/reset.min.css && postcss -u --no-map autoprefixer -r dist/reset.min.css",
+    "compile-base": "node-sass --output-style compressed --omit-source-map-url scss/base/c-base.scss dist/base.min.css && postcss -u --no-map autoprefixer -r dist/base.min.css",
+    "compile-components": "node-sass --output-style compressed --omit-source-map-url scss/components/c-components.scss dist/component.min.css && postcss -u --no-map autoprefixer -r dist/component.min.css",
+    "compile-lego": "node-sass --output-style compressed --omit-source-map-url scss/lego.scss dist/lego.min.css && postcss -u --no-map autoprefixer -r dist/lego.min.css",
+    "compile-demo": "node-sass --output-style compressed --omit-source-map-url scss/demo.scss dist/demo.min.css && postcss -u --no-map autoprefixer -r dist/demo.min.css",
+    "build": "npm run compile-reset && npm run compile-base && npm run compile-components && npm run compile-lego && npm run compile-demo"
   },
   "repository": {
     "type": "git",
