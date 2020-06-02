@@ -1,0 +1,75 @@
+// ==================
+// Mobile nav 
+// ==================
+
+@media #{$phone}, #{$tablet} {
+  .mobile-nav {
+    display: block;
+    padding: 18px;
+    z-index: 2;
+    width: 100vw;
+
+    // open and close icons controlled by the input
+    .mobile-nav__toggle {
+      position: absolute;
+      opacity: 0;
+      margin: 0;
+      left: 0;
+      top: 0;
+      width: calc(100% - 124px);
+      height: 60px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .nav__hamburger,
+    .nav__close {
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      position: relative;
+    }
+
+    &__title {
+      @include text(1.25em, $weight: 100, $color: inherit);
+      cursor: pointer;
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      margin: 0;
+    }
+  }
+
+  // content
+  .mobile-nav__content {
+    margin-top: 15px;
+
+    .nav__item {
+      outline: none;
+    }
+
+    .accordion__container .list--nav {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      height: 37px;
+      width: 100%;
+      margin: 5px 0;
+
+      .nav__item--nested {
+        padding-bottom: 10px;
+
+        &.divider {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+@media #{$desktop} {
+  .mobile-nav {
+    display: none;
+  }
+}

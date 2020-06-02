@@ -1,0 +1,60 @@
+// ==================
+// Toast 
+// ==================
+
+.toast {
+  @extend %flex;
+  flex-direction: column;
+  z-index: 2;
+  opacity: .8;
+  position: fixed;
+  max-width: 250px;
+  top: 10px;
+  right: 10px;
+  border: 1px solid $lego-gray-2;
+  background-color: $lego-gray-1;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &__header {
+    @extend %flex;
+    padding: 4px 14px;
+    border-bottom: 1px solid $lego-gray-2;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  &__body {
+    @extend %flex;
+    padding: 14px;
+    width: 100%;
+  }
+
+  &__close {
+    opacity: .6;
+    margin-left: auto;
+    background-color: transparent;
+    padding-right: 0;
+    color: $lego-gray-3;
+    min-height: 30px;
+  }
+}
+
+$skins:
+  'blue' #2390b0 #c5e9f3 #31b0d5,
+  'green' #357935 #c7e6c7 #449d44,
+  'orange' #8a6d3b #fcf8e3 #faebcc,
+  'red' #8e1f2b #f0bcc2 #b82838
+;
+
+.toast {
+  @each $name, $color, $background, $border-color in $skins {
+    &.skin-#{$name} {
+      @include custom-skin('toast', $background, $color, $border-color);
+
+      .toast__close {
+        color: $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+// ==================
+// Alert 
+// ==================
+
+$skins:
+  'blue' #2390b0 #c5e9f3 #31b0d5,
+  'green' #357935 #c7e6c7 #449d44,
+  'orange' #8a6d3b #fcf8e3 #faebcc,
+  'red' #8e1f2b #f0bcc2 #b82838
+;
+
+.alert {
+  @extend %flex;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $lego-gray-2;
+
+  &__body {
+    padding: 15px 0 15px 15px;
+  }
+
+  .alert__close {
+    opacity: .6;
+    margin-left: auto;
+    background-color: inherit;
+    margin-right: 15px;
+    padding-right: 0;
+    color: $lego-gray-6;
+    height: 18px;
+  }
+
+  @each $name, $color, $background, $border-color in $skins {
+    &.alert--#{$name},
+    &.alert--#{$name}--border {
+      .alert__close {
+        color: $color;
+      }
+    }
+    &.alert--#{$name} {
+      @include custom-skin('alert', $background, $color, $background);
+    }
+    &.alert--#{$name}--border {
+      @include custom-skin('alert', $background, $color, $border-color);
+    }
+  }
+}
