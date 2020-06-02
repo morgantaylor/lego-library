@@ -32,6 +32,6 @@ Thumbs.db
 *.js
 *.map
 
-scss/dist
+dist
 app.css
 demo.css
